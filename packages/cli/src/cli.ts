@@ -1,7 +1,7 @@
 import commander from "commander";
 import terminalLink from "terminal-link";
-import { Log4brains, Log4brainsError } from "@log4brains/core";
-import { AppConsole, FailureExit } from "@log4brains/cli-common";
+import { Log4brains, Log4brainsError } from "@freakin-ward/log4brains-core";
+import { AppConsole, FailureExit } from "@freakin-ward/log4brains-cli-common";
 
 import {
   ListCommand,
@@ -11,7 +11,7 @@ import {
 } from "./commands";
 
 const templateExampleUrl =
-  "https://raw.githubusercontent.com/thomvaill/log4brains/stable/packages/init/assets/template.md";
+  "https://raw.githubusercontent.com/FreakinWard/log4brains/develop/packages/init/assets/template.md";
 
 let l4bInstance: Log4brains;
 function getL4bInstance(): Log4brains {

@@ -25,7 +25,7 @@ jobs:
         node-version: ${{ fromJson(needs.load-nodejs-supported-versions.outputs.node_versions) }}
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains # stable version
+      npm-package-fullname: "@freakin-ward/log4brains" # stable version
       os: ${{ matrix.os }}
       node-version: ${{ matrix.node-version }}
 
@@ -37,7 +37,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains # stable version
+      npm-package-fullname: "@freakin-ward/log4brains" # stable version
       os: ${{ matrix.os }}
       node-version: current
       experimental: true # best effort mode

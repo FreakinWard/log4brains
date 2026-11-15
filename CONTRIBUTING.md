@@ -40,7 +40,7 @@ cd $(mktemp -d -t l4b-test-XXXX)
 log4brains init
 ```
 
-When you are done, run `yarn unlink-cli && npm install -g log4brains` to use the official version again.
+When you are done, run `yarn unlink-cli && npm install -g @freakin-ward/log4brains` to use the official version again.
 
 ## Coding standards
 
@@ -100,7 +100,7 @@ Log4brains follows a **simplified Git Flow** model. Here’s how the process wor
    It will then trigger automatically a **beta release** to npm, allowing users to install and test the latest changes:
 
    ```bash
-   npm install log4brains@beta
+   npm install @freakin-ward/log4brains@beta
    ```
 
    This helps us get feedback from early adopters before triggering a stable release.
@@ -136,5 +136,5 @@ Later, a **Canary Maintainer** can become a **Core Maintainer** if they demonstr
 
 _Work in Progress_
 
-- **Core Maintainers** are responsible for managing the [milestones](https://github.com/thomvaill/log4brains/milestones) of the project: this enables contributor to see what is planned for the next release, and what is the priority of the issues
+- **Core Maintainers** are responsible for managing the [milestones](https://github.com/FreakinWard/log4brains/milestones) of the project: this enables contributor to see what is planned for the next release, and what is the priority of the issues
 - **Canary Maintainers** are responsible for triaging issues and PRs

@@ -1,7 +1,7 @@
 import React from "react";
 import Router, { useRouter } from "next/router";
 // import io from "socket.io-client"; // loaded by _document.tsx so that we don't add this lib in the static mode bundle
-import type { FileWatcherEvent } from "@log4brains/core";
+import type { FileWatcherEvent } from "@freakin-ward/log4brains-core";
 import { Adr, AdrLight } from "../../lib-shared/types";
 import { Log4brainsMode, Log4brainsModeContext } from "../../contexts";
 import { AdrBrowserLayout, AdrBrowserLayoutProps } from "./AdrBrowserLayout";

@@ -11,7 +11,7 @@ Which tool(s) should we use to manage these records?
 
 ## Considered Options
 
-- [Log4brains](https://github.com/thomvaill/log4brains): architecture knowledge base (command-line + static site generator)
+- [Log4brains](https://github.com/FreakinWard/log4brains): architecture knowledge base (command-line + static site generator)
 - [ADR Tools](https://github.com/npryce/adr-tools): command-line to create ADRs
 - [ADR Tools Python](https://bitbucket.org/tinkerer_/adr-tools-python/src/master/): command-line to create ADRs
 - [adr-viewer](https://github.com/mrwilson/adr-viewer): static site generator

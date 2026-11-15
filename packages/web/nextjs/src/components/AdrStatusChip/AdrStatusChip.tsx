@@ -8,7 +8,7 @@ import {
   brown
 } from "@material-ui/core/colors";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import type { AdrDtoStatus } from "@log4brains/core";
+import type { AdrDtoStatus } from "@freakin-ward/log4brains-core";
 import clsx from "clsx";
 
 // Styles are inspired by the MUI "Badge" styles

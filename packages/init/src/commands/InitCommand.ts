@@ -8,12 +8,12 @@ import mkdirp from "mkdirp";
 import yaml from "yaml";
 import path from "path";
 import moment from "moment-timezone";
-import type { AppConsole } from "@log4brains/cli-common";
-import { FailureExit } from "@log4brains/cli-common";
+import type { AppConsole } from "@freakin-ward/log4brains-cli-common";
+import { FailureExit } from "@freakin-ward/log4brains-cli-common";
 import { replaceAllInFile } from "../utils";
 
 const assetsPath = path.resolve(path.join(__dirname, "../assets")); // only one level up because bundled with microbundle
-const docLink = "https://github.com/thomvaill/log4brains";
+const docLink = "https://github.com/FreakinWard/log4brains";
 
 function forceUnixPath(p: string): string {
   return p.replace(/\\/g, "/");

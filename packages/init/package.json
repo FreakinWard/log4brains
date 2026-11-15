@@ -1,5 +1,5 @@
 {
-  "name": "@log4brains/init",
+  "name": "@freakin-ward/log4brains-init",
   "version": "1.1.0",
   "description": "Log4brains architecture knowledge base initialization CLI",
   "keywords": [
@@ -11,10 +11,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/FreakinWard/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/FreakinWard/log4brains",
     "directory": "packages/init"
   },
   "engines": {
@@ -39,7 +39,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@log4brains/cli-common": "1.1.0",
+    "@freakin-ward/log4brains-cli-common": "1.1.0",
     "chalk": "^4.1.0",
     "commander": "^6.1.0",
     "execa": "^4.1.0",

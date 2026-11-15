@@ -1,8 +1,8 @@
 import commander from "commander";
-import type { AppConsole } from "@log4brains/cli-common";
-import { createInitCli } from "@log4brains/init";
-import { createCli } from "@log4brains/cli";
-import { createWebCli } from "@log4brains/web";
+import type { AppConsole } from "@freakin-ward/log4brains-cli-common";
+import { createInitCli } from "@freakin-ward/log4brains-init";
+import { createCli } from "@freakin-ward/log4brains-cli";
+import { createWebCli } from "@freakin-ward/log4brains-web";
 
 type Deps = {
   appConsole: AppConsole;

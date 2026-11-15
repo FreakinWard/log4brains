@@ -3,7 +3,7 @@ import { createServer } from "http";
 import SocketIO from "socket.io";
 import chalk from "chalk";
 import open from "open";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@freakin-ward/log4brains-cli-common";
 import { execNext, getL4bInstance, getNextJsDir } from "../utils";
 
 type Deps = {

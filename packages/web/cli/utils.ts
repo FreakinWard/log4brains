@@ -1,6 +1,6 @@
 import chalk from "chalk";
-import { ConsoleCapturer } from "@log4brains/cli-common";
-import { Log4brains } from "@log4brains/core";
+import { ConsoleCapturer } from "@freakin-ward/log4brains-cli-common";
+import { Log4brains } from "@freakin-ward/log4brains-core";
 import path from "path";
 
 let l4bInstance: Log4brains;

@@ -1,4 +1,4 @@
-import { AdrDtoStatus } from "@log4brains/core";
+import { AdrDtoStatus } from "@freakin-ward/log4brains-core";
 import { Adr } from "../../src/lib-shared/types";
 
 export const adrMocks = [

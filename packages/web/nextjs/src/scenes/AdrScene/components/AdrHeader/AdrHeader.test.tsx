@@ -1,4 +1,4 @@
-import { AdrDtoStatus } from "@log4brains/core";
+import { AdrDtoStatus } from "@freakin-ward/log4brains-core";
 import React from "react";
 import TestRenderer from "react-test-renderer";
 import { AdrHeader } from "./AdrHeader";

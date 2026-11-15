@@ -465,7 +465,7 @@ export function AdrBrowserLayout({
             <Typography className={classes.footerText}>
               Powered by{" "}
               <MuiLink
-                href="https://github.com/thomvaill/log4brains"
+                href="https://github.com/FreakinWard/log4brains"
                 className={classes.footerLink}
                 target="_blank"
                 rel="noopener"

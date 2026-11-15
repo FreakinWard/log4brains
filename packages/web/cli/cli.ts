@@ -1,5 +1,5 @@
 import commander from "commander";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@freakin-ward/log4brains-cli-common";
 import { previewCommand, buildCommand } from "./commands";
 
 type StartEditorCommandOpts = {

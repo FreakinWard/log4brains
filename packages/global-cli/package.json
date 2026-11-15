@@ -1,5 +1,5 @@
 {
-  "name": "log4brains",
+  "name": "@freakin-ward/log4brains",
   "version": "1.1.0",
   "description": "Log and publish your architecture decisions (ADR) with Log4brains",
   "keywords": [
@@ -21,10 +21,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/FreakinWard/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/FreakinWard/log4brains",
     "directory": "packages/global-cli"
   },
   "engines": {
@@ -51,11 +51,11 @@
     "unlink": "yarn unlink"
   },
   "dependencies": {
-    "@log4brains/cli": "1.1.0",
-    "@log4brains/cli-common": "1.1.0",
-    "@log4brains/core": "1.1.0",
-    "@log4brains/init": "1.1.0",
-    "@log4brains/web": "1.1.0",
+    "@freakin-ward/log4brains-cli": "1.1.0",
+    "@freakin-ward/log4brains-cli-common": "1.1.0",
+    "@freakin-ward/log4brains-core": "1.1.0",
+    "@freakin-ward/log4brains-init": "1.1.0",
+    "@freakin-ward/log4brains-web": "1.1.0",
     "chalk": "^4.1.0",
     "commander": "^6.1.0"
   },
