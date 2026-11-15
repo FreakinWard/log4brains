@@ -45,10 +45,13 @@ jobs:
 
       - name: Check for yarn.lock changes
         id: yarn-lock
-        run: git diff --quiet origin/develop HEAD -- yarn.lock
-        continue-on-error: true
-      #  - steps.yarn-lock.outcome == 'success' --> yarn.lock was not changed
-      #  - steps.yarn-lock.outcome == 'failure' --> yarn.lock was changed
+        # Sets an output instead of failing the step, so no error annotation is emitted
+        run: |
+          if git diff --quiet origin/develop HEAD -- yarn.lock; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       # We have to build all the packages before the tests
       # Because init-log4brains's integration tests use @freakin-ward/log4brains-cli, which uses @freakin-ward/log4brains-core
@@ -57,11 +60,11 @@ jobs:
       - run: yarn build
 
       - name: Test only packages that have changed compared to the main branch
-        if: ${{ inputs.only-changed-packages && steps.yarn-lock.outcome == 'success' }}
+        if: ${{ inputs.only-changed-packages && steps.yarn-lock.outputs.changed == 'false' }}
         run: yarn test --since origin/develop
 
       - name: Test all packages (only-changed-packages=false or yarn.lock has changed)
-        if: ${{ !inputs.only-changed-packages || steps.yarn-lock.outcome == 'failure' }}
+        if: ${{ !inputs.only-changed-packages || steps.yarn-lock.outputs.changed == 'true' }}
         run: yarn test
 
       - name: E2E tests
