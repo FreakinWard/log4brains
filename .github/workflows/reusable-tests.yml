@@ -28,6 +28,9 @@ jobs:
   tests:
     runs-on: ${{ inputs.os }}
     continue-on-error: ${{ inputs.experimental }}
+    env:
+      # "current" Node.js may be a prerelease (e.g. 27.0.0-alpha), which never satisfies `engines`
+      YARN_IGNORE_ENGINES: ${{ inputs.experimental && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -38,8 +41,7 @@ jobs:
           node-version: ${{ inputs.node-version }}
           cache: yarn
           cache-dependency-path: yarn.lock
-      # In experimental mode ("current" Node.js may be a prerelease), skip the engines check
-      - run: yarn install --frozen-lockfile --network-timeout 100000 ${{ inputs.experimental && '--ignore-engines' || '' }} # custom network-timeout for Windows runners
+      - run: yarn install --frozen-lockfile --network-timeout 100000 # custom network-timeout for Windows runners
 
       - name: Check for yarn.lock changes
         id: yarn-lock
@@ -49,7 +51,7 @@ jobs:
       #  - steps.yarn-lock.outcome == 'failure' --> yarn.lock was changed
 
       # We have to build all the packages before the tests
-      # Because init-log4brains's integration tests use @log4brains/cli, which uses @log4brains/core
+      # Because init-log4brains's integration tests use @freakin-ward/log4brains-cli, which uses @freakin-ward/log4brains-core
       # TODO: we should separate tests that require built packages of the others, to get a quicker feedback
       # Once it's done, we should add "yarn test" in each package's preVersion script
       - run: yarn build
@@ -67,5 +69,5 @@ jobs:
           yarn link-cli
           echo "$(yarn global bin)" >> $GITHUB_PATH
           rm -rf node_modules
-          yarn install --production --no-lockfile --network-timeout 100000 ${{ inputs.experimental && '--ignore-engines' || '' }}
+          yarn install --production --no-lockfile --network-timeout 100000
           yarn e2e
