@@ -113,9 +113,9 @@ By contributing to Log4brains, you agree that your contributions will be license
 
 ## Would like to become a co-maintainer?
 
-As discussed in [discussion #108](https://github.com/thomvaill/log4brains/discussions/108), I (@thomvaill), as the project's sole maintainer, struggle to dedicate enough time to ensure its stability and growth, which is critical for its continued development. To ensure the project's long-term success, it is essential to have multiple maintainers. Therefore, I am actively seeking reliable and committed co-maintainers to share the responsibilities and contribute to the project's future.
+This fork is currently maintained by a single maintainer. To ensure the project's long-term success, it is essential to have multiple maintainers, so reliable and committed co-maintainers are welcome to share the responsibilities and contribute to the project's future (see also the original [discussion #108](https://github.com/thomvaill/log4brains/discussions/108) in the upstream project).
 
-To make it easier I introduce two co-maintainer roles:
+There are two co-maintainer roles:
 
 - **Canary Maintainers**: in charge of triaging issues, reviewing PRs, and can merge them into `develop` (and thus trigger a beta release)
 - **Core Maintainers**: in charge of the project's overall direction and vision, and of releasing stable versions
@@ -127,7 +127,7 @@ If you're interested in becoming a co-maintainer, you can start your "Mentorship
 1. **Review Open PRs**: Begin by reviewing existing PRs and providing meaningful feedback. A current maintainer will mentor you through the review process.
 2. **Help Triaging Issues**: Engage with users by helping resolve issues and providing guidance.
 3. **Contribution Consistency**: Regular and meaningful contributions over time will demonstrate your knowledge and commitment.
-4. **Reach Out** to <thomvaill@bluebricks.dev> to exress your interest in becomming a co-maintainer.
+4. **Reach Out** to <log4brains@awardedservices.com> to express your interest in becoming a co-maintainer.
 
 Once we identify a trusted contributor, we will elevate them to the **Canary Maintainer** status, with permissions to merge PRs and perform other tasks.
 Later, a **Canary Maintainer** can become a **Core Maintainer** if they demonstrate a strong understanding of the project and its direction and if they are motived to take on the additional responsibilities.
