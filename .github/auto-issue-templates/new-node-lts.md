@@ -8,7 +8,7 @@ Please test the Log4brains project against this version and update the supported
 
 - [ ] Update the LTS version in `.nvmrc`
 - [ ] Run `nvm use` and ensure `node -v` returns the new LTS version
-- [ ] Run `rm -rf node_modules && yarn install`
+- [ ] Run `rm -rf node_modules && npm install`
 - [ ] Run all the quality checks described in CONTRIBUTNG.md
 - [ ] Run and test the app manually
 - [ ] Fix the potential bugs

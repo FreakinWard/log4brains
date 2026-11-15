@@ -10,7 +10,7 @@ import {
   createStyles,
   makeStyles,
   Theme,
-  fade
+  alpha
 } from "@material-ui/core/styles";
 import { Search as SearchIcon, Close as ClearIcon } from "@material-ui/icons";
 import { AutocompleteRenderInputParams } from "@material-ui/lab";
@@ -35,11 +35,11 @@ const useStyles = makeStyles((theme: Theme) => {
         : "inherit",
       backgroundColor: open
         ? theme.palette.common.white
-        : fade(theme.palette.common.white, 0.15),
+        : alpha(theme.palette.common.white, 0.15),
       "&:hover": {
         backgroundColor: open
           ? theme.palette.common.white
-          : fade(theme.palette.common.white, 0.25)
+          : alpha(theme.palette.common.white, 0.25)
       }
     }),
     inputInput: {

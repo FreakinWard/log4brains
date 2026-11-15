@@ -27,9 +27,6 @@ jobs:
   e2e-tests:
     runs-on: ${{ inputs.os }}
     continue-on-error: ${{ inputs.experimental }}
-    env:
-      # "current" Node.js may be a prerelease (e.g. 27.0.0-alpha), which never satisfies `engines`
-      YARN_IGNORE_ENGINES: ${{ inputs.experimental && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -38,11 +35,11 @@ jobs:
         with:
           node-version-file: ${{ inputs.node-version-file }}
           node-version: ${{ inputs.node-version }}
-          cache: yarn
-          cache-dependency-path: yarn.lock
+          cache: npm
+          cache-dependency-path: e2e-tests/package-lock.json
 
       # But we do install log4brains from the registry
       - run: npm install -g ${{ inputs.npm-package-fullname }}
 
       - name: E2E Tests on the registry version
-        run: yarn e2e
+        run: npm run e2e

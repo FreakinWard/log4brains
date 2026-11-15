@@ -16,5 +16,5 @@ npm install -g @freakin-ward/log4brains
 ## Development
 
 ```bash
-yarn dev:test
+npm run dev:test
 ```

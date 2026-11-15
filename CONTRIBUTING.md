@@ -10,37 +10,37 @@ Thank you so much! :clap:
 
 ```bash
 npm uninstall -g log4brains
-yarn install
-yarn link-cli
-yarn build
+npm install
+npm run link-cli
+npm run build
 
-yarn dev
+npm run dev
 # ... if it does not work, you may have to add this line to your ~/.bashrc (or similar):
-# export PATH="$PATH:$(yarn global bin)"
+# export PATH="$PATH:$(npm prefix -g)/bin"
 
 # You can now develop
-# `yarn dev` re-builds the changed packages live
+# `npm run dev` re-builds the changed packages live
 
 # You can test the different packages directly on the Log4brains project
 log4brains adr new
 log4brains preview
 log4brains build
-yarn serve-log4brains # serves the build output (`.log4brains/out`) locally
+npm run serve-log4brains # serves the build output (`.log4brains/out`) locally
 
 # For the Next.js app, you can enable the Fast Refresh feature just by setting NODE_ENV to `development`
 NODE_ENV=development log4brains preview
 # Or if you want to debug only the Next.js app without the Log4brains custom part, you can run:
-cd packages/web && yarn next dev # (in this case `yarn dev` is not needed before running this command)
+cd packages/web && npm run dev:nextjs # (in this case `npm run dev` is not needed before running this command)
 
 # To work on the UI, you probably would like to use the Storybook instead:
-cd packages/web && yarn storybook
+cd packages/web && npm run storybook
 
 # To test the init CLI, create an empty project
 cd $(mktemp -d -t l4b-test-XXXX)
 log4brains init
 ```
 
-When you are done, run `yarn unlink-cli && npm install -g @freakin-ward/log4brains` to use the official version again.
+When you are done, run `npm run unlink-cli && npm install -g @freakin-ward/log4brains` to use the official version again.
 
 ## Coding standards
 
@@ -74,17 +74,17 @@ Log4brains follows a **simplified Git Flow** model. Here’s how the process wor
 3. **Develop and Test**: Make your changes (do not forget the tests!), and ensure the following commands pass before submitting your PR:
 
    ```bash
-   yarn lint         # enforced automatically before every commit with husky+lint-staged
-   yarn format:fix   # enforced automatically before every commit with husky+lint-staged
-   yarn typescript   # enforced automatically before every commit with husky
-   yarn test:changed # (or `yarn test` to run all the tests)
+   npm run lint         # enforced automatically before every commit with husky+lint-staged
+   npm run format:fix   # enforced automatically before every commit with husky+lint-staged
+   npm run typescript   # enforced automatically before every commit with husky
+   npm run test:changed # (or `npm test` to run all the tests)
 
    # Simulate the execution on a fresh install:
-   yarn link-cli
-   yarn build
+   npm run link-cli
+   npm run build
    rm -rf node_modules
-   yarn install --production --no-lockfile
-   yarn e2e
+   npm install --omit=dev --no-package-lock
+   npm run e2e
    ```
 
    If applicable, a pull request without tests will be rejected.

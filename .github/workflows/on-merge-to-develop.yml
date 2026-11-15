@@ -69,17 +69,17 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc # current LTS
-          cache: yarn
-          cache-dependency-path: yarn.lock
+          cache: npm
+          cache-dependency-path: package-lock.json
           registry-url: https://registry.npmjs.org/ # needed by lerna to push to NPM
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: npm ci
+      - run: npm run build
       - name: Git identity for github-actions[bot]
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Run lerna publish
-        run: yarn lerna publish --yes --conventional-commits --conventional-prerelease --force-publish --dist-tag alpha --exact --create-release github
+        run: npx lerna publish --yes --conventional-commits --conventional-prerelease --force-publish --dist-tag alpha --exact --create-release github
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

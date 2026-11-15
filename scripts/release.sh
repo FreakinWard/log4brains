@@ -32,7 +32,7 @@ echo "  - the example is working: https://freakinward.github.io/log4brains/adr/"
 echo "  - manual smoketests are OK (log4brains adr new, log4brains adr list, log4brains preview)"
 read -rp "Press any key to continue or Ctrl+C to abort..."
 
-yarn lerna publish \
+npx lerna publish \
   --conventional-commits \
   --conventional-graduate \
   --exact \

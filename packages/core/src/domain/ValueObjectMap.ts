@@ -65,19 +65,19 @@ export class ValueObjectMap<K extends ValueObject<any>, V> implements Map<
     return this.map.size;
   }
 
-  [Symbol.iterator](): IterableIterator<[K, V]> {
+  [Symbol.iterator](): ReturnType<Map<K, V>[typeof Symbol.iterator]> {
     return this.map[Symbol.iterator]();
   }
 
-  entries(): IterableIterator<[K, V]> {
+  entries(): ReturnType<Map<K, V>["entries"]> {
     return this.map.entries();
   }
 
-  keys(): IterableIterator<K> {
+  keys(): ReturnType<Map<K, V>["keys"]> {
     return this.map.keys();
   }
 
-  values(): IterableIterator<V> {
+  values(): ReturnType<Map<K, V>["values"]> {
     return this.map.values();
   }
 

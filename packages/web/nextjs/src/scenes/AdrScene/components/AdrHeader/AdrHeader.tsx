@@ -29,7 +29,7 @@ import {
   DiGit as GitRIcon
 } from "react-icons/di";
 import { FiLink as LinkRIcon } from "react-icons/fi";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { AdrStatusChip } from "../../../../components";
 import { Adr } from "../../../../lib-shared/types";
 

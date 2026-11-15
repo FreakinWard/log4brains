@@ -35,7 +35,7 @@
     "test": "jest",
     "lint": "eslint . --max-warnings=0",
     "typedoc": "typedoc --mode library --includeVersion --readme none --theme minimal --excludePrivate --out docs/typedoc src/index.ts",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "awilix": "^4.2.6",
