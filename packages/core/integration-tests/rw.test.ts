@@ -30,8 +30,8 @@ describe("E2E tests / RW", () => {
       const adr = await instance.getAdrBySlug("create-adr-from-template");
 
       expect(adr).toBeDefined();
-      expect(adr?.title).toEqual("Hello World");
-      expect(adr?.status).toEqual("draft");
+      expect(adr?.title).toBe("Hello World");
+      expect(adr?.status).toBe("draft");
       expect(adr?.package).toBeNull();
       expect(adr?.body.enhancedMdx).toMatchSnapshot();
     });
@@ -46,9 +46,9 @@ describe("E2E tests / RW", () => {
       );
 
       expect(adr).toBeDefined();
-      expect(adr?.title).toEqual("Foo Bar");
-      expect(adr?.status).toEqual("draft");
-      expect(adr?.package).toEqual("package1");
+      expect(adr?.title).toBe("Foo Bar");
+      expect(adr?.status).toBe("draft");
+      expect(adr?.package).toBe("package1");
       expect(adr?.body.enhancedMdx).toMatchSnapshot();
     });
 
@@ -62,9 +62,9 @@ describe("E2E tests / RW", () => {
       );
 
       expect(adr).toBeDefined();
-      expect(adr?.title).toEqual("Foo Baz");
-      expect(adr?.status).toEqual("draft");
-      expect(adr?.package).toEqual("package2");
+      expect(adr?.title).toBe("Foo Baz");
+      expect(adr?.status).toBe("draft");
+      expect(adr?.package).toBe("package2");
       expect(adr?.body.enhancedMdx).toMatchSnapshot();
     });
 
@@ -91,7 +91,7 @@ describe("E2E tests / RW", () => {
       const superseded = await instance.getAdrBySlug("superseded");
       const superseder = await instance.getAdrBySlug("superseder");
 
-      expect(superseded?.status).toEqual("superseded");
+      expect(superseded?.status).toBe("superseded");
       expect(superseded?.supersededBy).toEqual(superseder?.slug);
       expect(superseder?.body.enhancedMdx).toMatchSnapshot();
     });
@@ -101,10 +101,10 @@ describe("E2E tests / RW", () => {
     test("duplicate", async () => {
       const date = moment().format("YYYYMMDD");
       const slug = await instance.generateAdrSlug("Duplicate Test");
-      expect(slug).toEqual(`${date}-duplicate-test`);
+      expect(slug).toBe(`${date}-duplicate-test`);
 
       await instance.createAdrFromTemplate(slug, "Duplicate Test");
-      expect(await instance.generateAdrSlug("Duplicate Test")).toEqual(
+      expect(await instance.generateAdrSlug("Duplicate Test")).toBe(
         `${date}-duplicate-test-2`
       );
     });

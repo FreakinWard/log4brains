@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { AdrDto } from "@freakin-ward/log4brains-core";
 import lunr from "lunr";
 
@@ -77,7 +76,7 @@ export class Search {
       builder.ref("slug");
       builder.field("title", { boost: 1000 });
       builder.field("verbatim");
-      // eslint-disable-next-line no-param-reassign
+
       builder.metadataWhitelist = ["position"];
 
       adrsForSearch.forEach((adr, slug) => {

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { Query, QueryHandler } from "@src/application";
+import { ClassType, Query, QueryHandler } from "@src/application";
 
 export class QueryBus {
   private readonly handlersByQueryName: Map<string, QueryHandler> = new Map<
@@ -7,7 +6,7 @@ export class QueryBus {
     QueryHandler
   >();
 
-  registerHandler(handler: QueryHandler, queryClass: Function): void {
+  registerHandler(handler: QueryHandler, queryClass: ClassType<Query>): void {
     this.handlersByQueryName.set(queryClass.name, handler);
   }
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import {
   InputBase,
@@ -19,7 +18,7 @@ import { AutocompleteRenderInputParams } from "@material-ui/lab";
 export type SearchBarProps = InputBaseProps &
   AutocompleteRenderInputParams & {
     open: boolean;
-    onClear: (event: React.ChangeEvent<{}>) => void;
+    onClear: (event: React.ChangeEvent<unknown>) => void;
   };
 
 // Inspired by https://material-ui.com/components/app-bar/#app-bar-with-search-field

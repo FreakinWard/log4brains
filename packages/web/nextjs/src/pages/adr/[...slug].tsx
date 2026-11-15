@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import { getLog4brainsInstance } from "../../lib/core-api";
 import { getConfig } from "../../lib/next";
-import { AdrScene, AdrSceneProps } from "../../scenes";
+import { AdrScene, AdrScenePageProps } from "../../scenes";
 import { toAdr } from "../../lib-shared/types";
 
 export default AdrScene;
@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<AdrSceneProps> = async ({
+export const getStaticProps: GetStaticProps<AdrScenePageProps> = async ({
   params
 }) => {
   const l4bInstance = getLog4brainsInstance();

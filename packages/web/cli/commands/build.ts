@@ -4,6 +4,7 @@ import exportApp from "next/dist/export";
 import loadConfig from "next/dist/next-server/server/config";
 import { PHASE_EXPORT } from "next/dist/next-server/lib/constants";
 import path from "path";
+import { pathToFileURL } from "url";
 import mkdirp from "mkdirp";
 import { makeBadge } from "badge-maker";
 import { promises as fsP } from "fs";
@@ -16,6 +17,29 @@ type Deps = {
   appConsole: AppConsole;
 };
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+/**
+ * Loads the Next.js app's next.config.js (a CommonJS module resolved at runtime)
+ */
+async function loadNextConfig(
+  nextDir: string
+): Promise<Record<string, unknown>> {
+  const configModule: unknown = await import(
+    pathToFileURL(path.join(nextDir, "next.config.js")).href
+  );
+  const config =
+    isRecord(configModule) && "default" in configModule
+      ? configModule.default
+      : configModule;
+  if (!isRecord(config)) {
+    throw new Error("Invalid next.config.js: it must export an object");
+  }
+  return config;
+}
+
 export async function buildCommand(
   { appConsole }: Deps,
   outPath: string,
@@ -25,11 +49,7 @@ export async function buildCommand(
   appConsole.println("Building Log4brains...");
 
   const nextDir = getNextJsDir();
-  // eslint-disable-next-line global-require,import/no-dynamic-require,@typescript-eslint/no-var-requires
-  const nextConfig = require(path.join(nextDir, "next.config.js")) as Record<
-    string,
-    unknown
-  >;
+  const nextConfig = await loadNextConfig(nextDir);
 
   // We use a different distDir than the preview mode
   // because getStaticPath()'s `fallback` config is somehow cached

@@ -30,12 +30,12 @@ describe("AdrRelation", () => {
     });
 
     const relation1 = new AdrRelation(from, "superseded by", to);
-    expect(relation1.toMarkdown()).toEqual(
+    expect(relation1.toMarkdown()).toBe(
       "superseded by [test/to](../../packages/test/docs/adr/to.md)"
     );
 
     const relation2 = new AdrRelation(from, "refines", to);
-    expect(relation2.toMarkdown()).toEqual(
+    expect(relation2.toMarkdown()).toBe(
       "refines [test/to](../../packages/test/docs/adr/to.md)"
     );
   });

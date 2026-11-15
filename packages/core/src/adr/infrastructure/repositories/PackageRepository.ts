@@ -43,14 +43,13 @@ export class PackageRepository {
 
   findAll(): Package[] {
     if (!this.packages) {
-      this.packages = (
-        this.config.project.packages || []
-      ).map((packageConfig) =>
-        this.buildPackage(
-          packageConfig.name,
-          packageConfig.path,
-          packageConfig.adrFolder
-        )
+      this.packages = (this.config.project.packages || []).map(
+        (packageConfig) =>
+          this.buildPackage(
+            packageConfig.name,
+            packageConfig.path,
+            packageConfig.adrFolder
+          )
       );
     }
     return this.packages;

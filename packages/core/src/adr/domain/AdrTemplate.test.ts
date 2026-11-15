@@ -34,8 +34,8 @@ describe("AdrTemplate", () => {
       new AdrSlug("test/20200101-hello-world"),
       "Hello World"
     );
-    expect(adr.slug.value).toEqual("test/20200101-hello-world");
-    expect(adr.title).toEqual("Hello World");
+    expect(adr.slug.value).toBe("test/20200101-hello-world");
+    expect(adr.title).toBe("Hello World");
   });
 
   it("throws when package mismatch in slug", () => {

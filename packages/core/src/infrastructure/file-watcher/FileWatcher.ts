@@ -3,11 +3,7 @@ import chokidar, { FSWatcher } from "chokidar";
 import { Log4brainsConfig } from "../config";
 
 export type FileWatcherEventType =
-  | "add"
-  | "addDir"
-  | "change"
-  | "unlink"
-  | "unlinkDir";
+  "add" | "addDir" | "change" | "unlink" | "unlinkDir";
 
 export type FileWatcherEvent = {
   type: FileWatcherEventType;

@@ -70,7 +70,7 @@ export function buildConfigFromWorkdir(workdir = "."): Log4brainsConfig {
         ...config.project,
         repository: guessGitRepositoryConfig(config, workdir)
       }
-    }) as Log4brainsConfig;
+    });
   } catch (e) {
     if (e instanceof Log4brainsError) {
       throw e;

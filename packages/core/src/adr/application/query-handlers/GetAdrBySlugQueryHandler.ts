@@ -21,9 +21,9 @@ export class GetAdrBySlugQueryHandler implements QueryHandler {
     try {
       return await this.adrRepository.find(query.slug);
     } catch (e) {
-      if (
-        !(e instanceof Log4brainsError && e.name === "This ADR does not exist")
-      ) {
+      if (!(
+        e instanceof Log4brainsError && e.name === "This ADR does not exist"
+      )) {
         throw e;
       }
     }

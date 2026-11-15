@@ -95,15 +95,13 @@ export function createCli({ appConsole }: Deps): commander.Command {
     ) // TODO: list available statuses
     .option("-r, --raw", "Use a raw format instead of a table", false)
     .description("List ADRs")
-    .action(
-      (opts: ListCommandOpts): Promise<void> => {
-        const cmd = new ListCommand({
-          l4bInstance: getL4bInstance(),
-          appConsole
-        });
-        return execWithErrorHandler(cmd.execute(opts), appConsole);
-      }
-    );
+    .action((opts: ListCommandOpts): Promise<void> => {
+      const cmd = new ListCommand({
+        l4bInstance: getL4bInstance(),
+        appConsole
+      });
+      return execWithErrorHandler(cmd.execute(opts), appConsole);
+    });
 
   return program;
 }

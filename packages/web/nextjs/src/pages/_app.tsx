@@ -28,6 +28,8 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   // Persistent Layout Pattern (https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/)
   const getLayout = Component.getLayout || ((page) => page);
+  // Next.js types `pageProps` as `any`: narrow it to the props type this app actually uses
+  const typedPageProps = pageProps as Record<string, unknown>;
 
   const router = useRouter();
   const mode = process.env.NEXT_PUBLIC_LOG4BRAINS_STATIC
@@ -54,7 +56,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       </Head>
       <Log4brainsModeContext.Provider value={mode}>
         <MuiDecorator>
-          {getLayout(<Component {...pageProps} />, pageProps)}
+          {getLayout(<Component {...typedPageProps} />, typedPageProps)}
         </MuiDecorator>
       </Log4brainsModeContext.Provider>
     </>
