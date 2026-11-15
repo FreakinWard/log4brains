@@ -41,8 +41,8 @@
     "log4brains": "./dist/log4brains"
   },
   "scripts": {
-    "dev": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node watch",
-    "build": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node && copyfiles -u 1 src/log4brains dist",
+    "dev": "tsup --watch",
+    "build": "tsup && copyfiles -u 1 src/log4brains dist",
     "clean": "rimraf ./dist",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",

@@ -32,8 +32,8 @@
     "dev": "yarn dev:cli",
     "build": "yarn build:cli && yarn build:nextjs",
     "clean": "yarn clean:cli && yarn clean:nextjs",
-    "dev:cli": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node watch",
-    "build:cli": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node",
+    "dev:cli": "tsup --watch",
+    "build:cli": "tsup",
     "clean:cli": "rimraf ./dist",
     "dev:nextjs": "cd nextjs && cross-env LOG4BRAINS_CWD=../.. NODE_OPTIONS=--openssl-legacy-provider next",
     "build:nextjs": "yarn clean:nextjs && cd nextjs && cross-env LOG4BRAINS_PHASE=initial-build NODE_OPTIONS=--openssl-legacy-provider next build",
@@ -52,7 +52,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@next/bundle-analyzer": "^10.0.1",
-    "@types/node": "^15.0.1",
+    "@types/node": "^20.19.43",
     "@types/react": "17.0.4",
     "babel-plugin-import": "^1.13.1",
     "badge-maker": "^3.3.0",
@@ -73,7 +73,7 @@
     "slugify": "^1.4.5",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.1",
-    "typescript": "^4.0.3"
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -92,7 +92,6 @@
     "babel-loader": "^8.1.0",
     "copyfiles": "^2.4.0",
     "del-cli": "^3.0.1",
-    "microbundle": "^0.12.4",
     "react-is": "^16.13.1",
     "react-test-renderer": "^17.0.1"
   }

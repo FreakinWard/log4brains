@@ -28,9 +28,9 @@
   "module": "./dist/index.module.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node watch",
+    "dev": "tsup --watch",
     "dev:test": "nodemon",
-    "build": "microbundle --no-compress --format es,cjs --tsconfig tsconfig.build.json --target node",
+    "build": "tsup",
     "clean": "rimraf ./dist",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",
