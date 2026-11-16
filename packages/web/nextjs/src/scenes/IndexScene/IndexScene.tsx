@@ -1,10 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { Alert } from "@material-ui/lab";
-import { Typography } from "@material-ui/core";
+import { Alert, Typography } from "@mui/material";
 import { Log4brainsMode, Log4brainsModeContext } from "../../contexts";
 import { Markdown, TwoColContent } from "../../components";
+import { styled } from "@mui/material/styles";
 // eslint-disable-next-line import/no-cycle
 import { ConnectedAdrBrowserLayout } from "../../layouts";
 
@@ -20,34 +19,24 @@ export type IndexScenePageProps = IndexSceneProps & {
   l4bVersion: string;
 };
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    previewAlert: {
-      width: "38ch"
-    },
-    previewAlertMessage: {
-      paddingTop: 2
-    }
-  })
-);
+const PreviewAlert = styled(Alert)({
+  width: "38ch",
+  "& .MuiAlert-message": {
+    paddingTop: "2px"
+  }
+});
 
 export function IndexScene({ projectName, markdown }: IndexSceneProps) {
-  const classes = useStyles();
-
   const mode = React.useContext(Log4brainsModeContext);
 
   const previewAlert =
     mode === Log4brainsMode.preview ? (
-      <Alert
-        severity="warning"
-        className={classes.previewAlert}
-        classes={{ message: classes.previewAlertMessage }}
-      >
+      <PreviewAlert severity="warning">
         <Typography variant="h6">Preview mode</Typography>
         <Typography variant="body2">
           Hot Reload is enabled on all pages
         </Typography>
-      </Alert>
+      </PreviewAlert>
     ) : null;
 
   return (

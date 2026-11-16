@@ -1,48 +1,37 @@
 import React from "react";
-import { Chip } from "@material-ui/core";
+import { Chip } from "@mui/material";
 import {
   grey,
   indigo,
   deepOrange,
   lightGreen,
   brown
-} from "@material-ui/core/colors";
-import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+} from "@mui/material/colors";
 import type { AdrDtoStatus } from "@freakin-ward/log4brains-core";
-import { clsx } from "clsx";
+import { styled } from "@mui/material/styles";
+
+const statusColors: Record<AdrDtoStatus, string> = {
+  draft: grey[800],
+  proposed: indigo[800],
+  rejected: deepOrange[800],
+  accepted: lightGreen[800],
+  deprecated: brown[600],
+  superseded: brown[600]
+};
 
 // Styles are inspired by the MUI "Badge" styles
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      fontSize: "0.74rem",
-      fontWeight: Number(theme.typography.fontWeightMedium),
-      height: "18px",
-      verticalAlign: "text-bottom"
-    },
-    label: {
-      padding: "0 6px"
-    },
-    draft: {
-      color: grey[800]
-    },
-    proposed: {
-      color: indigo[800]
-    },
-    rejected: {
-      color: deepOrange[800]
-    },
-    accepted: {
-      color: lightGreen[800]
-    },
-    deprecated: {
-      color: brown[600]
-    },
-    superseded: {
-      color: brown[600]
-    }
-  })
-);
+const StatusChip = styled(Chip, {
+  shouldForwardProp: (prop) => prop !== "status"
+})<{ status: AdrDtoStatus }>(({ theme, status }) => ({
+  fontSize: "0.74rem",
+  fontWeight: Number(theme.typography.fontWeightMedium),
+  height: "18px",
+  verticalAlign: "text-bottom",
+  color: statusColors[status],
+  "& .MuiChip-labelSmall": {
+    padding: "0 6px"
+  }
+}));
 
 export type AdrStatusChipProps = {
   className?: string;
@@ -50,14 +39,13 @@ export type AdrStatusChipProps = {
 };
 
 export function AdrStatusChip({ className, status }: AdrStatusChipProps) {
-  const classes = useStyles();
   return (
-    <Chip
+    <StatusChip
       variant="outlined"
       size="small"
       label={status.toUpperCase()}
-      className={clsx(className, classes.root, classes[status])}
-      classes={{ labelSmall: classes.label }}
+      className={className}
+      status={status}
     />
   );
 }

@@ -2,41 +2,24 @@ import React, { useEffect, useMemo } from "react";
 import { compiler as mdCompiler } from "markdown-to-jsx";
 import { useRouter } from "next/router";
 import hljs from "highlight.js";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import {
-  Typography,
-  Link as MuiLink,
-  TypographyProps
-} from "@material-ui/core";
-import { CustomTheme } from "../../mui";
+import { Typography, Link as MuiLink, TypographyProps } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { AdrLink } from "./components";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { slugify } from "../../lib/slugify";
 
-const useStyles = makeStyles((theme: CustomTheme) =>
-  createStyles({
-    code: {
-      backgroundColor: "#F8F8F8",
-      borderRadius: theme.shape.borderRadius,
-      padding: 3
-    },
-    listItem: {}
-  })
-);
+const Code = styled("code")(({ theme }) => ({
+  backgroundColor: "#F8F8F8",
+  borderRadius: `${theme.shape.borderRadius}px`,
+  padding: "3px"
+}));
 
 function Li(props: TypographyProps) {
-  const classes = useStyles();
   return (
-    <li className={classes.listItem}>
+    <li>
       <Typography component="span" {...props} />
     </li>
   );
-}
-
-function Code(props: { children: React.ReactNode }) {
-  const classes = useStyles();
-  const { children } = props;
-  return <code className={classes.code}>{children}</code>;
 }
 
 const options = {

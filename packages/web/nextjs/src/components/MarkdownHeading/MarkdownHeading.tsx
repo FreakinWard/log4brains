@@ -1,31 +1,19 @@
 import React from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import {
-  Typography,
-  TypographyClassKey,
-  Link as MuiLink
-} from "@material-ui/core";
-import { clsx } from "clsx";
+import { Typography, TypographyClassKey, Link as MuiLink } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      "&:hover": {
-        "& $link": {
-          visibility: "visible"
-        }
-      }
-    },
-    link: {
-      marginLeft: "0.3ch",
-      color: "inherit",
-      "&:hover": {
-        color: theme.palette.primary.main
-      },
-      visibility: "hidden"
-    }
-  })
-);
+// Only visible when the heading is hovered
+const PermanentLink = styled(MuiLink)(({ theme }) => ({
+  marginLeft: "0.3ch",
+  color: "inherit",
+  "&:hover": {
+    color: theme.palette.primary.main
+  },
+  visibility: "hidden",
+  "*:hover > &": {
+    visibility: "visible"
+  }
+}));
 
 export type MarkdownHeadingProps = {
   children: string;
@@ -40,8 +28,6 @@ export function MarkdownHeading({
   variant,
   className
 }: MarkdownHeadingProps) {
-  const classes = useStyles();
-
   let typographyVariant: TypographyClassKey;
   switch (variant) {
     case "h1":
@@ -60,19 +46,18 @@ export function MarkdownHeading({
       typographyVariant = "h6";
       break;
   }
-
   return (
     <Typography
       gutterBottom
       variant={typographyVariant}
       component={variant}
       id={id}
-      className={clsx(classes.root, className)}
+      className={className}
     >
       {children}
-      <MuiLink href={`#${id}`} className={classes.link} title="Permanent link">
+      <PermanentLink href={`#${id}`} title="Permanent link">
         ¶
-      </MuiLink>
+      </PermanentLink>
     </Typography>
   );
 }

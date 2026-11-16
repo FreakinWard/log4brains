@@ -11,7 +11,8 @@ import {
   DialogContentText,
   DialogTitle,
   Button
-} from "@material-ui/core";
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
 import {
   Timeline,
   TimelineConnector,
@@ -20,105 +21,99 @@ import {
   TimelineItem,
   TimelineOppositeContent,
   TimelineSeparator
-} from "@material-ui/lab";
-import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+} from "@mui/lab";
+
 import {
   EmojiFlags as EmojiFlagsIcon,
   CropFree as CropFreeIcon,
   Add as AddIcon
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import Link from "next/link";
-import { clsx } from "clsx";
+
 import { Log4brainsMode, Log4brainsModeContext } from "../../../../contexts";
 import { AdrStatusChip } from "../../../../components";
+import { AdrStatusLink } from "../../../../components/Markdown/components/AdrLink";
 import { AdrLight } from "../../../../lib-shared/types";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {},
-    timeline: {
-      padding: 0
-    },
-    adrLink: {
-      display: "block"
-    },
-    timelineItem: {
-      "&:hover": {
-        "& $timelineConnector": {
-          backgroundColor: theme.palette.primary.main
-        }
-      }
-    },
-    selectedTimelineItem: {
-      "&:hover": {
-        "& $timelineConnector": {
-          backgroundColor: theme.palette.secondary.main
-        }
-      },
-      "& $timelineConnector": {
-        backgroundColor: theme.palette.secondary.main
-      },
-      "& $adrLink": {
-        color: theme.palette.secondary.main,
+// The dot and connector of an ADR item
+const connectorSelector =
+  "& .MuiTimelineDot-root, & .MuiTimelineConnector-root";
+
+// TimelineItem detects its TimelineOppositeContent child by type: it must not be wrapped with styled()
+const oppositeContentSelector = "& .MuiTimelineOppositeContent-root";
+
+const NewAdrItem = styled(TimelineItem)({
+  [oppositeContentSelector]: {
+    flex: "0 0 calc(12ch - 11.5px)"
+  }
+});
+
+const StartItem = styled(TimelineItem)({
+  [oppositeContentSelector]: {
+    flex: "0 0 calc(12ch - 12px)"
+  }
+});
+
+const AdrItem = styled(TimelineItem, {
+  shouldForwardProp: (prop) => prop !== "selected"
+})<{ selected: boolean }>(({ theme, selected }) =>
+  selected
+    ? {
         "&:hover": {
-          color: theme.palette.secondary.main
+          [connectorSelector]: {
+            backgroundColor: theme.palette.secondary.main
+          }
+        },
+        [connectorSelector]: {
+          backgroundColor: theme.palette.secondary.main
+        },
+        "& .MuiLink-root": {
+          color: theme.palette.secondary.main,
+          "&:hover": {
+            color: theme.palette.secondary.main
+          }
         }
       }
-    },
-    timelineOppositeContentRootAdd: {
-      flex: "0 0 calc(12ch - 11.5px)"
-    },
-    timelineOppositeContentRoot: {
-      flex: "0 0 12ch"
-    },
-    newAdrFab: {
-      width: 35,
-      height: 35
-    },
-    date: {
-      fontSize: "0.8rem",
-      color: theme.palette.grey[500]
-    },
-    adrStatusChip: {
-      marginLeft: "-1ch"
-    },
-    icon: {
-      verticalAlign: "middle"
-    },
-    adrTitle: {
-      marginRight: "0.5ch"
-    },
-    package: {
-      fontSize: "0.8rem",
-      verticalAlign: "text-top",
-      whiteSpace: "pre",
-      color: theme.palette.grey[700]
-    },
-    timelineStartOppositeContentRoot: {
-      flex: "0 0 calc(12ch - 12px)"
-    },
-    timelineContentContainer: {
-      paddingBottom: theme.spacing(2)
-    },
-    timelineConnector: {},
-    currentAdrTimelineConnector: {
-      backgroundColor: theme.palette.secondary.main
-    },
-    // TODO: refactor with AdrLink.tsx
-    draftLink: {},
-    proposedLink: {},
-    acceptedLink: {},
-    rejectedLink: {
-      textDecoration: "line-through"
-    },
-    deprecatedLink: {
-      textDecoration: "line-through"
-    },
-    supersededLink: {
-      textDecoration: "line-through"
-    }
-  })
+    : {
+        "&:hover": {
+          [connectorSelector]: {
+            backgroundColor: theme.palette.primary.main
+          }
+        }
+      }
 );
+
+const DateText = styled(Typography)(({ theme }) => ({
+  fontSize: "0.8rem",
+  color: theme.palette.grey[500]
+}));
+
+const ItemContent = styled("div")(({ theme }) => ({
+  paddingBottom: theme.spacing(2)
+}));
+
+const ItemLink = styled(AdrStatusLink)({
+  display: "block"
+});
+
+const ItemTitle = styled("span")({
+  marginRight: "0.5ch"
+});
+
+const ItemPackage = styled("span")(({ theme }) => ({
+  fontSize: "0.8rem",
+  verticalAlign: "text-top",
+  whiteSpace: "pre",
+  color: theme.palette.grey[700]
+}));
+
+const ItemStatusChip = styled(AdrStatusChip)({
+  marginLeft: "-1ch"
+});
+
+const DialogNote = styled(Typography)({
+  marginTop: "20px"
+});
 
 type Props = {
   adrs?: AdrLight[];
@@ -127,8 +122,6 @@ type Props = {
 };
 
 export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
-  const classes = useStyles();
-
   const [newAdrOpen, setNewAdrOpen] = React.useState(false);
   const mode = React.useContext(Log4brainsModeContext);
 
@@ -139,7 +132,7 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
   let lastDateString = "";
 
   return (
-    <div className={clsx(className, classes.root)} {...props}>
+    <div className={className} {...props}>
       {mode === Log4brainsMode.preview && (
         <Dialog
           open={newAdrOpen}
@@ -163,7 +156,7 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
                 Just press <code>Ctrl+S</code> to watch your changes here,
                 thanks to Hot Reload.
               </Typography>
-              <Typography variant="body2" style={{ marginTop: 20 }}>
+              <DialogNote variant="body2">
                 Would you have preferred to create a new ADR directly from here?
                 <br />
                 Leave a 👍 on{" "}
@@ -175,7 +168,7 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
                   this GitHub issue
                 </MuiLink>{" "}
                 then!
-              </Typography>
+              </DialogNote>
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -190,19 +183,16 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
         </Dialog>
       )}
 
-      <Timeline className={classes.timeline}>
+      <Timeline>
         {mode === Log4brainsMode.preview && (
-          <TimelineItem className={classes.timelineItem}>
-            <TimelineOppositeContent
-              classes={{ root: classes.timelineOppositeContentRootAdd }}
-            />
+          <NewAdrItem>
+            <TimelineOppositeContent />
             <TimelineSeparator>
               <Tooltip title="Create a new ADR">
                 <Fab
                   size="small"
                   color="primary"
                   aria-label="create a new ADR"
-                  className={classes.newAdrFab}
                   onClick={() => setNewAdrOpen(true)}
                 >
                   <AddIcon />
@@ -211,7 +201,7 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent />
-          </TimelineItem>
+          </NewAdrItem>
         )}
 
         {adrs.map((adr) => {
@@ -224,66 +214,38 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
           const [month, year] = dateString.split("|");
 
           return (
-            <TimelineItem
-              key={adr.slug}
-              className={clsx(classes.timelineItem, {
-                [classes.selectedTimelineItem]: currentAdrSlug === adr.slug
-              })}
-            >
-              <TimelineOppositeContent
-                classes={{ root: classes.timelineOppositeContentRoot }}
-              >
-                <Typography variant="body2" className={classes.date}>
-                  {month}
-                </Typography>
-                <Typography variant="body2" className={classes.date}>
-                  {year}
-                </Typography>
+            <AdrItem key={adr.slug} selected={currentAdrSlug === adr.slug}>
+              <TimelineOppositeContent>
+                <DateText variant="body2">{month}</DateText>
+                <DateText variant="body2">{year}</DateText>
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot className={classes.timelineConnector} />
-                <TimelineConnector className={classes.timelineConnector} />
+                <TimelineDot />
+                <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <div className={classes.timelineContentContainer}>
+                <ItemContent>
                   <Link href={`/adr/${adr.slug}`} passHref>
-                    <MuiLink
-                      className={clsx(classes.adrLink, {
-                        [classes[`${adr.status}Link` as keyof typeof classes]]:
-                          true
-                      })}
-                      variant="body2"
-                    >
-                      <span className={classes.adrTitle}>
-                        {adr.title || "Untitled"}
-                      </span>
+                    <ItemLink status={adr.status} variant="body2">
+                      <ItemTitle>{adr.title || "Untitled"}</ItemTitle>
                       {adr.package ? (
-                        <span className={classes.package}>
-                          <CropFreeIcon
-                            fontSize="inherit"
-                            className={classes.icon}
-                          />{" "}
-                          {adr.package}
-                        </span>
+                        <ItemPackage>
+                          <CropFreeIcon fontSize="inherit" /> {adr.package}
+                        </ItemPackage>
                       ) : null}
-                    </MuiLink>
+                    </ItemLink>
                   </Link>
                   <div>
-                    <AdrStatusChip
-                      status={adr.status}
-                      className={classes.adrStatusChip}
-                    />
+                    <ItemStatusChip status={adr.status} />
                   </div>
-                </div>
+                </ItemContent>
               </TimelineContent>
-            </TimelineItem>
+            </AdrItem>
           );
         })}
 
-        <TimelineItem>
-          <TimelineOppositeContent
-            classes={{ root: classes.timelineStartOppositeContentRoot }}
-          />
+        <StartItem>
+          <TimelineOppositeContent />
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot>
@@ -291,7 +253,7 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
             </TimelineDot>
           </TimelineSeparator>
           <TimelineContent />
-        </TimelineItem>
+        </StartItem>
       </Timeline>
     </div>
   );
