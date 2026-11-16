@@ -226,7 +226,7 @@ After each step, run e2e **after a production-style install** (the CI step that 
 ## 10. Open decisions
 
 1. **npm name:** negotiate a handover, or rename under a new scope?
-2. **Node support:** `>=20` (recommended) or `>=22`?
+2. ~~**Node support:**~~ Decided: `>=22` (Node 20 EOL April 2026).
 3. **Package manager / release tool:** Yarn 1 + Lerna, or pnpm/Yarn 4 + Changesets?
 4. **Module system:** full ESM (recommended) or stay on CJS-compatible majors?
 5. **Storybook:** re-init or drop?

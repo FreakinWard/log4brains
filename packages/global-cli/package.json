@@ -28,7 +28,7 @@
     "directory": "packages/global-cli"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "files": [
     "dist"
