@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import chalk from "chalk";
-import inquirer from "inquirer";
+import { confirm, input, select } from "@inquirer/prompts";
 import ora, { Ora } from "ora";
 import CliTable3, { Table } from "cli-table3";
 import { ConsoleCapturer } from "./ConsoleCapturer";
@@ -171,10 +171,7 @@ export class AppConsole {
     defaultValue: boolean
   ): Promise<boolean> {
     console.log("");
-    const answer = await inquirer.prompt<{ q: boolean }>([
-      { type: "confirm", name: "q", message: question, default: defaultValue }
-    ]);
-    return answer.q;
+    return confirm({ message: question, default: defaultValue });
   }
 
   async askInputQuestion(
@@ -182,15 +179,7 @@ export class AppConsole {
     defaultValue?: string
   ): Promise<string> {
     console.log("");
-    const answer = await inquirer.prompt<{ q: string }>([
-      {
-        type: "input",
-        name: "q",
-        message: question,
-        default: defaultValue
-      }
-    ]);
-    return answer.q;
+    return input({ message: question, default: defaultValue });
   }
 
   async askInputQuestionAndValidate(
@@ -229,15 +218,6 @@ export class AppConsole {
     defaultValue?: V
   ): Promise<V> {
     console.log("");
-    const answer = await inquirer.prompt<{ q: V }>([
-      {
-        type: "list",
-        name: "q",
-        message: question,
-        default: defaultValue,
-        choices
-      }
-    ]);
-    return answer.q;
+    return select<V>({ message: question, default: defaultValue, choices });
   }
 }

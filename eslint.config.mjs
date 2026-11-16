@@ -24,6 +24,7 @@ export default tseslint.config(
     ignores: [
       "**/*.js",
       "**/*.mjs",
+      "**/*.cjs",
       "**/*.d.ts",
       "**/*.stories.tsx", // temporary disabled
       "**/tsup.config.ts",

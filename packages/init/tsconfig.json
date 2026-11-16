@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "moduleResolution": "bundler", // ESM-only dependencies expose their types through package.json "exports"
     "declaration": true,
     "declarationMap": true,
     "outDir": "dist",

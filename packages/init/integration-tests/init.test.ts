@@ -1,4 +1,4 @@
-import execa from "execa";
+import { execa, type ResultPromise } from "execa";
 import path from "path";
 import os from "os";
 import fs, { promises as fsP } from "fs";
@@ -42,9 +42,9 @@ type PackageAnswer = {
 };
 
 function bindAnswers(
-  cli: execa.ExecaChildProcess<string>,
+  cli: ResultPromise,
   packageAnswer?: PackageAnswer
-): execa.ExecaChildProcess<string> {
+): ResultPromise {
   if (!cli.stdout) {
     throw new Error("CLI must have an stdout");
   }
