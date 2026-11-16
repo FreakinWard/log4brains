@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": "^22.22.2 || >=24.15.0"
   },
   "workspaces": [
     "packages/*"
