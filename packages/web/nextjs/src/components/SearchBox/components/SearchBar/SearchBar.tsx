@@ -10,7 +10,7 @@ import {
 import { alpha, styled } from "@mui/material/styles";
 import { Search as SearchIcon, Close as ClearIcon } from "@mui/icons-material";
 
-export type SearchBarProps = InputBaseProps &
+export type SearchBarProps = Omit<InputBaseProps, "slotProps"> &
   AutocompleteRenderInputParams & {
     open: boolean;
     onClear: (event: React.ChangeEvent<unknown>) => void;
@@ -42,7 +42,7 @@ const SearchInput = styled(InputBase, {
 }));
 
 export function SearchBar(props: SearchBarProps) {
-  const { InputProps, InputLabelProps, open, onClear, ...params } = props;
+  const { slotProps, open, onClear, ...params } = props;
   return (
     <SearchInput
       placeholder="Search..."
@@ -53,8 +53,7 @@ export function SearchBar(props: SearchBarProps) {
         </InputAdornment>
       }
       endAdornment={
-        // eslint-disable-next-line react/destructuring-assignment
-        <Fade in={open && props.inputProps.value !== ""}>
+        <Fade in={open && slotProps.htmlInput.value !== ""}>
           <InputAdornment position="end">
             <IconButton
               onClick={(event) => onClear(event)}
@@ -67,7 +66,8 @@ export function SearchBar(props: SearchBarProps) {
           </InputAdornment>
         </Fade>
       }
-      ref={InputProps.ref}
+      ref={slotProps.input.ref}
+      inputProps={slotProps.htmlInput}
       {...params}
     />
   );

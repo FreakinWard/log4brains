@@ -3,87 +3,87 @@
 exports[`Toc renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="css-3q0o02"
+    class="css-1et3lpr"
   >
     <h6
-      class="MuiTypography-root MuiTypography-subtitle2 css-1f97qt4-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-subtitle2 css-udw1jt-MuiTypography-root"
     >
       Table of contents
     </h6>
     <ul
-      class="css-1j2o5i6"
+      class="css-1kkcpvi"
     >
       <li>
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
           href="#header-1"
         >
           Header 1
         </a>
         <ul
-          class="css-1j2o5i6"
+          class="css-1kkcpvi"
         >
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
               href="#header-11"
             >
               Header 1.1
             </a>
             <ul
-              class="css-1j2o5i6"
+              class="css-1kkcpvi"
             >
               <li>
                 <a
-                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
                   href="#header-111"
                 >
                   Header 1.1.1
                 </a>
                 <ul
-                  class="css-1j2o5i6"
+                  class="css-1kkcpvi"
                 />
               </li>
               <li>
                 <a
-                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
                   href="#header-112"
                 >
                   Header 1.1.2
                 </a>
                 <ul
-                  class="css-1j2o5i6"
+                  class="css-1kkcpvi"
                 />
               </li>
             </ul>
           </li>
           <li>
             <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
               href="#header-12"
             >
               Header 1.2
             </a>
             <ul
-              class="css-1j2o5i6"
+              class="css-1kkcpvi"
             >
               <li>
                 <a
-                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
                   href="#"
                 />
                 <ul
-                  class="css-1j2o5i6"
+                  class="css-1kkcpvi"
                 >
                   <li>
                     <a
-                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
                       href="#subtitle-without-direct-parent"
                     >
                       Subtitle without direct parent
                     </a>
                     <ul
-                      class="css-1j2o5i6"
+                      class="css-1kkcpvi"
                     />
                   </li>
                 </ul>
@@ -94,13 +94,13 @@ exports[`Toc renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1orsvah-MuiTypography-root-MuiLink-root"
           href="#header-2"
         >
           Header 2
         </a>
         <ul
-          class="css-1j2o5i6"
+          class="css-1kkcpvi"
         />
       </li>
     </ul>

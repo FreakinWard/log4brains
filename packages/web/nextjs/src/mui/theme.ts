@@ -91,6 +91,14 @@ export const theme: CustomTheme = {
             })
           }
         },
+        // MUI v9 sets the chip line height to 1.5 (before: inherited)
+        MuiChip: {
+          styleOverrides: {
+            root: {
+              lineHeight: "inherit"
+            }
+          }
+        },
         MuiFab: {
           styleOverrides: {
             sizeSmall: {
@@ -134,12 +142,17 @@ export const theme: CustomTheme = {
           styleOverrides: {
             colorInherit: ({ theme: t }) => ({
               color: t.palette.text.primary
-            }),
+            })
+          },
+          variants: [
             // v4 outlined border color (v5 uses the text color for "inherit")
-            outlinedInherit: {
-              borderColor: "rgba(0, 0, 0, 0.23)"
+            {
+              props: { variant: "outlined", color: "inherit" },
+              style: {
+                borderColor: "rgba(0, 0, 0, 0.23)"
+              }
             }
-          }
+          ]
         },
         MuiButtonGroup: {
           defaultProps: {
