@@ -2,7 +2,6 @@ import { execa, type ResultPromise } from "execa";
 import path from "path";
 import os from "os";
 import fs, { promises as fsP } from "fs";
-import rimraf from "rimraf";
 
 // Source: https://shift.infinite.red/integration-testing-interactive-clis-93af3cc0d56f. Thanks!
 const keys = {
@@ -31,7 +30,7 @@ async function usingTempDir(fn: (cwd: string) => void | Promise<void>) {
   try {
     await fn(folder);
   } finally {
-    rimraf.sync(folder);
+    fs.rmSync(folder, { recursive: true, force: true });
   }
 }
 
