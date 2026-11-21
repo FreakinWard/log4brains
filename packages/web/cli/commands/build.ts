@@ -1,7 +1,6 @@
 import chalk from "chalk";
 import path from "path";
 import { randomUUID } from "crypto";
-import mkdirp from "mkdirp";
 import { makeBadge } from "badge-maker";
 import { promises as fsP } from "fs";
 import type { AppConsole } from "@freakin-ward/log4brains-cli-common";
@@ -51,7 +50,7 @@ export async function buildCommand(
 
   appConsole.startSpinner("Generating ADR data...");
   // TODO: move to a dedicated module
-  await mkdirp(path.join(outPath, "data", buildId));
+  await fsP.mkdir(path.join(outPath, "data", buildId), { recursive: true });
   const adrs = await getL4bInstance().searchAdrs();
 
   // TODO: remove this dead code when we are sure we don't need a JSON file per ADR

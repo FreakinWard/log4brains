@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import { compiler as mdCompiler } from "markdown-to-jsx";
+import { compiler as mdCompiler } from "markdown-to-jsx/react";
 import { useRouter } from "next/router";
 import hljs from "highlight.js";
 import { Typography, Link as MuiLink, TypographyProps } from "@mui/material";
@@ -60,9 +60,12 @@ type MarkdownProps = {
 };
 
 function isReactElementWithChildren(
-  obj: React.JSX.Element
+  obj: React.ReactNode
 ): obj is React.ReactElement<{ children: React.ReactElement }> {
-  return "children" in obj.props; // TODO: improve tests here
+  return (
+    React.isValidElement<Record<string, unknown>>(obj) &&
+    "children" in obj.props
+  ); // TODO: improve tests here
 }
 
 export function Markdown({ children, onCompiled }: MarkdownProps) {
