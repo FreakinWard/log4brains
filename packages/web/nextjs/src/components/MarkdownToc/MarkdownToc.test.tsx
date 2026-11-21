@@ -1,6 +1,6 @@
 import React from "react";
 import { compiler as mdCompiler } from "markdown-to-jsx";
-import TestRenderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { MarkdownToc } from "./MarkdownToc";
 
@@ -50,9 +50,9 @@ describe("Toc", () => {
   }>;
 
   it("renders correctly", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <MarkdownToc content={content.props.children} />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

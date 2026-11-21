@@ -3,6 +3,7 @@ out/
 dist/
 .next/
 .next-export/
+.next-preview/
 .log4brains/
 CHANGELOG.md
 /lerna.json

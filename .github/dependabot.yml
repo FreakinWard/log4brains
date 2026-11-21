@@ -12,19 +12,19 @@ updates:
       minor-and-patch:
         update-types: ["minor", "patch"]
     ignore:
-      # Held back until the web rewrite (MAINTENANCE_PLAN.md, phase 6)
+      # Major upgrades of the web stack are planned steps (MAINTENANCE_PLAN.md)
       - dependency-name: "next"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
         update-types: ["version-update:semver-major"]
-      - dependency-name: "@types/react"
       - dependency-name: "@mui/*"
         update-types: ["version-update:semver-major"]
       - dependency-name: "socket.io*"
         update-types: ["version-update:semver-major"]
       - dependency-name: "markdown-to-jsx"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: "/"

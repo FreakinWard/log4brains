@@ -24,9 +24,10 @@ import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
 //   ChevronRight as ChevronRightIcon,
 //   PlaylistAddCheck as PlaylistAddCheckIcon
 // } from "@mui/icons-material";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 
+import { RouterLink } from "../../components";
 import { AdrMenu } from "./components/AdrMenu";
 import { styled, Theme } from "@mui/material/styles";
 import { ConnectedSearchBox } from "./components/ConnectedSearchBox/ConnectedSearchBox";
@@ -86,7 +87,7 @@ const AppBarTitle = styled("div")(({ theme }) => ({
   }
 }));
 
-const AppBarTitleLink = styled(MuiLink)(({ theme }) => ({
+const AppBarTitleLink = styled(RouterLink)(({ theme }) => ({
   display: "block",
   color: "inherit",
   "&:hover": {
@@ -279,21 +280,21 @@ export function AdrBrowserLayout({
     <DrawerContainer>
       <DrawerToolbar>
         <div />
-        <Link href="/" passHref>
-          <IconButton
-            size="small"
-            color="inherit"
-            aria-label="go to homepage"
-            title={`Architecture knowledge base of ${projectName}`}
-          >
-            <img
-              src={`${router?.basePath}/l4b-static/Log4brains-logo.png`}
-              alt="Log4brains logo"
-              width={40}
-              height={40}
-            />
-          </IconButton>
-        </Link>
+        <IconButton
+          LinkComponent={NextLink}
+          href="/"
+          size="small"
+          color="inherit"
+          aria-label="go to homepage"
+          title={`Architecture knowledge base of ${projectName}`}
+        >
+          <img
+            src={`${router?.basePath}/l4b-static/Log4brains-logo.png`}
+            alt="Log4brains logo"
+            width={40}
+            height={40}
+          />
+        </IconButton>
         <IconButton
           size="small"
           color="inherit"
@@ -362,30 +363,28 @@ export function AdrBrowserLayout({
           >
             <MenuIcon />
           </MenuButton>
-          <Link href="/">
-            <AppBarTitle>
-              <div>
-                <img
-                  src={`${router?.basePath}/l4b-static/Log4brains-logo-dark.png`}
-                  alt="Log4brains logo"
-                  width={50}
-                  height={50}
-                />
-              </div>
-              <div>
-                <Link href="/" passHref>
-                  <AppBarTitleLink variant="h6" noWrap>
-                    {projectName}
-                  </AppBarTitleLink>
-                </Link>
-                <Link href="/" passHref>
-                  <AppBarTitleLink variant="body2" noWrap>
-                    Architecture knowledge base
-                  </AppBarTitleLink>
-                </Link>
-              </div>
-            </AppBarTitle>
-          </Link>
+          <AppBarTitle
+            onClick={() => {
+              void router.push("/");
+            }}
+          >
+            <div>
+              <img
+                src={`${router?.basePath}/l4b-static/Log4brains-logo-dark.png`}
+                alt="Log4brains logo"
+                width={50}
+                height={50}
+              />
+            </div>
+            <div>
+              <AppBarTitleLink href="/" variant="h6" noWrap>
+                {projectName}
+              </AppBarTitleLink>
+              <AppBarTitleLink href="/" variant="body2" noWrap>
+                Architecture knowledge base
+              </AppBarTitleLink>
+            </div>
+          </AppBarTitle>
           <LayoutLeftCol />
           <LayoutCenterCol>
             <SearchBackdrop open={searchOpen} />

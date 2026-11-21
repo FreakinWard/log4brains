@@ -27,7 +27,7 @@ function variantToLevel(variant: string): number {
 }
 
 function isMarkdownHeadingElement(
-  element: JSX.Element
+  element: React.JSX.Element
 ): element is React.ReactElement<MarkdownHeadingProps> {
   return typeof element.type === "function" && element.type === MarkdownHeading;
 }
@@ -89,11 +89,13 @@ export function MarkdownToc({
     <Root className={className}>
       <Title variant="subtitle2">Table of contents</Title>
       <TocList>
-        {model.render((title: string, id: string, children: JSX.Element[]) => (
-          <TocSection title={title} id={id} key={id}>
-            {children}
-          </TocSection>
-        ))}
+        {model.render(
+          (title: string, id: string, children: React.JSX.Element[]) => (
+            <TocSection title={title} id={id} key={id}>
+              {children}
+            </TocSection>
+          )
+        )}
       </TocList>
     </Root>
   );

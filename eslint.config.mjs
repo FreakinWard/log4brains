@@ -33,6 +33,7 @@ export default tseslint.config(
       "**/node_modules/**",
       "**/.next/**",
       "**/.next-export/**",
+      "**/.next-preview/**",
       "**/.log4brains/**",
       "e2e-tests/**"
     ]

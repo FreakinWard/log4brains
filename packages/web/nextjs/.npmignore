@@ -1,4 +1,11 @@
+.next
 .next-export
 .storybook
 jest.config.js
 tsconfig.dev.json
+# Build cache and traces: not needed to serve the preview
+.next-preview/cache
+.next-preview/trace
+.next-preview/trace-build
+.next-preview/diagnostics
+tsconfig.tsbuildinfo
