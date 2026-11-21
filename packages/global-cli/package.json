@@ -31,6 +31,7 @@
     "node": "^22.22.2 || >=24.15.0"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "source": "./src/index.ts",
@@ -44,11 +45,11 @@
   },
   "types": "./dist/index.d.ts",
   "bin": {
-    "log4brains": "./dist/log4brains"
+    "log4brains": "./bin/log4brains"
   },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup && copyfiles -u 1 src/log4brains dist",
+    "build": "tsup",
     "clean": "rimraf ./dist",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",
@@ -64,8 +65,5 @@
     "@awarded/log4brains-web": "1.1.0",
     "chalk": "^6.0.1",
     "commander": "^15.1.0"
-  },
-  "devDependencies": {
-    "copyfiles": "^2.4.0"
   }
 }
