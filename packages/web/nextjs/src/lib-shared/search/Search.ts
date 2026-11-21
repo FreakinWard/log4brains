@@ -1,4 +1,4 @@
-import { AdrDto } from "@log4brains/core";
+import { AdrDto } from "@awarded/log4brains-core";
 import lunr from "lunr";
 
 type AdrForSearch = {

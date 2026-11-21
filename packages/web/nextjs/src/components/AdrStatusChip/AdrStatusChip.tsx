@@ -7,7 +7,7 @@ import {
   lightGreen,
   brown
 } from "@mui/material/colors";
-import type { AdrDtoStatus } from "@log4brains/core";
+import type { AdrDtoStatus } from "@awarded/log4brains-core";
 import { styled } from "@mui/material/styles";
 
 const statusColors: Record<AdrDtoStatus, string> = {

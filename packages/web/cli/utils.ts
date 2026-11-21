@@ -1,6 +1,6 @@
 import chalk from "chalk";
-import { ConsoleCapturer } from "@log4brains/cli-common";
-import { Log4brains } from "@log4brains/core";
+import { ConsoleCapturer } from "@awarded/log4brains-cli-common";
+import { Log4brains } from "@awarded/log4brains-core";
 import path from "path";
 import { spawn } from "child_process";
 

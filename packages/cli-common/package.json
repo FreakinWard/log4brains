@@ -1,5 +1,5 @@
 {
-  "name": "@log4brains/cli-common",
+  "name": "@awarded/log4brains-cli-common",
   "version": "1.1.0",
   "description": "Log4brains architecture knowledge base common CLI features",
   "keywords": [
@@ -11,10 +11,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/FreakinWard/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/FreakinWard/log4brains",
     "directory": "packages/cli-common"
   },
   "engines": {

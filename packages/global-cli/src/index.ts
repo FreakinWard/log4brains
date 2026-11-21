@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import chalk from "chalk";
-import { AppConsole, FailureExit } from "@log4brains/cli-common";
-import { Log4brainsConfigNotFoundError } from "@log4brains/core";
+import { AppConsole, FailureExit } from "@awarded/log4brains-cli-common";
+import { Log4brainsConfigNotFoundError } from "@awarded/log4brains-core";
 import { createGlobalCli } from "./cli";
 
 const debug = !!process.env.DEBUG;

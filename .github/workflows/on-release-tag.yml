@@ -20,7 +20,7 @@ jobs:
     needs: get-log4brains-version
     uses: ./.github/workflows/reusable-wait-for-npm-version-to-be-published.yml
     with:
-      npm-package: log4brains
+      npm-package: "@awarded/log4brains"
       npm-version: ${{ needs.get-log4brains-version.outputs.version }}
 
   load-nodejs-supported-versions:
@@ -38,7 +38,7 @@ jobs:
         node-version: ${{ fromJson(needs.load-nodejs-supported-versions.outputs.node_versions) }}
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains@${{ needs.get-log4brains-version.outputs.version }}
+      npm-package-fullname: "@awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}"
       os: ${{ matrix.os }}
       node-version: ${{ matrix.node-version }}
 
@@ -52,7 +52,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains@${{ needs.get-log4brains-version.outputs.version }}
+      npm-package-fullname: "@awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}"
       os: ${{ matrix.os }}
       node-version: current
       experimental: true # best effort mode
@@ -98,7 +98,7 @@ jobs:
           node-version-file: .nvmrc # current LTS
       - name: Install and Build Log4brains
         run: |
-          npm install -g log4brains@${{ needs.get-log4brains-version.outputs.version }}
+          npm install -g @awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}
           log4brains build --basePath /${GITHUB_REPOSITORY#*/}/adr
       - name: Publish to Github pages
         uses: JamesIves/github-pages-deploy-action@v4

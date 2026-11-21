@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@awarded/log4brains-cli-common";
 import { InitCommand, InitCommandOpts } from "./commands";
 
 type Deps = {

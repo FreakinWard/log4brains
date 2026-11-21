@@ -5,12 +5,12 @@ import { defineConfig, Options } from "tsup";
  *
  * Outputs keep microbundle's file names so `main`/`module`/`types` don't change:
  * - dist/index.js        (CommonJS)
- * - dist/index.module.js (ES modules, NOT .mjs: webpack 4 in @log4brains/web
+ * - dist/index.module.js (ES modules, NOT .mjs: webpack 4 in @awarded/log4brains-web
  *                         consumes this file and would apply strict ESM rules to .mjs)
  * - dist/index.d.ts
  *
  * Target is ES2019 because webpack 4 (Next.js 10) cannot parse `?.` / `??`.
- * TODO: raise the target once @log4brains/web is on a modern Next.js.
+ * TODO: raise the target once @awarded/log4brains-web is on a modern Next.js.
  */
 export function createConfig(
   overrides: Options = {}

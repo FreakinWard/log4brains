@@ -4,7 +4,7 @@ import { randomUUID } from "crypto";
 import { Server as SocketIOServer } from "socket.io";
 import chalk from "chalk";
 import open from "open";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@awarded/log4brains-cli-common";
 import { execNext, getL4bInstance, getNextJsDir } from "../utils";
 
 type Deps = {

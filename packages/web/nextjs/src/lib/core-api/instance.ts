@@ -1,5 +1,5 @@
 import path from "path";
-import { Log4brains } from "@log4brains/core";
+import { Log4brains } from "@awarded/log4brains-core";
 
 let instance: Log4brains;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Router, { useRouter } from "next/router";
-import type { FileWatcherEvent } from "@log4brains/core";
+import type { FileWatcherEvent } from "@awarded/log4brains-core";
 import { Adr, AdrLight } from "../../lib-shared/types";
 import { Log4brainsMode, Log4brainsModeContext } from "../../contexts";
 import { AdrBrowserLayout, AdrBrowserLayoutProps } from "./AdrBrowserLayout";

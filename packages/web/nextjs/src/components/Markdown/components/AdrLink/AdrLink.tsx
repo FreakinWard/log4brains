@@ -1,5 +1,5 @@
 import React from "react";
-import { AdrDtoStatus } from "@log4brains/core";
+import { AdrDtoStatus } from "@awarded/log4brains-core";
 import { styled } from "@mui/material/styles";
 import { RouterLink } from "../../../RouterLink";
 

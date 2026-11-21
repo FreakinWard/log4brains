@@ -52,13 +52,13 @@ module.exports = withBundleAnalyzer({
   // - core's dependency injection container registers its classes by name
   // - chokidar uses native file watching (fsevents)
   serverExternalPackages: [
-    "@log4brains/core",
-    "@log4brains/cli-common",
+    "@awarded/log4brains-core",
+    "@awarded/log4brains-cli-common",
     "chokidar"
   ],
   experimental: {
     // Keeps class names in the server code: core's dependency injection container resolves its classes by name
-    // (@log4brains/core is a symlinked workspace in development, so it is bundled despite serverExternalPackages)
+    // (@awarded/log4brains-core is a symlinked workspace in development, so it is bundled despite serverExternalPackages)
     serverMinification: false
   },
   typescript: {

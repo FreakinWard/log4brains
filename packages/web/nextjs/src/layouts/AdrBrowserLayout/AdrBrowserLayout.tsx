@@ -447,7 +447,7 @@ export function AdrBrowserLayout({
             <FooterText>
               Powered by{" "}
               <FooterLink
-                href="https://github.com/thomvaill/log4brains"
+                href="https://github.com/FreakinWard/log4brains"
                 target="_blank"
                 rel="noopener"
               >

@@ -54,7 +54,7 @@ jobs:
           fi
 
       # We have to build all the packages before the tests
-      # Because init-log4brains's integration tests use @log4brains/cli, which uses @log4brains/core
+      # Because init-log4brains's integration tests use @awarded/log4brains-cli, which uses @awarded/log4brains-core
       # TODO: we should separate tests that require built packages of the others, to get a quicker feedback
       # Once it's done, we should add "npm test" in each package's preVersion script
       - run: npm run build
