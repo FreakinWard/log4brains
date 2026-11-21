@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -10,6 +10,9 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    // Next.js 10 forces moduleResolution "node", deprecated in TypeScript 6. TODO: remove with Next.js 16
+    "ignoreDeprecations": "6.0",
+    "types": ["node", "socket.io-client"], // TypeScript 6 no longer includes every @types package by default
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"

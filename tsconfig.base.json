@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2018", // Transpiled later by Next.js or microbundle with Babel
+    "module": "esnext", // Microbundle/rollup will also generate a commonJS-compatible package
+    "moduleResolution": "bundler",
+    "types": ["node", "jest"], // TypeScript 6 no longer includes every @types package by default
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "noEmit": true // builds go through tsup/Next.js; prevents stray tsc runs from writing .js next to sources
+  }
+}
