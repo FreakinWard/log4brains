@@ -1,4 +1,5 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import { Entity, Log4brainsError } from "@src/domain";
 import { CheerioMarkdown, cheerioToMarkdown } from "@src/lib/cheerio-markdown";
 import type { Adr } from "./Adr";
@@ -9,7 +10,7 @@ type Props = {
 };
 
 type ElementAndRegExpMatch = {
-  element: cheerio.Cheerio;
+  element: cheerio.Cheerio<AnyNode>;
   match: string[];
 };
 
@@ -44,7 +45,7 @@ export class MarkdownBody extends Entity<Props> {
     return this;
   }
 
-  private getFirstH1TitleElement(): cheerio.Cheerio | undefined {
+  private getFirstH1TitleElement(): cheerio.Cheerio<AnyNode> | undefined {
     const elt = this.cm.$("h1").first();
     return elt.length > 0 ? elt : undefined;
   }
@@ -69,7 +70,7 @@ export class MarkdownBody extends Entity<Props> {
     }
   }
 
-  private getHeaderMetadataUl(): cheerio.Cheerio | undefined {
+  private getHeaderMetadataUl(): cheerio.Cheerio<AnyNode> | undefined {
     const elts = this.cm.$("body > *:first-child").nextUntil("h2").addBack();
     const ul = elts.filter("ul").first();
     return ul.length > 0 ? ul : undefined;
@@ -126,7 +127,7 @@ export class MarkdownBody extends Entity<Props> {
     }
   }
 
-  private getLinksUl(): cheerio.Cheerio | undefined {
+  private getLinksUl(): cheerio.Cheerio<AnyNode> | undefined {
     const h2Results = this.cm.$("h2").filter(
       (i, elt) =>
         this.cm
@@ -153,7 +154,7 @@ export class MarkdownBody extends Entity<Props> {
     return ul
       .children()
       .map((i, li) => cheerioToMarkdown(this.cm.$(li)))
-      .get() as string[];
+      .get();
   }
 
   addLink(link: string): void {

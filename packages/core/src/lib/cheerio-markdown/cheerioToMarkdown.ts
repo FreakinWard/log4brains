@@ -1,7 +1,8 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 
 export function cheerioToMarkdown(
-  elt: cheerio.Cheerio,
+  elt: cheerio.Cheerio<AnyNode>,
   keepLinks = true
 ): string {
   const html = elt.html();
