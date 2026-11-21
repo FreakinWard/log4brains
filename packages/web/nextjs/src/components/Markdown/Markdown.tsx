@@ -55,7 +55,7 @@ type MarkdownProps = {
 };
 
 function isReactElementWithChildren(
-  obj: JSX.Element
+  obj: React.JSX.Element
 ): obj is React.ReactElement<{ children: React.ReactElement }> {
   return "children" in obj.props; // TODO: improve tests here
 }

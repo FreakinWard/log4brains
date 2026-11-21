@@ -28,7 +28,6 @@ import {
   CropFree as CropFreeIcon,
   Add as AddIcon
 } from "@mui/icons-material";
-import Link from "next/link";
 
 import { Log4brainsMode, Log4brainsModeContext } from "../../../../contexts";
 import { AdrStatusChip } from "../../../../components";
@@ -225,16 +224,18 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
               </TimelineSeparator>
               <TimelineContent>
                 <ItemContent>
-                  <Link href={`/adr/${adr.slug}`} passHref>
-                    <ItemLink status={adr.status} variant="body2">
-                      <ItemTitle>{adr.title || "Untitled"}</ItemTitle>
-                      {adr.package ? (
-                        <ItemPackage>
-                          <CropFreeIcon fontSize="inherit" /> {adr.package}
-                        </ItemPackage>
-                      ) : null}
-                    </ItemLink>
-                  </Link>
+                  <ItemLink
+                    href={`/adr/${adr.slug}`}
+                    status={adr.status}
+                    variant="body2"
+                  >
+                    <ItemTitle>{adr.title || "Untitled"}</ItemTitle>
+                    {adr.package ? (
+                      <ItemPackage>
+                        <CropFreeIcon fontSize="inherit" /> {adr.package}
+                      </ItemPackage>
+                    ) : null}
+                  </ItemLink>
                   <div>
                     <ItemStatusChip status={adr.status} />
                   </div>

@@ -6,7 +6,6 @@ import {
   Button,
   Divider,
   Tooltip,
-  Link as MuiLink,
   Box,
   Alert
 } from "@mui/material";
@@ -15,9 +14,14 @@ import {
   ArrowForward as ArrowForwardIcon
 } from "@mui/icons-material";
 import Head from "next/head";
-import Link from "next/link";
+import NextLink from "next/link";
 import { styled } from "@mui/material/styles";
-import { Markdown, MarkdownToc, TwoColContent } from "../../components";
+import {
+  Markdown,
+  MarkdownToc,
+  RouterLink,
+  TwoColContent
+} from "../../components";
 // eslint-disable-next-line import/no-cycle
 import { ConnectedAdrBrowserLayout } from "../../layouts";
 import { AdrHeader } from "./components";
@@ -86,9 +90,9 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
         {currentAdr.supersededBy ? (
           <>
             {" by "}
-            <Link href={buildAdrUrl(currentAdr.supersededBy)} passHref>
-              <MuiLink>{currentAdr.supersededBy.title || "Untitled"}</MuiLink>
-            </Link>
+            <RouterLink href={buildAdrUrl(currentAdr.supersededBy)}>
+              {currentAdr.supersededBy.title || "Untitled"}
+            </RouterLink>
           </>
         ) : null}
         .
@@ -138,18 +142,20 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
 
         <BottomNav>
           {adrNav.previousAdr ? (
-            <Link href={buildAdrUrl(adrNav.previousAdr)} passHref>
-              <Tooltip
-                title={adrNav.previousAdr.title || ""}
-                aria-label="previous"
+            <Tooltip
+              title={adrNav.previousAdr.title || ""}
+              aria-label="previous"
+            >
+              <Button
+                LinkComponent={NextLink}
+                href={buildAdrUrl(adrNav.previousAdr)}
+                startIcon={<ArrowBackIcon />}
               >
-                <Button startIcon={<ArrowBackIcon />}>
-                  <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                    Previous
-                  </Box>
-                </Button>
-              </Tooltip>
-            </Link>
+                <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                  Previous
+                </Box>
+              </Button>
+            </Tooltip>
           ) : (
             <div />
           )}
@@ -163,13 +169,15 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
             </BottomInfoText>
           </div>
           {adrNav.nextAdr ? (
-            <Link href={buildAdrUrl(adrNav.nextAdr)} passHref>
-              <Tooltip title={adrNav.nextAdr.title || ""} aria-label="next">
-                <Button endIcon={<ArrowForwardIcon />}>
-                  <Box sx={{ display: { xs: "none", sm: "block" } }}>Next</Box>
-                </Button>
-              </Tooltip>
-            </Link>
+            <Tooltip title={adrNav.nextAdr.title || ""} aria-label="next">
+              <Button
+                LinkComponent={NextLink}
+                href={buildAdrUrl(adrNav.nextAdr)}
+                endIcon={<ArrowForwardIcon />}
+              >
+                <Box sx={{ display: { xs: "none", sm: "block" } }}>Next</Box>
+              </Button>
+            </Tooltip>
           ) : (
             <div />
           )}
@@ -179,6 +187,9 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
   );
 }
 
-AdrScene.getLayout = (scene: JSX.Element, sceneProps: AdrScenePageProps) => (
+AdrScene.getLayout = (
+  scene: React.JSX.Element,
+  sceneProps: AdrScenePageProps
+) => (
   <ConnectedAdrBrowserLayout {...sceneProps}>{scene}</ConnectedAdrBrowserLayout>
 );

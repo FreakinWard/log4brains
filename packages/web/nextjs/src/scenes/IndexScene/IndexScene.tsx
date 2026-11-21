@@ -56,7 +56,7 @@ export function IndexScene({ projectName, markdown }: IndexSceneProps) {
 }
 
 IndexScene.getLayout = (
-  scene: JSX.Element,
+  scene: React.JSX.Element,
   sceneProps: IndexScenePageProps
 ) => (
   <ConnectedAdrBrowserLayout {...sceneProps}>{scene}</ConnectedAdrBrowserLayout>

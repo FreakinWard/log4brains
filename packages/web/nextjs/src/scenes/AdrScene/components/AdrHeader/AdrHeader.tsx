@@ -37,7 +37,7 @@ function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function getRepositoryIcon(provider: string): JSX.Element {
+function getRepositoryIcon(provider: string): React.JSX.Element {
   switch (provider) {
     case "github":
       return (

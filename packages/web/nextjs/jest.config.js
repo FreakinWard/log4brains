@@ -1,10 +1,10 @@
-const base = require("../../../jest.config.base");
-const packageJson = require("./package");
+const nextJest = require("next/jest");
+const packageJson = require("../package.json");
 
-module.exports = {
-  ...base,
-  displayName: packageJson.name,
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
-  }
-};
+// Compiles the tests with the same SWC configuration as the Next.js app (instead of ts-jest)
+const createJestConfig = nextJest({ dir: __dirname });
+
+module.exports = createJestConfig({
+  testEnvironment: "jsdom", // components are rendered with Testing Library
+  displayName: packageJson.name
+});

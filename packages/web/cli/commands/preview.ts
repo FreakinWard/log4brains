@@ -1,5 +1,6 @@
 import next from "next";
 import { createServer } from "http";
+import { randomUUID } from "crypto";
 import SocketIO from "socket.io";
 import chalk from "chalk";
 import open from "open";
@@ -27,6 +28,10 @@ export async function previewCommand(
   appConsole.startSpinner("Log4brains is starting...");
   appConsole.debug(`Run \`next ${dev ? "dev" : "start"}\`...`);
 
+  // Authenticates the revalidation requests sent to the Next.js app (see nextjs/src/pages/api/revalidate.ts)
+  const revalidateToken = randomUUID();
+  process.env.LOG4BRAINS_REVALIDATE_TOKEN = revalidateToken;
+
   const app = next({
     dev,
     dir: getNextJsDir()
@@ -36,27 +41,38 @@ export async function previewCommand(
     await app.prepare();
   });
 
-  /**
-   * #NEXTJS-HACK
-   * We override this private property to set the incrementalCache in "dev" mode (ie. it disables it)
-   * to make our Hot Reload feature work.
-   * In fact, we trigger a page re-render every time an ADR changes and we absolutely need up-to-date data on every render.
-   * The "serve stale data while revalidating" Next.JS policy is not suitable for us.
-   */
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  app.server.incrementalCache.incrementalOptions.dev = true; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  const srv = createServer(app.getRequestHandler());
+  const handle = app.getRequestHandler();
+  const srv = createServer((req, res) => {
+    void handle(req, res);
+  });
 
   // FileWatcher with Socket.io
   const io = SocketIO(srv);
 
   const { fileWatcher } = getL4bInstance();
+  // Hot Reload: the pages showing the changed file are regenerated before the browser re-renders them
+  const revalidatePages = async (relativePath: string): Promise<void> => {
+    try {
+      const res = await fetch(`http://localhost:${port}/api/revalidate/`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-log4brains-token": revalidateToken
+        },
+        body: JSON.stringify({ relativePath })
+      });
+      appConsole.debug(
+        `[FileWatcher] revalidation: ${res.status} ${await res.text()}`
+      );
+    } catch (e) {
+      appConsole.debug(`[FileWatcher] revalidation failed: ${String(e)}`);
+    }
+  };
   fileWatcher.subscribe((event) => {
     appConsole.debug(`[FileWatcher] ${event.type} - ${event.relativePath}`);
-    io.emit("FileWatcher", event);
+    void revalidatePages(event.relativePath).then(() =>
+      io.emit("FileWatcher", event)
+    );
   });
   fileWatcher.start();
 

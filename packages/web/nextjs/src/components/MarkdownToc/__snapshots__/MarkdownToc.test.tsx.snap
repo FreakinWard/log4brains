@@ -1,153 +1,89 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Toc renders correctly 1`] = `
-[
-  <style
-    dangerouslySetInnerHTML={
-      {
-        "__html": ".css-3q0o02>ul{padding:0!important;}",
-      }
-    }
-    data-emotion="css 3q0o02"
-  />,
+<DocumentFragment>
   <div
-    className="css-3q0o02"
+    class="css-3q0o02"
   >
-    <style
-      dangerouslySetInnerHTML={
-        {
-          "__html": ".css-4cxybv{padding-bottom:8px;}",
-        }
-      }
-      data-emotion="css 4cxybv"
-    />
-    <style
-      dangerouslySetInnerHTML={
-        {
-          "__html": ".css-1f97qt4-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.57;letter-spacing:0.00714em;padding-bottom:8px;}",
-        }
-      }
-      data-emotion="css 1f97qt4-MuiTypography-root"
-    />
     <h6
-      className="MuiTypography-root MuiTypography-subtitle2 css-1f97qt4-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-subtitle2 css-1f97qt4-MuiTypography-root"
     >
       Table of contents
     </h6>
-    <style
-      dangerouslySetInnerHTML={
-        {
-          "__html": ".css-1j2o5i6{list-style-type:none;padding-left:1rem;}",
-        }
-      }
-      data-emotion="css 1j2o5i6"
-    />
     <ul
-      className="css-1j2o5i6"
+      class="css-1j2o5i6"
     >
       <li>
-        <style
-          dangerouslySetInnerHTML={
-            {
-              "__html": ".css-12u91cq-MuiLink-root{-webkit-text-decoration:underline;text-decoration:underline;text-decoration-color:rgba(25, 118, 210, 0.4);}.css-12u91cq-MuiLink-root:hover{text-decoration-color:inherit;}",
-            }
-          }
-          data-emotion="css 12u91cq-MuiLink-root"
-        />
-        <style
-          dangerouslySetInnerHTML={
-            {
-              "__html": ".css-1xylxj1-MuiTypography-root-MuiLink-root{margin:0;font:inherit;color:#1976d2;-webkit-text-decoration:underline;text-decoration:underline;text-decoration-color:rgba(25, 118, 210, 0.4);}.css-1xylxj1-MuiTypography-root-MuiLink-root:hover{text-decoration-color:inherit;}",
-            }
-          }
-          data-emotion="css 1xylxj1-MuiTypography-root-MuiLink-root"
-        />
         <a
-          className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="#header-1"
-          onBlur={[Function]}
-          onFocus={[Function]}
         >
           Header 1
         </a>
         <ul
-          className="css-1j2o5i6"
+          class="css-1j2o5i6"
         >
           <li>
             <a
-              className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
               href="#header-11"
-              onBlur={[Function]}
-              onFocus={[Function]}
             >
               Header 1.1
             </a>
             <ul
-              className="css-1j2o5i6"
+              class="css-1j2o5i6"
             >
               <li>
                 <a
-                  className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
                   href="#header-111"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                 >
                   Header 1.1.1
                 </a>
                 <ul
-                  className="css-1j2o5i6"
+                  class="css-1j2o5i6"
                 />
               </li>
               <li>
                 <a
-                  className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
                   href="#header-112"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
                 >
                   Header 1.1.2
                 </a>
                 <ul
-                  className="css-1j2o5i6"
+                  class="css-1j2o5i6"
                 />
               </li>
             </ul>
           </li>
           <li>
             <a
-              className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
               href="#header-12"
-              onBlur={[Function]}
-              onFocus={[Function]}
             >
               Header 1.2
             </a>
             <ul
-              className="css-1j2o5i6"
+              class="css-1j2o5i6"
             >
               <li>
                 <a
-                  className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
                   href="#"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                >
-                  
-                </a>
+                />
                 <ul
-                  className="css-1j2o5i6"
+                  class="css-1j2o5i6"
                 >
                   <li>
                     <a
-                      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+                      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
                       href="#subtitle-without-direct-parent"
-                      onBlur={[Function]}
-                      onFocus={[Function]}
                     >
                       Subtitle without direct parent
                     </a>
                     <ul
-                      className="css-1j2o5i6"
+                      class="css-1j2o5i6"
                     />
                   </li>
                 </ul>
@@ -158,18 +94,16 @@ exports[`Toc renders correctly 1`] = `
       </li>
       <li>
         <a
-          className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="#header-2"
-          onBlur={[Function]}
-          onFocus={[Function]}
         >
           Header 2
         </a>
         <ul
-          className="css-1j2o5i6"
+          class="css-1j2o5i6"
         />
       </li>
     </ul>
-  </div>,
-]
+  </div>
+</DocumentFragment>
 `;
