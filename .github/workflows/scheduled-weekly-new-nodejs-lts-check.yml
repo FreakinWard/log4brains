@@ -18,7 +18,7 @@ jobs:
     needs: load-nodejs-supported-versions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           sparse-checkout: |
             .github
@@ -55,7 +55,7 @@ jobs:
 
       - name: Create an issue if new LTS and not yet opened
         if: ${{ steps.check-version.outputs.new_lts_version != '' && steps.last-issue.outputs.has-found != 'true' }}
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: "Support new Node.js LTS version: ${{ steps.check-version.outputs.new_lts_version }}"
           content-filepath: .github/auto-issue-templates/new-node-lts.md

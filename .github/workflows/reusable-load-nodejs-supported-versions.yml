@@ -15,7 +15,7 @@ jobs:
     outputs:
       node_versions: ${{ steps.get-versions.outputs.node_versions }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           sparse-checkout: |
             .github/supported_nodejs_versions.json

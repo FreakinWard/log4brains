@@ -9,7 +9,7 @@ on:
       - "packages/**"
       - "!packages/**/CHANGELOG.md" # filters out changes made by lerna
       - "!packages/**/package.json" # filters out changes made by lerna
-      - ".github/workflows/build.yml"
+      - ".github/**"
 
 defaults:
   run:
@@ -27,6 +27,7 @@ jobs:
   tests-per-nodejs-version:
     needs: load-nodejs-supported-versions
     strategy:
+      fail-fast: false
       matrix:
         node-version: ${{ fromJson(needs.load-nodejs-supported-versions.outputs.node_versions) }}
     uses: ./.github/workflows/reusable-tests.yml
@@ -36,6 +37,7 @@ jobs:
 
   tests-LTS-per-other-os:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, macos-latest]
     uses: ./.github/workflows/reusable-tests.yml
@@ -51,19 +53,20 @@ jobs:
       experimental: true # best effort mode
 
   release-alpha:
+    if: ${{ vars.RELEASES_ENABLED == 'true' }} # set this repository variable once npm/Docker secrets are configured
     needs:
       - quality-checks
       - tests-per-nodejs-version
       - tests-LTS-per-other-os
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # fetch all history for Lerna (https://stackoverflow.com/a/60184319/9285308)
           ssh-key: ${{ secrets.LERNA_GITHUB_DEPLOY_KEY }} # so that Lerna is able to push to the protected branch (https://github.com/orgs/community/discussions/25305#discussioncomment-10728028)
       - name: Fetch all git tags for Lerna # (https://stackoverflow.com/a/60184319/9285308)
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* || true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc # current LTS
           cache: yarn

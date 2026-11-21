@@ -27,11 +27,14 @@ jobs:
   e2e-tests:
     runs-on: ${{ inputs.os }}
     continue-on-error: ${{ inputs.experimental }}
+    env:
+      # "current" Node.js may be a prerelease (e.g. 27.0.0-alpha), which never satisfies `engines`
+      YARN_IGNORE_ENGINES: ${{ inputs.experimental && 'true' || 'false' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # required by Log4brains to work correctly (needs the whole Git history)
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: ${{ inputs.node-version-file }}
           node-version: ${{ inputs.node-version }}

@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "workspaces": [
     "packages/**"
@@ -67,7 +67,7 @@
     }
   },
   "lint-staged": {
-    "!(tsup.config|tsup.config.base).{ts,tsx}": "eslint --max-warnings=0",
+    "!(tsup.config|tsup.config.base).{ts,tsx}": "eslint --max-warnings=0 --ignore-pattern '!.storybook'",
     "*.{js,jsx,ts,tsx,json,md}": "prettier-eslint --list-different"
   },
   "config": {

@@ -106,3 +106,7 @@ dist
 
 # Log4brains
 .log4brains
+
+# OS / IDE
+.DS_Store
+.idea/

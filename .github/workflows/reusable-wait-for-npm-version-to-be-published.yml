@@ -20,8 +20,8 @@ jobs:
   wait-for-npm-version-to-be-published:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v7
+      - uses: actions/checkout@v7
         with:
           sparse-checkout: |
             scripts/wait-for-npm-version-to-be-published.sh
