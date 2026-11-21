@@ -8,67 +8,61 @@ describe("FilesystemPath", () => {
   });
 
   it("returns the absolute path", () => {
-    expect(new FilesystemPath("/foo", "./bar/test").absolutePath).toEqual(
+    expect(new FilesystemPath("/foo", "./bar/test").absolutePath).toBe(
       "/foo/bar/test"
     );
-    expect(new FilesystemPath("/foo", "bar/test").absolutePath).toEqual(
+    expect(new FilesystemPath("/foo", "bar/test").absolutePath).toBe(
       "/foo/bar/test"
     );
-    expect(new FilesystemPath("/foo/bar", "../test").absolutePath).toEqual(
+    expect(new FilesystemPath("/foo/bar", "../test").absolutePath).toBe(
       "/foo/test"
     );
   });
 
   it("returns the basename", () => {
-    expect(new FilesystemPath("/foo", "bar/test").basename).toEqual("test");
-    expect(new FilesystemPath("/foo", "bar/test.md").basename).toEqual(
-      "test.md"
-    );
+    expect(new FilesystemPath("/foo", "bar/test").basename).toBe("test");
+    expect(new FilesystemPath("/foo", "bar/test.md").basename).toBe("test.md");
   });
 
   it("returns the extension", () => {
-    expect(new FilesystemPath("/foo", "bar/test").extension).toEqual("");
-    expect(new FilesystemPath("/foo", "bar/test.md").extension).toEqual(".md");
+    expect(new FilesystemPath("/foo", "bar/test").extension).toBe("");
+    expect(new FilesystemPath("/foo", "bar/test.md").extension).toBe(".md");
   });
 
   it("returns the basename without the extension", () => {
     expect(
       new FilesystemPath("/foo", "bar/test").basenameWithoutExtension
-    ).toEqual("test");
+    ).toBe("test");
     expect(
       new FilesystemPath("/foo", "bar/test.md").basenameWithoutExtension
-    ).toEqual("test");
+    ).toBe("test");
   });
 
   it("joins a FilesystemPath to a string path", () => {
     expect(
       new FilesystemPath("/foo", "bar/test").join("hello-world.md").absolutePath
-    ).toEqual("/foo/bar/test/hello-world.md");
+    ).toBe("/foo/bar/test/hello-world.md");
   });
 
   it("returns the relative path between two paths (from a directory)", () => {
     const from = new FilesystemPath("/test", "foo/bar");
-    expect(from.relative(new FilesystemPath("/test", "foo"), true)).toEqual(
-      ".."
-    );
+    expect(from.relative(new FilesystemPath("/test", "foo"), true)).toBe("..");
     expect(
       from.relative(new FilesystemPath("/test", "foo/lorem/ipsum"), true)
-    ).toEqual("../lorem/ipsum");
+    ).toBe("../lorem/ipsum");
     expect(
       from.relative(new FilesystemPath("/test", "foo/bar/test"), true)
-    ).toEqual("test");
+    ).toBe("test");
   });
 
   it("returns the relative path between two paths (from a file)", () => {
     const from = new FilesystemPath("/test", "foo/bar.md");
-    expect(from.relative(new FilesystemPath("/test", "foo"), false)).toEqual(
-      ""
-    );
+    expect(from.relative(new FilesystemPath("/test", "foo"), false)).toBe("");
     expect(
       from.relative(new FilesystemPath("/test", "foo/lorem/ipsum"), false)
-    ).toEqual("lorem/ipsum");
-    expect(
-      from.relative(new FilesystemPath("/test", "bar/test"), false)
-    ).toEqual("../bar/test");
+    ).toBe("lorem/ipsum");
+    expect(from.relative(new FilesystemPath("/test", "bar/test"), false)).toBe(
+      "../bar/test"
+    );
   });
 });

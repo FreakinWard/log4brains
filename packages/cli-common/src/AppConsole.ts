@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import chalk from "chalk";
@@ -80,15 +78,15 @@ export class AppConsole {
     this.spinner = undefined;
   }
 
-  println(message?: any, ...optionalParams: any[]): void {
+  println(message?: unknown, ...optionalParams: unknown[]): void {
     console.log(message ?? "", ...optionalParams);
   }
 
-  printlnErr(message?: any, ...optionalParams: any[]): void {
+  printlnErr(message?: unknown, ...optionalParams: unknown[]): void {
     console.error(message ?? "", ...optionalParams);
   }
 
-  debug(message?: any, ...optionalParams: any[]): void {
+  debug(message?: unknown, ...optionalParams: unknown[]): void {
     if (this.opts.debug) {
       this.println(
         chalk.dim(message),
@@ -158,7 +156,7 @@ export class AppConsole {
     if (raw) {
       table.forEach((value) => {
         if (typeof value === "object" && value instanceof Array) {
-          console.log(value.join(","));
+          console.log(value.map(String).join(","));
         } else {
           console.log(value);
         }

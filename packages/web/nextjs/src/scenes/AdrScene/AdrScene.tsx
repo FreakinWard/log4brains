@@ -58,6 +58,12 @@ const useStyles = makeStyles((theme: CustomTheme) =>
 export type AdrSceneProps = {
   projectName: string;
   currentAdr: Adr;
+};
+
+/**
+ * Props given to the page: the scene's props plus the ones only used by its layout
+ */
+export type AdrScenePageProps = AdrSceneProps & {
   l4bVersion: string;
 };
 
@@ -179,6 +185,6 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
   );
 }
 
-AdrScene.getLayout = (scene: JSX.Element, sceneProps: AdrSceneProps) => (
+AdrScene.getLayout = (scene: JSX.Element, sceneProps: AdrScenePageProps) => (
   <ConnectedAdrBrowserLayout {...sceneProps}>{scene}</ConnectedAdrBrowserLayout>
 );

@@ -10,7 +10,7 @@ Lorem ipsum
 ## Subtitle
 # Second title`
       );
-      expect(body.getFirstH1Title()).toEqual("First title");
+      expect(body.getFirstH1Title()).toBe("First title");
     });
 
     it("returns undefined when there is no first title", () => {
@@ -33,7 +33,7 @@ Lorem ipsum
 # Second title`
       );
       body.setFirstH1Title("New title");
-      expect(body.getRawMarkdown()).toEqual(`# New title
+      expect(body.getRawMarkdown()).toBe(`# New title
 Lorem ipsum
 ## Subtitle
 ## Subtitle
@@ -47,7 +47,7 @@ Lorem ipsum
 ## Subtitle`
       );
       body.setFirstH1Title("New title");
-      expect(body.getRawMarkdown()).toEqual(`# New title
+      expect(body.getRawMarkdown()).toBe(`# New title
 Lorem ipsum
 ## Subtitle
 ## Subtitle`);
@@ -68,8 +68,8 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 ## Subtitle
 # Second title`
       );
-      expect(body.getHeaderMetadata("status")).toEqual("draft");
-      expect(body.getHeaderMetadata("date")).toEqual("2020-01-01");
+      expect(body.getHeaderMetadata("status")).toBe("draft");
+      expect(body.getHeaderMetadata("date")).toBe("2020-01-01");
     });
 
     it("returns a metadata even if there is a paragraph before", () => {
@@ -86,8 +86,8 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 ## Subtitle
 # Second title`
       );
-      expect(body.getHeaderMetadata("status")).toEqual("draft");
-      expect(body.getHeaderMetadata("date")).toEqual("2020-01-01");
+      expect(body.getHeaderMetadata("status")).toBe("draft");
+      expect(body.getHeaderMetadata("date")).toBe("2020-01-01");
     });
 
     it("returns undefined when the metadata is not set", () => {
@@ -126,7 +126,7 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 
       body.setHeaderMetadata("Status", "accepted");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 Hello!
 
 - Lorem Ipsum
@@ -156,7 +156,7 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 
       body.setHeaderMetadata("Deciders", "@JohnDoe");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 Hello!
 
 - Lorem Ipsum
@@ -181,7 +181,7 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 
       body.setHeaderMetadata("Deciders", "@JohnDoe");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 
 - Deciders: @JohnDoe
 
@@ -237,7 +237,7 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 
       body.addLink("link3");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 ## Subtitle
 ## Links
 
@@ -257,7 +257,7 @@ Lorem ipsum`
 
       body.addLink("link1");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 ## Subtitle
 Lorem ipsum
 
@@ -284,7 +284,7 @@ Lorem ipsum
       body.addLinkNoDuplicate("Link TEST");
       body.addLinkNoDuplicate("Link2");
 
-      expect(body.getRawMarkdown()).toEqual(`# Hello World
+      expect(body.getRawMarkdown()).toBe(`# Hello World
 ## Subtitle
 ## Links
 

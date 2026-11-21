@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { Command, CommandHandler } from "@src/application";
+import { ClassType, Command, CommandHandler } from "@src/application";
 
 export class CommandBus {
   private readonly handlersByCommandName: Map<string, CommandHandler> = new Map<
@@ -7,7 +6,10 @@ export class CommandBus {
     CommandHandler
   >();
 
-  registerHandler(handler: CommandHandler, commandClass: Function): void {
+  registerHandler(
+    handler: CommandHandler,
+    commandClass: ClassType<Command>
+  ): void {
     this.handlersByCommandName.set(commandClass.name, handler);
   }
 

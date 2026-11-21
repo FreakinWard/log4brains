@@ -3,7 +3,7 @@ import { AdrStatus } from "./AdrStatus";
 describe("AdrStatus", () => {
   it("create from name", () => {
     const status = AdrStatus.createFromName("draft");
-    expect(status.name).toEqual("draft");
+    expect(status.name).toBe("draft");
   });
 
   it("throws when unknown name", () => {
@@ -14,6 +14,6 @@ describe("AdrStatus", () => {
 
   it("works with 'superseded by XXX", () => {
     const status = AdrStatus.createFromName("superseded by XXX");
-    expect(status.name).toEqual("superseded");
+    expect(status.name).toBe("superseded");
   });
 });

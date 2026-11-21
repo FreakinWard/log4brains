@@ -19,7 +19,7 @@ describe("Adr", () => {
         slug: new AdrSlug("test"),
         body: new MarkdownBody(`# Lorem Ipsum`)
       });
-      expect(adr.title).toEqual("Lorem Ipsum");
+      expect(adr.title).toBe("Lorem Ipsum");
     });
 
     it("returns undefined when no title", () => {
@@ -83,7 +83,7 @@ describe("Adr", () => {
   - Status: superseded by foo/bar
   `)
       });
-      expect(adr.superseder?.value).toEqual("foo/bar");
+      expect(adr.superseder?.value).toBe("foo/bar");
     });
   });
 
@@ -183,7 +183,7 @@ Hello
 `).setAdrLinkResolver(markdownAdrLinkResolver)
       });
 
-      expect(await adr.getEnhancedMdx()).toEqual(`
+      expect(await adr.getEnhancedMdx()).toBe(`
 ## Subtitle
 
 Hello
@@ -212,7 +212,7 @@ Hello
 `).setAdrLinkResolver(markdownAdrLinkResolver)
       });
 
-      expect(await adr.getEnhancedMdx()).toEqual(`
+      expect(await adr.getEnhancedMdx()).toBe(`
 Hello this is a paragraph.
 
 - Unknown Metadata: test
@@ -239,7 +239,7 @@ Link to an URL: [lorem ipsum](https://www.google.com/).
 `).setAdrLinkResolver(markdownAdrLinkResolver)
       });
 
-      expect(await adr.getEnhancedMdx()).toEqual(`## Subtitle
+      expect(await adr.getEnhancedMdx()).toBe(`## Subtitle
 
 Link to an actual ADR: <AdrLink slug="test-link" status="accepted" customLabel="custom text" />.
 Link to an actual ADR: <AdrLink slug="test-link" status="accepted" />.

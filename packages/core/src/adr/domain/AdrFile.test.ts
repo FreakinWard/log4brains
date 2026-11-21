@@ -30,6 +30,6 @@ describe("AdrFile", () => {
         new FilesystemPath("/", "test"),
         new AdrSlug("my-package/20200101-hello-world")
       ).path.absolutePath
-    ).toEqual("/test/20200101-hello-world.md");
+    ).toBe("/test/20200101-hello-world.md");
   });
 });

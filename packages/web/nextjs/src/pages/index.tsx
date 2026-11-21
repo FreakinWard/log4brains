@@ -1,12 +1,12 @@
 import { GetStaticProps } from "next";
 import { getIndexPageMarkdown, getLog4brainsInstance } from "../lib/core-api";
 import { getConfig } from "../lib/next";
-import { IndexScene, IndexSceneProps } from "../scenes";
+import { IndexScene, IndexScenePageProps } from "../scenes";
 import { toAdrLight } from "../lib-shared/types";
 
 export default IndexScene;
 
-export const getStaticProps: GetStaticProps<IndexSceneProps> = async () => {
+export const getStaticProps: GetStaticProps<IndexScenePageProps> = async () => {
   return {
     props: {
       projectName: getLog4brainsInstance().config.project.name,

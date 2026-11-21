@@ -1,3 +1,4 @@
+export * from "./ClassType";
 export * from "./Command";
 export * from "./CommandHandler";
 export * from "./Query";

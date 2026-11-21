@@ -120,9 +120,8 @@ export function AdrHeader({
 }: AdrHeaderProps) {
   const classes = useStyles();
 
-  const [linkCopiedSnackIsOpened, linkCopiedSnackSetOpened] = React.useState(
-    false
-  );
+  const [linkCopiedSnackIsOpened, linkCopiedSnackSetOpened] =
+    React.useState(false);
   const linkCopiedSnackClose = () => {
     linkCopiedSnackSetOpened(false);
   };

@@ -117,7 +117,7 @@ export class CheerioMarkdown {
     const lines = this.markdown.split(`\n`);
     const windowsLines = lines.length > 0 ? isWindowsLine(lines[0]) : false;
     if (lines[lines.length - 1].trim() === "") {
-      delete lines[lines.length - 1];
+      lines[lines.length - 1] = "";
     }
     lines.push(`${newLine}${windowsLines ? `\r` : ""}`);
     lines.push(`${windowsLines ? `\r` : ""}\n`);

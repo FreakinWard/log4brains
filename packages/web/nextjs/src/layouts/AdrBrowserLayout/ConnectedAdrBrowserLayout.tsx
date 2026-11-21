@@ -69,7 +69,6 @@ type ConnectedAdrBrowserLayoutProps = Omit<
   adrs?: AdrLight[];
 };
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function ConnectedAdrBrowserLayout(
   props: ConnectedAdrBrowserLayoutProps
 ) {

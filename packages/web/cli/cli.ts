@@ -21,32 +21,27 @@ export function createWebCli({ appConsole }: Deps): commander.Command {
   program
     .command("preview [adr]")
     .description("Start Log4brains locally to preview your changes", {
-      adr:
-        "If provided, will automatically open your browser to this specific ADR"
+      adr: "If provided, will automatically open your browser to this specific ADR"
     })
     .option("-p, --port <port>", "Port to listen on", "4004")
     .option("--no-open", "Do not open the browser automatically", false)
-    .action(
-      (adr: string, opts: StartEditorCommandOpts): Promise<void> => {
-        return previewCommand(
-          { appConsole },
-          parseInt(opts.port, 10),
-          opts.open,
-          adr
-        );
-      }
-    );
+    .action((adr: string, opts: StartEditorCommandOpts): Promise<void> => {
+      return previewCommand(
+        { appConsole },
+        parseInt(opts.port, 10),
+        opts.open,
+        adr
+      );
+    });
 
   program
     .command("build")
     .description("Build Log4brains as a deployable static website")
     .option("-o, --out <path>", "Output path", ".log4brains/out")
     .option("--basePath <path>", "Custom base path", "")
-    .action(
-      (opts: BuildCommandOpts): Promise<void> => {
-        return buildCommand({ appConsole }, opts.out, opts.basePath);
-      }
-    );
+    .action((opts: BuildCommandOpts): Promise<void> => {
+      return buildCommand({ appConsole }, opts.out, opts.basePath);
+    });
 
   return program;
 }

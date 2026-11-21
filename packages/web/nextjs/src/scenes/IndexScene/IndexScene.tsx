@@ -11,6 +11,12 @@ import { ConnectedAdrBrowserLayout } from "../../layouts";
 export type IndexSceneProps = {
   projectName: string;
   markdown: string;
+};
+
+/**
+ * Props given to the page: the scene's props plus the ones only used by its layout
+ */
+export type IndexScenePageProps = IndexSceneProps & {
   l4bVersion: string;
 };
 
@@ -60,6 +66,9 @@ export function IndexScene({ projectName, markdown }: IndexSceneProps) {
   );
 }
 
-IndexScene.getLayout = (scene: JSX.Element, sceneProps: IndexSceneProps) => (
+IndexScene.getLayout = (
+  scene: JSX.Element,
+  sceneProps: IndexScenePageProps
+) => (
   <ConnectedAdrBrowserLayout {...sceneProps}>{scene}</ConnectedAdrBrowserLayout>
 );

@@ -167,7 +167,7 @@ export class Adr extends AggregateRoot<Props> {
     ) {
       return [];
     }
-    return deciders.split(/\s*[,]{1}\s*/).map((decider) => decider.trim());
+    return deciders.split(",").map((decider) => decider.trim());
   }
 
   setFile(file: AdrFile): void {

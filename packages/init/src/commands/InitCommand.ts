@@ -60,7 +60,7 @@ export class InitCommand {
       "./adrs",
       "./architecture-decisions"
     ];
-    // eslint-disable-next-line no-restricted-syntax
+
     for (const possiblePath of usualPaths) {
       if (fs.existsSync(path.join(cwd, possiblePath))) {
         return possiblePath;
@@ -107,10 +107,19 @@ export class InitCommand {
     );
 
     // Name
-    let name;
+    let name: string | undefined;
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,global-require,import/no-dynamic-require,@typescript-eslint/no-var-requires
-      name = require(path.join(cwd, "package.json")).name as string;
+      const pkg: unknown = JSON.parse(
+        fs.readFileSync(path.join(cwd, "package.json"), "utf-8")
+      );
+      if (
+        typeof pkg === "object" &&
+        pkg !== null &&
+        "name" in pkg &&
+        typeof pkg.name === "string"
+      ) {
+        name = pkg.name;
+      }
     } catch (e) {
       // ignore
     }
@@ -135,8 +144,7 @@ export class InitCommand {
               short: "Mono-package project"
             },
             {
-              name:
-                "Multi-package project (one ADR folder per package + a global one)",
+              name: "Multi-package project (one ADR folder per package + a global one)",
               value: "multi",
               short: "Multi-package project"
             }

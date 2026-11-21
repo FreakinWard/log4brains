@@ -29,7 +29,7 @@ describe("MarkdownAdrLink", () => {
       body: new MarkdownBody("")
     });
     const link = new MarkdownAdrLink(from, to);
-    expect(link.toMarkdown()).toEqual(
+    expect(link.toMarkdown()).toBe(
       "[test/to](../../packages/test/docs/adr/to.md)"
     );
   });

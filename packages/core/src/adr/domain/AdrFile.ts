@@ -35,7 +35,6 @@ export class AdrFile extends ValueObject<Props> {
 
   static isPathValid(path: FilesystemPath): boolean {
     try {
-      // eslint-disable-next-line no-new
       new AdrFile(path);
       return true;
     } catch (e) {

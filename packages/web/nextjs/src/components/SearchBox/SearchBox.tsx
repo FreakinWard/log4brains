@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import {
   Autocomplete,
@@ -39,7 +38,7 @@ export type SearchBoxProps = Omit<
    *
    * @param event The event source of the callback.
    */
-  onOpen?: (event: React.ChangeEvent<{}>) => void;
+  onOpen?: (event: React.ChangeEvent<unknown>) => void;
 
   /**
    * Callback fired when the popup requests to be closed.
@@ -49,7 +48,7 @@ export type SearchBoxProps = Omit<
    * @param reason Can be: `"toggleInput"`, `"escape"`, `"select-option"`, `"blur"`.
    */
   onClose?: (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     reason: AutocompleteCloseReason
   ) => void;
 
@@ -68,7 +67,7 @@ export type SearchBoxProps = Omit<
    * @param reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`.
    */
   onQueryChange?: (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     query: string,
     reason: AutocompleteInputChangeReason
   ) => void;
@@ -112,7 +111,7 @@ export function SearchBox(props: SearchBoxProps) {
     state: "open"
   });
 
-  const handleOpen = (event: React.ChangeEvent<{}>) => {
+  const handleOpen = (event: React.ChangeEvent<unknown>) => {
     if (open) {
       return;
     }
@@ -125,7 +124,7 @@ export function SearchBox(props: SearchBoxProps) {
   const router = useRouter();
 
   const handleClose = (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     reason: AutocompleteCloseReason
   ) => {
     if (!open) {

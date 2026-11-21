@@ -5,15 +5,13 @@ import { PackageRef } from "./PackageRef";
 
 describe("AdrSlug", () => {
   it("returns the package part", () => {
-    expect(new AdrSlug("my-package/0001-test").packagePart).toEqual(
-      "my-package"
-    );
+    expect(new AdrSlug("my-package/0001-test").packagePart).toBe("my-package");
     expect(new AdrSlug("0001-test").packagePart).toBeUndefined();
   });
 
   it("returns the name part", () => {
-    expect(new AdrSlug("my-package/0001-test").namePart).toEqual("0001-test");
-    expect(new AdrSlug("0001-test").namePart).toEqual("0001-test");
+    expect(new AdrSlug("my-package/0001-test").namePart).toBe("0001-test");
+    expect(new AdrSlug("0001-test").namePart).toBe("0001-test");
   });
 
   describe("createFromFile()", () => {
@@ -23,7 +21,7 @@ describe("AdrSlug", () => {
           new AdrFile(new FilesystemPath("/", "0001-my-adr.md")),
           new PackageRef("my-package")
         ).value
-      ).toEqual("my-package/0001-my-adr");
+      ).toBe("my-package/0001-my-adr");
     });
 
     it("creates from AdrFile without package", () => {
@@ -31,7 +29,7 @@ describe("AdrSlug", () => {
         AdrSlug.createFromFile(
           new AdrFile(new FilesystemPath("/", "0001-my-adr.md"))
         ).value
-      ).toEqual("0001-my-adr");
+      ).toBe("0001-my-adr");
     });
   });
 
@@ -43,13 +41,13 @@ describe("AdrSlug", () => {
           new PackageRef("my-package"),
           new Date(2020, 0, 1)
         ).value
-      ).toEqual("my-package/20200101-my-adr");
+      ).toBe("my-package/20200101-my-adr");
     });
 
     it("creates from title without package", () => {
       expect(
         AdrSlug.createFromTitle("My ADR", undefined, new Date(2020, 0, 1)).value
-      ).toEqual("20200101-my-adr");
+      ).toBe("20200101-my-adr");
     });
 
     it("creates from title with complex title", () => {
@@ -59,7 +57,7 @@ describe("AdrSlug", () => {
           undefined,
           new Date(2020, 0, 1)
         ).value
-      ).toEqual("20200101-lexemple-dun-titre-complique-test");
+      ).toBe("20200101-lexemple-dun-titre-complique-test");
     });
   });
 });

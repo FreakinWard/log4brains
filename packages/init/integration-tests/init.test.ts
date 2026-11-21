@@ -1,9 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/prefer-regexp-exec */
-/* eslint-disable jest/no-conditional-expect */
-/* eslint-disable jest/no-try-expect */
 import execa from "execa";
 import path from "path";
 import os from "os";
@@ -46,7 +40,7 @@ type PackageAnswer = {
   path: string;
   adrFolder: string;
 };
-// eslint-disable-next-line sonarjs/cognitive-complexity
+
 function bindAnswers(
   cli: execa.ExecaChildProcess<string>,
   packageAnswer?: PackageAnswer
