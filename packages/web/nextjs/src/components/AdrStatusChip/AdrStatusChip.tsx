@@ -28,7 +28,7 @@ const StatusChip = styled(Chip, {
   height: "18px",
   verticalAlign: "text-bottom",
   color: statusColors[status],
-  "& .MuiChip-labelSmall": {
+  "& .MuiChip-label": {
     padding: "0 6px"
   }
 }));

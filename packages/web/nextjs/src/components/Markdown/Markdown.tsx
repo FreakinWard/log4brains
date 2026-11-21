@@ -8,6 +8,11 @@ import { AdrLink } from "./components";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { slugify } from "../../lib/slugify";
 
+// Typography's `paragraph` prop, removed in MUI v9
+const Paragraph = styled(Typography)({
+  marginBottom: "16px"
+});
+
 const Code = styled("code")(({ theme }) => ({
   backgroundColor: "#F8F8F8",
   borderRadius: `${theme.shape.borderRadius}px`,
@@ -40,7 +45,7 @@ const options = {
       component: MarkdownHeading,
       props: { variant: "h4" }
     },
-    p: { component: Typography, props: { paragraph: true } },
+    p: { component: Paragraph },
     a: { component: MuiLink },
     li: { component: Li },
     AdrLink: { component: AdrLink },
