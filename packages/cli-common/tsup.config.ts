@@ -1,3 +1,3 @@
-import { createConfig } from "../../tsup.config.base";
+import { createEsmConfig } from "../../tsup.config.base";
 
-export default createConfig();
+export default createEsmConfig();

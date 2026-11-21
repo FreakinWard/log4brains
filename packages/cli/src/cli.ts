@@ -1,4 +1,4 @@
-import commander from "commander";
+import { Command } from "commander";
 import terminalLink from "terminal-link";
 import { Log4brains, Log4brainsError } from "@log4brains/core";
 import { AppConsole, FailureExit } from "@log4brains/cli-common";
@@ -47,18 +47,17 @@ type Deps = {
   appConsole: AppConsole;
 };
 
-export function createCli({ appConsole }: Deps): commander.Command {
-  const program = new commander.Command();
+export function createCli({ appConsole }: Deps): Command {
+  const program = new Command().allowExcessArguments(); // commander >=13 rejects extra arguments; keep the previous lenient behavior
 
   const adr = program
     .command("adr")
     .description("Group of commands to manage your ADRs...");
 
   adr
-    .command("new [title]")
-    .description("Create an ADR", {
-      title: "The title of the ADR. Required if --quiet is passed"
-    })
+    .command("new")
+    .argument("[title]", "The title of the ADR. Required if --quiet is passed")
+    .description("Create an ADR")
     .option("-q, --quiet", "Disable interactive mode", false)
     .option(
       "-p, --package <package>",

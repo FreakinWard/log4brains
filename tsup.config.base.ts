@@ -32,3 +32,18 @@ export function createConfig(
     ...overrides
   });
 }
+
+/**
+ * Config for ESM-only packages (`"type": "module"`) that webpack never bundles:
+ * outputs dist/index.js (ES modules) and dist/index.d.ts, targeting the Node versions we support.
+ */
+export function createEsmConfig(
+  overrides: Options = {}
+): ReturnType<typeof defineConfig> {
+  return createConfig({
+    format: ["esm"],
+    outExtension: () => ({ js: ".js" }),
+    target: "node22",
+    ...overrides
+  });
+}

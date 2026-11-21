@@ -3,16 +3,16 @@
 import fs, { promises as fsP } from "fs";
 import terminalLink from "terminal-link";
 import chalk from "chalk";
-import execa from "execa";
-import mkdirp from "mkdirp";
+import { execa } from "execa";
 import yaml from "yaml";
 import path from "path";
+import { fileURLToPath } from "url";
 import moment from "moment-timezone";
 import type { AppConsole } from "@log4brains/cli-common";
 import { FailureExit } from "@log4brains/cli-common";
 import { replaceAllInFile } from "../utils";
 
-const assetsPath = path.resolve(path.join(__dirname, "../assets")); // only one level up because bundled with microbundle
+const assetsPath = fileURLToPath(new URL("../assets", import.meta.url)); // only one level up because bundled into dist/index.js
 const docLink = "https://github.com/thomvaill/log4brains";
 
 function forceUnixPath(p: string): string {
@@ -180,7 +180,7 @@ export class InitCommand {
             "./docs/adr"
           );
     }
-    await mkdirp(path.join(cwd, adrFolder));
+    await fsP.mkdir(path.join(cwd, adrFolder), { recursive: true });
     this.console.println();
 
     // Packages
@@ -210,7 +210,7 @@ export class InitCommand {
           (answer) => !!answer.trim(),
           `${pkgCodeFolder}/docs/adr`
         );
-        await mkdirp(path.join(cwd, pkgAdrFolder));
+        await fsP.mkdir(path.join(cwd, pkgAdrFolder), { recursive: true });
         packages.push({
           name: pkgName,
           path: forceUnixPath(pkgCodeFolder),

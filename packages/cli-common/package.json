@@ -18,14 +18,20 @@
     "directory": "packages/cli-common"
   },
   "engines": {
-    "node": ">=22"
+    "node": "^22.22.2 || >=24.15.0"
   },
   "files": [
     "dist"
   ],
   "source": "./src/index.ts",
   "main": "./dist/index.js",
-  "module": "./dist/index.module.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsup --watch",
@@ -36,13 +42,10 @@
     "lint": "eslint . --max-warnings=0",
     "prepublishOnly": "npm run build"
   },
-  "devDependencies": {
-    "@types/inquirer": "^7.3.1"
-  },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "@inquirer/prompts": "^8.8.0",
+    "chalk": "^6.0.1",
     "cli-table3": "^0.6.0",
-    "inquirer": "^7.3.3",
-    "ora": "^5.1.0"
+    "ora": "^10.0.0"
   }
 }

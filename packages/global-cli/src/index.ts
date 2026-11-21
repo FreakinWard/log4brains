@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import chalk from "chalk";
 import { AppConsole, FailureExit } from "@log4brains/cli-common";
 import { Log4brainsConfigNotFoundError } from "@log4brains/core";
@@ -33,8 +34,11 @@ function handleError(err: unknown): void {
 }
 
 try {
-  // eslint-disable-next-line
-  const pkgVersion = require("../package.json").version as string;
+  const pkgVersion = (
+    JSON.parse(
+      readFileSync(new URL("../package.json", import.meta.url), "utf8")
+    ) as { version: string }
+  ).version;
 
   const cli = createGlobalCli({ version: pkgVersion, appConsole });
   cli.parseAsync(process.argv).catch(handleError);

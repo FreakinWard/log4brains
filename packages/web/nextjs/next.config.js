@@ -42,6 +42,10 @@ module.exports = withBundleAnalyzer({
     // To avoid issues with fsevents during the build, especially on macOS
     config.externals.push("chokidar");
 
+    // ESM-only package (chalk, ora, @inquirer/prompts) that webpack 4 cannot bundle: loaded at runtime instead.
+    // TODO: remove once on a modern Next.js
+    config.externals.push("@log4brains/cli-common");
+
     return config;
   },
   future: {

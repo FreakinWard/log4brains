@@ -18,7 +18,7 @@
     "directory": "packages/init"
   },
   "engines": {
-    "node": ">=22"
+    "node": "^22.22.2 || >=24.15.0"
   },
   "files": [
     "assets",
@@ -26,7 +26,13 @@
   ],
   "source": "./src/index.ts",
   "main": "./dist/index.js",
-  "module": "./dist/index.module.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsup --watch",
@@ -40,12 +46,11 @@
   },
   "dependencies": {
     "@log4brains/cli-common": "1.1.0",
-    "chalk": "^4.1.0",
-    "commander": "^6.1.0",
-    "execa": "^4.1.0",
-    "mkdirp": "^1.0.4",
+    "chalk": "^6.0.1",
+    "commander": "^15.1.0",
+    "execa": "^10.2.1",
     "moment-timezone": "^0.5.32",
-    "terminal-link": "^2.1.1",
+    "terminal-link": "^5.0.0",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
