@@ -1,97 +1,187 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`AdrHeader renders correctly with deciders 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
+      <div
+        className="css-1bgvo2p"
+      >
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Creation date"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vi4pw0{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-1vi4pw0 .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1vi4pw0"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-kji558-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-kji558-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-kji558-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-kji558-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-kji558-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-kji558-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-kji558-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-kji558-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css kji558-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-kji558-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
       <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Deciders"
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PeopleIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5"
           />
         </svg>
          
-        Jan 1, 2020
+        John Doe, Lorem Ipsum, Ipsum Dolor
       </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Deciders"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
-        />
-      </svg>
-       
-      John Doe, Lorem Ipsum, Ipsum Dolor
-    </p>
-  </div>
-  <div>
     <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
         >
-          <span
-            className="MuiButton-label"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-10tjo1u-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-10tjo1u-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-10tjo1u-MuiButton-root:hover{background-color:transparent;}}.css-10tjo1u-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 10tjo1u-MuiButton-root"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1rwt2y5-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -119,126 +209,230 @@ exports[`AdrHeader renders correctly with deciders 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 1433tg5-MuiTooltip-popper"
           />
-        </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 179vq5o-MuiPopper-root-MuiTooltip-popper"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader renders correctly with package 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 1, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            DRAFT
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vi4pw0{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-1vi4pw0 .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1vi4pw0"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-kji558-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-kji558-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-kji558-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-kji558-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-kji558-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-kji558-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-kji558-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-kji558-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css kji558-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-kji558-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-10tjo1u-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-10tjo1u-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-10tjo1u-MuiButton-root:hover{background-color:transparent;}}.css-10tjo1u-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 10tjo1u-MuiButton-root"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1rwt2y5-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -266,126 +460,230 @@ exports[`AdrHeader renders correctly with package 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 1433tg5-MuiTooltip-popper"
           />
-        </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 179vq5o-MuiPopper-root-MuiTooltip-popper"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader renders correctly with publication date 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            ACCEPTED
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1blr7wb{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-1blr7wb .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1blr7wb"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-khjoqs-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-khjoqs-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-khjoqs-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-khjoqs-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-khjoqs-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css khjoqs-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-khjoqs-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-10tjo1u-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-10tjo1u-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-10tjo1u-MuiButton-root:hover{background-color:transparent;}}.css-10tjo1u-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 10tjo1u-MuiButton-root"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1rwt2y5-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -413,147 +711,244 @@ exports[`AdrHeader renders correctly with publication date 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 1433tg5-MuiTooltip-popper"
           />
-        </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 179vq5o-MuiPopper-root-MuiTooltip-popper"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader renders correctly with tags 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 1, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            DRAFT
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vi4pw0{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-1vi4pw0 .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1vi4pw0"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-kji558-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-kji558-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-kji558-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-kji558-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-kji558-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-kji558-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-kji558-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-kji558-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css kji558-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-kji558-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Tags"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"
-        />
-      </svg>
-       
-      <span
-        className="makeStyles-tags-4"
-      >
-        #foo #bar
-      </span>
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Tags"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="LabelIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12z"
+          />
+        </svg>
+         
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-1i5zo8a{color:#757575;}",
+            }
+          }
+          data-emotion="css 1i5zo8a"
+        />
+        <span
+          className="css-1i5zo8a"
+        >
+          #foo #bar
+        </span>
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -581,109 +976,191 @@ exports[`AdrHeader renders correctly with tags 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}",
+                }
+              }
+              data-emotion="css 8je8zh-MuiTouchRipple-root"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader renders correctly without deciders 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
+      <div
+        className="css-1bgvo2p"
+      >
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Creation date"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vi4pw0{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-1vi4pw0 .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1vi4pw0"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-kji558-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#424242;}.css-kji558-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-kji558-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-kji558-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-kji558-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-kji558-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-kji558-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-kji558-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-kji558-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-kji558-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-kji558-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css kji558-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-kji558-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
       <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
           />
         </svg>
          
-        Jan 1, 2020
+        John Doe
       </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
     <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
         >
-          <span
-            className="MuiButton-label"
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -711,126 +1188,209 @@ exports[`AdrHeader renders correctly without deciders 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}",
+                }
+              }
+              data-emotion="css 8je8zh-MuiTouchRipple-root"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader shows the Github repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            ACCEPTED
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1blr7wb{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-1blr7wb .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1blr7wb"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-khjoqs-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-khjoqs-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-khjoqs-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-khjoqs-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-khjoqs-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css khjoqs-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-khjoqs-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -858,39 +1418,44 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://github.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Github"
-        >
-          <span
-            className="MuiButton-label"
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}",
+                }
+              }
+              data-emotion="css 8je8zh-MuiTouchRipple-root"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <a
+            aria-label="View/edit on Github"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            href="https://github.com/xxx"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            rel="noopener"
+            tabIndex={0}
+            target="_blank"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -913,126 +1478,217 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AdrHeader shows the Gitlab repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </a>
         </div>
       </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+  </div>,
+]
+`;
+
+exports[`AdrHeader shows the Gitlab repository button 1`] = `
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
     <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        className="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1blr7wb{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-1blr7wb .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1blr7wb"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-khjoqs-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-khjoqs-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-khjoqs-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-khjoqs-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-khjoqs-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css khjoqs-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-khjoqs-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-10tjo1u-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-10tjo1u-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-10tjo1u-MuiButton-root:hover{background-color:transparent;}}.css-10tjo1u-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 10tjo1u-MuiButton-root"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1rwt2y5-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1060,39 +1716,49 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 1433tg5-MuiTooltip-popper"
           />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://gitlab.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Gitlab"
-        >
-          <span
-            className="MuiButton-label"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 179vq5o-MuiPopper-root-MuiTooltip-popper"
+          />
+          <a
+            aria-label="View/edit on Gitlab"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            href="https://gitlab.com/xxx"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            rel="noopener"
+            tabIndex={0}
+            target="_blank"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1115,126 +1781,198 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader shows the generic repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            ACCEPTED
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1blr7wb{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-1blr7wb .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1blr7wb"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-khjoqs-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-khjoqs-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-khjoqs-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-khjoqs-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-khjoqs-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css khjoqs-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-khjoqs-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1262,39 +2000,44 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://foo.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Git"
-        >
-          <span
-            className="MuiButton-label"
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}",
+                }
+              }
+              data-emotion="css 8je8zh-MuiTouchRipple-root"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <a
+            aria-label="View/edit on Git"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            href="https://foo.com/xxx"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            rel="noopener"
+            tabIndex={0}
+            target="_blank"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1318,126 +2061,217 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`AdrHeader shows the locally edit button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-1ij28oh{color:#616161;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}",
+      }
+    }
+    data-emotion="css 1ij28oh"
+  />,
+  <div
+    className="css-1ij28oh"
+  >
+    <div>
+      <style
+        dangerouslySetInnerHTML={
+          {
+            "__html": ".css-1bgvo2p{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-column-gap:8px;column-gap:8px;}",
+          }
+        }
+        data-emotion="css 1bgvo2p"
+      />
       <div
-        title="Status"
+        className="css-1bgvo2p"
       >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-e784if-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;}",
+            }
+          }
+          data-emotion="css e784if-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1vooibu-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:inherit;}",
+              }
+            }
+            data-emotion="css 1vooibu-MuiSvgIcon-root"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            ACCEPTED
-          </span>
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           
+          test
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           
+          Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1blr7wb{font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-1blr7wb .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css 1blr7wb"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-khjoqs-MuiChip-root{max-width:100%;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:0.8125rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;height:24px;color:rgba(0, 0, 0, 0.87);background-color:rgba(0, 0, 0, 0.08);border-radius:16px;white-space:nowrap;-webkit-transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;cursor:unset;outline:0;-webkit-text-decoration:none;text-decoration:none;border:0;padding:0;vertical-align:middle;box-sizing:border-box;background-color:transparent;border:1px solid #bdbdbd;font-size:0.74rem;font-weight:500;height:18px;vertical-align:text-bottom;color:#558b2f;}.css-khjoqs-MuiChip-root.Mui-disabled{opacity:0.38;pointer-events:none;}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:5px;margin-right:-6px;width:24px;height:24px;color:#616161;font-size:0.75rem;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorPrimary{color:#fff;background-color:#1565c0;}.css-khjoqs-MuiChip-root .MuiChip-avatarColorSecondary{color:#fff;background-color:#7b1fa2;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:4px;margin-right:-4px;width:18px;height:18px;font-size:0.625rem;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;margin-right:-4px;font-size:18px;color:#616161;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{-webkit-tap-highlight-color:transparent;color:rgba(0, 0, 0, 0.26);font-size:16px;cursor:pointer;margin:0 5px 0 -6px;margin-right:4px;margin-left:-4px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon:hover{color:rgba(0, 0, 0, 0.4);}.css-khjoqs-MuiChip-root.MuiChip-clickable:hover{background-color:rgba(0, 0, 0, 0.04);}.css-khjoqs-MuiChip-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}.css-khjoqs-MuiChip-root .MuiChip-avatar{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-avatarSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-icon{margin-left:4px;}.css-khjoqs-MuiChip-root .MuiChip-iconSmall{margin-left:2px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIcon{margin-right:5px;}.css-khjoqs-MuiChip-root .MuiChip-deleteIconSmall{margin-right:3px;}.css-khjoqs-MuiChip-root .MuiChip-labelSmall{padding:0 6px;}",
+              }
+            }
+            data-emotion="css khjoqs-MuiChip-root"
+          />
+          <div
+            className="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-outlinedDefault css-khjoqs-MuiChip-root"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+          >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-rrn746-MuiChip-label{overflow:hidden;text-overflow:ellipsis;padding-left:7px;padding-right:7px;white-space:nowrap;}",
+                }
+              }
+              data-emotion="css rrn746-MuiChip-label"
+            />
+            <span
+              className="MuiChip-label MuiChip-labelSmall css-rrn746-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <p
+        className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        title="Author"
       >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
-    <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          <span
-            className="MuiButton-label"
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         
+        John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <style
+          dangerouslySetInnerHTML={
+            {
+              "__html": ".css-edsu1d-MuiButtonGroup-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;border-radius:4px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-grouped{min-width:40px;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:transparent;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-firstButton:hover,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton:hover{border-right-color:currentColor;}.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-lastButton,.css-edsu1d-MuiButtonGroup-root .MuiButtonGroup-middleButton{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}",
+            }
+          }
+          data-emotion="css edsu1d-MuiButtonGroup-root"
+        />
+        <div
+          className="MuiButtonGroup-root MuiButtonGroup-outlined css-edsu1d-MuiButtonGroup-root"
+          role="group"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-10tjo1u-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-10tjo1u-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-10tjo1u-MuiButton-root:hover{background-color:transparent;}}.css-10tjo1u-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 10tjo1u-MuiButton-root"
+          />
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(25, 118, 210, 0.5);color:#1976d2;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1rwt2y5-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);border:1px solid #1976d2;}@media (hover: none){.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1rwt2y5-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Copy link"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
+            <style
+              dangerouslySetInnerHTML={
+                {
+                  "__html": ".css-i4bv87-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}",
+                }
+              }
+              data-emotion="css i4bv87-MuiSvgIcon-root"
+            />
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1465,39 +2299,49 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 1433tg5-MuiTooltip-popper"
           />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://foo.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Git"
-        >
-          <span
-            className="MuiButton-label"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}",
+              }
+            }
+            data-emotion="css 179vq5o-MuiPopper-root-MuiTooltip-popper"
+          />
+          <a
+            aria-label="View/edit on Git"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButtonGroup-middleButton css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            href="https://foo.com/xxx"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            rel="noopener"
+            tabIndex={0}
+            target="_blank"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1521,52 +2365,61 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
+          </a>
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1dexzz8-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(156, 39, 176, 0.5);color:#9c27b0;}.css-1dexzz8-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(156, 39, 176, 0.04);border:1px solid #9c27b0;}@media (hover: none){.css-1dexzz8-MuiButton-root:hover{background-color:transparent;}}.css-1dexzz8-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1dexzz8-MuiButton-root"
           />
-        </a>
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSecondary"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Edit locally"
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
+          <style
+            dangerouslySetInnerHTML={
+              {
+                "__html": ".css-1l9sosn-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:5px 15px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border:1px solid rgba(156, 39, 176, 0.5);color:#9c27b0;}.css-1l9sosn-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1l9sosn-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1l9sosn-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1l9sosn-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(156, 39, 176, 0.04);border:1px solid #9c27b0;}@media (hover: none){.css-1l9sosn-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1l9sosn-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);border:1px solid rgba(0, 0, 0, 0.12);}",
+              }
+            }
+            data-emotion="css 1l9sosn-MuiButtonBase-root-MuiButton-root"
+          />
+          <button
+            aria-label="Edit locally"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorSecondary MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorSecondary MuiButtonGroup-lastButton css-1l9sosn-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="EditIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
               <path
-                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"
               />
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

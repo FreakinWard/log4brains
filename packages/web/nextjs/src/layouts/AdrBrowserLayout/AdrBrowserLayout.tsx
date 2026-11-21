@@ -15,197 +15,207 @@ import {
   CircularProgress,
   Grow,
   Fade,
-  Hidden,
+  Box,
   IconButton
-} from "@material-ui/core";
-import { Menu as MenuIcon, Close as CloseIcon } from "@material-ui/icons";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+} from "@mui/material";
+import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
+
 // import {
 //   ChevronRight as ChevronRightIcon,
 //   PlaylistAddCheck as PlaylistAddCheckIcon
-// } from "@material-ui/icons";
+// } from "@mui/icons-material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { clsx } from "clsx";
+
 import { AdrMenu } from "./components/AdrMenu";
-import { CustomTheme } from "../../mui";
+import { styled, Theme } from "@mui/material/styles";
 import { ConnectedSearchBox } from "./components/ConnectedSearchBox/ConnectedSearchBox";
 import { AdrLight } from "../../lib-shared/types";
 import { AdrNav, AdrNavContext } from "../../contexts";
 import { RoutingProgress } from "./components/RoutingProgress";
 
-const drawerWidth = 380;
 const searchTransitionDuration = 300;
 
-const useStyles = makeStyles((theme: CustomTheme) => {
-  const topSpace = theme.spacing(6);
-  return createStyles({
-    root: {
-      display: "flex"
-    },
-    layoutLeftCol: {
-      flexGrow: 0.5,
-      [theme.breakpoints.down("md")]: {
-        display: "none"
-      }
-    },
-    layoutCenterCol: {
-      paddingLeft: theme.custom.layout.centerColPadding,
-      paddingRight: theme.custom.layout.centerColPadding,
-      flexGrow: 1,
-      [theme.breakpoints.up("md")]: {
-        flexGrow: 0,
-        flexShrink: 0,
-        flexBasis: theme.custom.layout.centerColBasis
-      }
-    },
-    layoutRightCol: {
-      flexGrow: 1,
-      flexBasis: theme.custom.layout.rightColBasis,
-      [theme.breakpoints.down("md")]: {
-        display: "none"
-      }
-    },
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1
-    },
-    appBarMenuButton: {
-      [theme.breakpoints.up("sm")]: {
-        display: "none"
-      }
-    },
-    appBarTitle: {
-      display: "none",
-      [theme.breakpoints.up("sm")]: {
-        display: "flex",
-        alignItems: "center",
-        width: drawerWidth - theme.spacing(3),
-        flexGrow: 0,
-        flexShrink: 0,
-        cursor: "pointer"
-      }
-    },
-    appBarTitleLink: {
-      display: "block",
-      color: "inherit",
-      "&:hover": {
-        color: "inherit"
-      },
-      marginLeft: theme.spacing(2)
-    },
-    searchBackdrop: {
-      zIndex: theme.zIndex.modal - 2
-    },
-    searchBox: {
-      zIndex: theme.zIndex.modal - 1,
-      width: "100%",
-      [theme.breakpoints.up("md")]: {
-        width: "70%"
-      },
-      transition: theme.transitions.create("width", {
-        duration: searchTransitionDuration
-      })
-    },
-    searchBoxOpen: {
-      width: "100%"
-    },
-    drawer: {
-      [theme.breakpoints.up("sm")]: {
-        width: drawerWidth,
-        flexShrink: 0
-      }
-    },
-    drawerPaper: {
-      width: drawerWidth
-    },
-    drawerContainer: {
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      [theme.breakpoints.up("sm")]: {
-        paddingTop: topSpace
-      }
-    },
-    drawerToolbar: {
-      visibility: "visible",
-      [theme.breakpoints.up("sm")]: {
-        visibility: "hidden"
-      },
-      justifyContent: "space-between"
-    },
-    adrMenu: {
-      flexGrow: 1,
-      flexShrink: 1,
-      overflow: "auto",
-      "&::-webkit-scrollbar": {
-        width: 6,
-        backgroundColor: theme.palette.background
-      },
-      "&::-webkit-scrollbar-thumb": {
-        borderRadius: 10,
-        "-webkit-box-shadow": "inset 0 0 2px rgba(0,0,0,.3)",
-        backgroundColor: theme.palette.grey[400]
-      }
-    },
-    bottomMenuList: {
-      flexGrow: 0,
-      flexShrink: 0
-    },
-    adlTitleAndSpinner: {
-      display: "flex",
-      justifyContent: "space-between",
-      paddingLeft: theme.spacing(2),
-      [theme.breakpoints.up("sm")]: {
-        paddingLeft: theme.spacing(3)
-      },
-      paddingBottom: theme.spacing(0.5),
-      paddingRight: theme.spacing(3)
-    },
-    adlTitle: {
-      fontWeight: Number(theme.typography.fontWeightBold)
-    },
-    adrMenuSpinner: {
-      alignSelf: "center",
-      marginTop: "30vh"
-    },
-    container: {
-      flexGrow: 1,
-      paddingTop: theme.spacing(2),
-      [theme.breakpoints.up("sm")]: {
-        paddingTop: topSpace
-      }
-    },
-    content: {
-      minHeight: `calc(100vh - 35px - ${
-        theme.spacing(1) + theme.spacing(8)
-      }px)`, // TODO: calc AppBar height more precisely
-      [theme.breakpoints.up("sm")]: {
-        minHeight: `calc(100vh - 35px - ${topSpace + theme.spacing(8)}px)` // TODO: calc AppBar height more precisely
-      }
-    },
-    footer: {
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[500],
-      height: 35,
-      display: "flex",
-      marginTop: theme.spacing(6)
-    },
-    footerText: {
-      fontSize: "0.77rem"
-    },
-    footerLink: {
-      color: theme.palette.grey[600],
-      fontSize: "0.8rem",
-      "&:hover": {
-        color: theme.palette.grey[800]
-      }
-    },
-    footerContent: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center"
-    }
-  });
+const topSpace = (theme: Theme) => theme.spacing(6);
+
+const Root = styled("div")({
+  display: "flex"
+});
+
+const LayoutLeftCol = styled("div")(({ theme }) => ({
+  flexGrow: 0.5,
+  [theme.breakpoints.down("lg")]: {
+    display: "none"
+  }
+}));
+
+const LayoutCenterCol = styled("div")(({ theme }) => ({
+  paddingLeft: `${theme.custom.layout.centerColPadding}px`,
+  paddingRight: `${theme.custom.layout.centerColPadding}px`,
+  flexGrow: 1,
+  [theme.breakpoints.up("md")]: {
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: `${theme.custom.layout.centerColBasis}px`
+  }
+}));
+
+const LayoutRightCol = styled("div")(({ theme }) => ({
+  flexGrow: 1,
+  flexBasis: `${theme.custom.layout.rightColBasis}px`,
+  [theme.breakpoints.down("lg")]: {
+    display: "none"
+  }
+}));
+
+const MenuButton = styled(IconButton)(({ theme }) => ({
+  [theme.breakpoints.up("sm")]: {
+    display: "none"
+  }
+}));
+
+const AppBarTitle = styled("div")(({ theme }) => ({
+  display: "none",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+    alignItems: "center",
+    width: `calc(${theme.custom.layout.drawerWidth}px - ${theme.spacing(3)})`,
+    flexGrow: 0,
+    flexShrink: 0,
+    cursor: "pointer"
+  }
+}));
+
+const AppBarTitleLink = styled(MuiLink)(({ theme }) => ({
+  display: "block",
+  color: "inherit",
+  "&:hover": {
+    color: "inherit"
+  },
+  marginLeft: theme.spacing(2)
+}));
+
+const SearchBackdrop = styled(Backdrop)(({ theme }) => ({
+  zIndex: theme.zIndex.modal - 2
+}));
+
+const LayoutSearchBox = styled(ConnectedSearchBox, {
+  shouldForwardProp: (prop) => prop !== "expanded"
+})<{ expanded: boolean }>(({ theme, expanded }) => ({
+  zIndex: theme.zIndex.modal - 1,
+  width: "100%",
+  [theme.breakpoints.up("md")]: {
+    width: expanded ? "100%" : "70%"
+  },
+  transition: theme.transitions.create("width", {
+    duration: searchTransitionDuration
+  })
+}));
+
+const DrawerNav = styled("nav")(({ theme }) => ({
+  [theme.breakpoints.up("sm")]: {
+    width: `${theme.custom.layout.drawerWidth}px`,
+    flexShrink: 0
+  }
+}));
+
+const DrawerContainer = styled("div")(({ theme }) => ({
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  [theme.breakpoints.up("sm")]: {
+    paddingTop: topSpace(theme)
+  }
+}));
+
+const DrawerToolbar = styled(Toolbar)(({ theme }) => ({
+  visibility: "visible",
+  [theme.breakpoints.up("sm")]: {
+    visibility: "hidden"
+  },
+  justifyContent: "space-between"
+}));
+
+const AdrMenuContainer = styled("div")(({ theme }) => ({
+  transformOrigin: "center left", // for the <Grow> transition
+  flexGrow: 1,
+  flexShrink: 1,
+  overflow: "auto",
+  "&::-webkit-scrollbar": {
+    width: "6px",
+    backgroundColor: theme.palette.background.default
+  },
+  "&::-webkit-scrollbar-thumb": {
+    borderRadius: "10px",
+    "-webkit-box-shadow": "inset 0 0 2px rgba(0,0,0,.3)",
+    backgroundColor: theme.palette.grey[400]
+  }
+}));
+
+const BottomMenuList = styled(List)({
+  flexGrow: 0,
+  flexShrink: 0
+});
+
+const AdlTitleAndSpinner = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  paddingLeft: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    paddingLeft: theme.spacing(3)
+  },
+  paddingBottom: theme.spacing(0.5),
+  paddingRight: theme.spacing(3)
+}));
+
+const AdrMenuSpinner = styled(CircularProgress)({
+  alignSelf: "center",
+  marginTop: "30vh"
+});
+
+const Container = styled("div")(({ theme }) => ({
+  flexGrow: 1,
+  paddingTop: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    paddingTop: topSpace(theme)
+  }
+}));
+
+const Content = styled("main")(({ theme }) => ({
+  minHeight: `calc(100vh - 35px - ${theme.spacing(1 + 8)})`, // TODO: calc AppBar height more precisely
+  [theme.breakpoints.up("sm")]: {
+    minHeight: `calc(100vh - 35px - ${topSpace(theme)} - ${theme.spacing(8)})` // TODO: calc AppBar height more precisely
+  }
+}));
+
+const Footer = styled("footer")(({ theme }) => ({
+  backgroundColor: theme.palette.grey[100],
+  color: theme.palette.grey[500],
+  height: "35px",
+  display: "flex",
+  marginTop: theme.spacing(6)
+}));
+
+const FooterContent = styled(LayoutCenterCol)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center"
+});
+
+const FooterText = styled(Typography)({
+  fontSize: "0.77rem"
+});
+
+const FooterLink = styled(MuiLink)(({ theme }) => ({
+  color: theme.palette.grey[600],
+  fontSize: "0.8rem",
+  "&:hover": {
+    color: theme.palette.grey[800]
+  }
+}));
+
+const FooterVersion = styled("span")({
+  fontSize: "0.8em"
 });
 
 function buildAdrNav(currentAdr: AdrLight, adrs: AdrLight[]): AdrNav {
@@ -246,7 +256,6 @@ export function AdrBrowserLayout({
   routing = false,
   l4bVersion
 }: AdrBrowserLayoutProps) {
-  const classes = useStyles();
   const router = useRouter();
 
   const [mobileDrawerOpen, setMobileDrawerOpen] = React.useState(false);
@@ -267,8 +276,8 @@ export function AdrBrowserLayout({
   const [searchReallyOpen, setSearchReallyOpenState] = React.useState(false);
 
   const drawer = (
-    <div className={classes.drawerContainer}>
-      <Toolbar className={classes.drawerToolbar}>
+    <DrawerContainer>
+      <DrawerToolbar>
         <div />
         <Link href="/" passHref>
           <IconButton
@@ -294,31 +303,28 @@ export function AdrBrowserLayout({
         >
           <CloseIcon fontSize="small" />
         </IconButton>
-      </Toolbar>
+      </DrawerToolbar>
 
-      <div className={classes.adlTitleAndSpinner}>
-        <Typography variant="subtitle2" className={classes.adlTitle}>
-          Decision log
-        </Typography>
+      <AdlTitleAndSpinner>
+        <Typography variant="subtitle2">Decision log</Typography>
 
         <Fade in={adrsReloading}>
           <CircularProgress size={13} />
         </Fade>
-      </div>
+      </AdlTitleAndSpinner>
 
-      <Grow in={adrs !== undefined} style={{ transformOrigin: "center left" }}>
-        <AdrMenu
-          adrs={adrs}
-          currentAdrSlug={currentAdr?.slug}
-          className={classes.adrMenu}
-        />
-      </Grow>
-
-      {adrs === undefined && (
-        <CircularProgress size={30} className={classes.adrMenuSpinner} />
+      {adrs !== undefined && (
+        // MUI v5 transitions need a child that holds a ref to a DOM element
+        <Grow in>
+          <AdrMenuContainer>
+            <AdrMenu adrs={adrs} currentAdrSlug={currentAdr?.slug} />
+          </AdrMenuContainer>
+        </Grow>
       )}
 
-      <List className={classes.bottomMenuList}>
+      {adrs === undefined && <AdrMenuSpinner size={30} />}
+
+      <BottomMenuList>
         {/* <Divider />
       <ListItem button>
         <ListItemIcon>
@@ -337,28 +343,27 @@ export function AdrBrowserLayout({
             <PlaylistAddCheckIcon />
           </ListItemIcon>
           <ListItemText primary="Decision backlog" />
-        </ListItem>
+              </ListItem>
       </Link> */}
-      </List>
-    </div>
+      </BottomMenuList>
+    </DrawerContainer>
   );
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+    <Root>
+      <AppBar position="fixed">
         {routing && <RoutingProgress />}
         <Toolbar>
-          <IconButton
+          <MenuButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleMobileDrawerToggle}
-            className={classes.appBarMenuButton}
           >
             <MenuIcon />
-          </IconButton>
+          </MenuButton>
           <Link href="/">
-            <div className={classes.appBarTitle}>
+            <AppBarTitle>
               <div>
                 <img
                   src={`${router?.basePath}/l4b-static/Log4brains-logo-dark.png`}
@@ -369,31 +374,23 @@ export function AdrBrowserLayout({
               </div>
               <div>
                 <Link href="/" passHref>
-                  <MuiLink
-                    variant="h6"
-                    noWrap
-                    className={classes.appBarTitleLink}
-                  >
+                  <AppBarTitleLink variant="h6" noWrap>
                     {projectName}
-                  </MuiLink>
+                  </AppBarTitleLink>
                 </Link>
                 <Link href="/" passHref>
-                  <MuiLink
-                    variant="body2"
-                    noWrap
-                    className={classes.appBarTitleLink}
-                  >
+                  <AppBarTitleLink variant="body2" noWrap>
                     Architecture knowledge base
-                  </MuiLink>
+                  </AppBarTitleLink>
                 </Link>
               </div>
-            </div>
+            </AppBarTitle>
           </Link>
-          <div className={classes.layoutLeftCol} />
-          <div className={clsx(classes.layoutCenterCol)}>
-            <Backdrop open={searchOpen} className={classes.searchBackdrop} />
+          <LayoutLeftCol />
+          <LayoutCenterCol>
+            <SearchBackdrop open={searchOpen} />
             <NoSsr>
-              <ConnectedSearchBox
+              <LayoutSearchBox
                 onOpen={() => {
                   setSearchOpenState(true);
                   // Delayed real opening because otherwise the dropdown width is bugged
@@ -407,79 +404,64 @@ export function AdrBrowserLayout({
                   setSearchReallyOpenState(false);
                 }}
                 open={searchReallyOpen}
-                className={clsx(classes.searchBox, {
-                  [classes.searchBoxOpen]: searchOpen
-                })}
+                expanded={searchOpen}
               />
             </NoSsr>
-          </div>
-          <div className={classes.layoutRightCol} />
+          </LayoutCenterCol>
+          <LayoutRightCol />
         </Toolbar>
       </AppBar>
 
-      <nav
-        className={classes.drawer}
-        aria-label="architecture decision records list"
-      >
-        <Hidden smUp implementation="css">
+      <DrawerNav aria-label="architecture decision records list">
+        <Box sx={{ display: { sm: "none" } }}>
           <Drawer
             variant="temporary"
             anchor="left"
             open={mobileDrawerOpen}
             onClose={handleMobileDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper
-            }}
             ModalProps={{
               keepMounted: true // Better open performance on mobile.
             }}
           >
             {drawer}
           </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            variant="permanent"
-            open
-            classes={{
-              paper: classes.drawerPaper
-            }}
-          >
+        </Box>
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Drawer variant="permanent" open>
             {drawer}
           </Drawer>
-        </Hidden>
-      </nav>
+        </Box>
+      </DrawerNav>
 
-      <div className={classes.container}>
+      <Container>
         <Toolbar />
-        <main className={classes.content}>
+        <Content>
           <AdrNavContext.Provider
             value={currentAdr && adrs ? buildAdrNav(currentAdr, adrs) : {}}
           >
             {children}
           </AdrNavContext.Provider>
-        </main>
-        <footer className={classes.footer}>
-          <div className={classes.layoutLeftCol} />
-          <div className={clsx(classes.layoutCenterCol, classes.footerContent)}>
-            <Typography className={classes.footerText}>
+        </Content>
+        <Footer>
+          <LayoutLeftCol />
+          <FooterContent>
+            <FooterText>
               Powered by{" "}
-              <MuiLink
+              <FooterLink
                 href="https://github.com/thomvaill/log4brains"
-                className={classes.footerLink}
                 target="_blank"
                 rel="noopener"
               >
                 Log4brains
-              </MuiLink>{" "}
-              <span style={{ fontSize: "0.8em" }}>
+              </FooterLink>{" "}
+              <FooterVersion>
                 {l4bVersion ? `(v${l4bVersion})` : null}
-              </span>
-            </Typography>
-          </div>
-          <div className={classes.layoutRightCol} />
-        </footer>
-      </div>
-    </div>
+              </FooterVersion>
+            </FooterText>
+          </FooterContent>
+          <LayoutRightCol />
+        </Footer>
+      </Container>
+    </Root>
   );
 }

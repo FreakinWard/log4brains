@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
@@ -20,12 +20,6 @@ type AppPropsWithLayout<P = Record<string, unknown>> = AppProps<P> & {
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Remove the server-side injected CSS (@see https://github.com/mui-org/material-ui/blob/master/examples/nextjs/pages/_app.js)
-  useEffect(() => {
-    const jssStyles = document.querySelector("#jss-server-side");
-    jssStyles?.parentElement?.removeChild(jssStyles);
-  });
-
   // Persistent Layout Pattern (https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/)
   const getLayout = Component.getLayout || ((page) => page);
   // Next.js types `pageProps` as `any`: narrow it to the props type this app actually uses

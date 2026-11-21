@@ -1,26 +1,18 @@
 import React from "react";
 import { AdrDtoStatus } from "@log4brains/core";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { Link as MuiLink } from "@material-ui/core";
+import { Link as MuiLink } from "@mui/material";
 import Link from "next/link";
-import { clsx } from "clsx";
+import { styled } from "@mui/material/styles";
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    // TODO: refactor with AdrMenu.tsx
-    draftLink: {},
-    proposedLink: {},
-    acceptedLink: {},
-    rejectedLink: {
-      textDecoration: "line-through"
-    },
-    deprecatedLink: {
-      textDecoration: "line-through"
-    },
-    supersededLink: {
-      textDecoration: "line-through"
-    }
-  })
+const struckStatuses: AdrDtoStatus[] = ["rejected", "deprecated", "superseded"];
+
+/**
+ * Link to an ADR, struck through when the ADR is no longer active.
+ */
+export const AdrStatusLink = styled(MuiLink, {
+  shouldForwardProp: (prop) => prop !== "status"
+})<{ status: AdrDtoStatus }>(({ status }) =>
+  struckStatuses.includes(status) ? { textDecoration: "line-through" } : {}
 );
 
 type AdrLinkProps = {
@@ -33,17 +25,11 @@ type AdrLinkProps = {
 };
 
 export function AdrLink({ slug, status, title, customLabel }: AdrLinkProps) {
-  const classes = useStyles();
-
   return (
     <Link href={`/adr/${slug}`} passHref>
-      <MuiLink
-        className={clsx({
-          [classes[`${status}Link`]]: true
-        })}
-      >
+      <AdrStatusLink status={status}>
         {customLabel || title || "Untitled"}
-      </MuiLink>
+      </AdrStatusLink>
     </Link>
   );
 }

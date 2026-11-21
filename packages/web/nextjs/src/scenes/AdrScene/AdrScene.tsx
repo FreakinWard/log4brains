@@ -1,22 +1,22 @@
 import React from "react";
 import moment from "moment";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+
 import {
   Typography,
   Button,
   Divider,
   Tooltip,
   Link as MuiLink,
-  Hidden
-} from "@material-ui/core";
+  Box,
+  Alert
+} from "@mui/material";
 import {
   ArrowBack as ArrowBackIcon,
   ArrowForward as ArrowForwardIcon
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import Head from "next/head";
 import Link from "next/link";
-import { Alert } from "@material-ui/lab";
-import { CustomTheme } from "../../mui";
+import { styled } from "@mui/material/styles";
 import { Markdown, MarkdownToc, TwoColContent } from "../../components";
 // eslint-disable-next-line import/no-cycle
 import { ConnectedAdrBrowserLayout } from "../../layouts";
@@ -29,31 +29,30 @@ import {
 import { Adr } from "../../lib-shared/types";
 import { buildAdrUrl } from "../../lib/adr-utils";
 
-const useStyles = makeStyles((theme: CustomTheme) =>
-  createStyles({
-    header: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(4)
-    },
-    alert: {
-      marginBottom: theme.spacing(3)
-    },
-    bottomNavDivider: {
-      marginTop: theme.spacing(12)
-    },
-    bottomNav: {
-      display: "flex",
-      justifyContent: "space-between",
-      marginTop: theme.spacing(1)
-    },
-    bottomInfo: {},
-    bottomInfoText: {
-      fontSize: "0.77rem",
-      textAlign: "center",
-      color: theme.palette.grey[600]
-    }
-  })
-);
+const Header = styled(AdrHeader)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+  marginBottom: theme.spacing(4)
+}));
+
+const StatusAlert = styled(Alert)(({ theme }) => ({
+  marginBottom: theme.spacing(3)
+}));
+
+const BottomNavDivider = styled(Divider)(({ theme }) => ({
+  marginTop: theme.spacing(12)
+}));
+
+const BottomNav = styled("nav")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  marginTop: theme.spacing(1)
+}));
+
+const BottomInfoText = styled(Typography)(({ theme }) => ({
+  fontSize: "0.77rem",
+  textAlign: "center",
+  color: theme.palette.grey[600]
+}));
 
 export type AdrSceneProps = {
   projectName: string;
@@ -68,8 +67,6 @@ export type AdrScenePageProps = AdrSceneProps & {
 };
 
 export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
-  const classes = useStyles();
-
   const mode = React.useContext(Log4brainsModeContext);
   const adrNav = React.useContext(AdrNavContext);
 
@@ -84,7 +81,7 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
   let alert;
   if (currentAdr.status === "superseded") {
     alert = (
-      <Alert severity="warning" className={classes.alert}>
+      <StatusAlert severity="warning">
         This ADR is <strong>superseded</strong>
         {currentAdr.supersededBy ? (
           <>
@@ -95,19 +92,19 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
           </>
         ) : null}
         .
-      </Alert>
+      </StatusAlert>
     );
   } else if (currentAdr.status === "deprecated") {
     alert = (
-      <Alert severity="warning" className={classes.alert}>
+      <StatusAlert severity="warning">
         This ADR is <strong>deprecated</strong>.
-      </Alert>
+      </StatusAlert>
     );
   } else if (currentAdr.status === "rejected") {
     alert = (
-      <Alert severity="error" className={classes.alert}>
+      <StatusAlert severity="error">
         This ADR was <strong>rejected</strong>.
-      </Alert>
+      </StatusAlert>
     );
   }
 
@@ -126,9 +123,8 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
           {currentAdr.title || "Untitled"}
         </Typography>
         <Divider />
-        <AdrHeader
+        <Header
           adr={currentAdr}
-          className={classes.header}
           locallyEditable={mode === Log4brainsMode.preview}
         />
 
@@ -138,9 +134,9 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
           {currentAdr.body.enhancedMdx}
         </Markdown>
 
-        <Divider className={classes.bottomNavDivider} />
+        <BottomNavDivider />
 
-        <nav className={classes.bottomNav}>
+        <BottomNav>
           {adrNav.previousAdr ? (
             <Link href={buildAdrUrl(adrNav.previousAdr)} passHref>
               <Tooltip
@@ -148,9 +144,9 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
                 aria-label="previous"
               >
                 <Button startIcon={<ArrowBackIcon />}>
-                  <Hidden xsDown implementation="css">
+                  <Box sx={{ display: { xs: "none", sm: "block" } }}>
                     Previous
-                  </Hidden>
+                  </Box>
                 </Button>
               </Tooltip>
             </Link>
@@ -158,28 +154,26 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
             <div />
           )}
 
-          <div className={classes.bottomInfo}>
-            <Typography className={classes.bottomInfoText}>
+          <div>
+            <BottomInfoText>
               Last edited by {currentAdr.lastEditAuthor}
-            </Typography>
-            <Typography className={classes.bottomInfoText}>
+            </BottomInfoText>
+            <BottomInfoText>
               on {moment(currentAdr.lastEditDate).format("lll")}
-            </Typography>
+            </BottomInfoText>
           </div>
           {adrNav.nextAdr ? (
             <Link href={buildAdrUrl(adrNav.nextAdr)} passHref>
               <Tooltip title={adrNav.nextAdr.title || ""} aria-label="next">
                 <Button endIcon={<ArrowForwardIcon />}>
-                  <Hidden xsDown implementation="css">
-                    Next
-                  </Hidden>
+                  <Box sx={{ display: { xs: "none", sm: "block" } }}>Next</Box>
                 </Button>
               </Tooltip>
             </Link>
           ) : (
             <div />
           )}
-        </nav>
+        </BottomNav>
       </TwoColContent>
     </>
   );
