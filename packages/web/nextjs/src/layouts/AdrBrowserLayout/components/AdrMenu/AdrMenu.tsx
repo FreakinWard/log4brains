@@ -28,7 +28,7 @@ import {
   Add as AddIcon
 } from "@material-ui/icons";
 import Link from "next/link";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { Log4brainsMode, Log4brainsModeContext } from "../../../../contexts";
 import { AdrStatusChip } from "../../../../components";
 import { AdrLight } from "../../../../lib-shared/types";

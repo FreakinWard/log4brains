@@ -8,6 +8,7 @@
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noEmit": true // builds go through tsup/Next.js; prevents stray tsc runs from writing .js next to sources
   }
 }

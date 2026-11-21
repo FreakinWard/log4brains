@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Link as MuiLink, Typography } from "@material-ui/core";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import {
   Toc as TocModel,
   TocBuilder as TocModelBuilder
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     title: {
-      fontWeight: theme.typography.fontWeightBold,
+      fontWeight: Number(theme.typography.fontWeightBold),
       paddingBottom: theme.spacing(1)
     },
     tocUl: {

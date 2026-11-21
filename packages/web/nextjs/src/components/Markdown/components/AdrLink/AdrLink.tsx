@@ -3,7 +3,7 @@ import { AdrDtoStatus } from "@log4brains/core";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Link as MuiLink } from "@material-ui/core";
 import Link from "next/link";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 const useStyles = makeStyles(() =>
   createStyles({

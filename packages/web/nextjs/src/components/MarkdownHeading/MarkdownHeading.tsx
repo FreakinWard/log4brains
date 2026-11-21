@@ -5,7 +5,7 @@ import {
   TypographyClassKey,
   Link as MuiLink
 } from "@material-ui/core";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

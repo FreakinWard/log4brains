@@ -1,5 +1,5 @@
 import {
-  createMuiTheme,
+  createTheme,
   darken,
   Theme,
   responsiveFontSizes
@@ -21,7 +21,7 @@ const titleFontFamily = '"Roboto Slab", "Noto Serif", "Times New Roman", serif';
 
 export const theme: CustomTheme = {
   ...responsiveFontSizes(
-    createMuiTheme({
+    createTheme({
       palette: {
         primary: {
           main: primary

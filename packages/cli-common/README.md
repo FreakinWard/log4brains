@@ -16,5 +16,5 @@ npm install -g log4brains
 ## Development
 
 ```bash
-yarn dev:test
+npm run dev:test
 ```

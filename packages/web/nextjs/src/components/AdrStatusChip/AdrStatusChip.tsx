@@ -9,14 +9,14 @@ import {
 } from "@material-ui/core/colors";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import type { AdrDtoStatus } from "@log4brains/core";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 // Styles are inspired by the MUI "Badge" styles
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       fontSize: "0.74rem",
-      fontWeight: theme.typography.fontWeightMedium,
+      fontWeight: Number(theme.typography.fontWeightMedium),
       height: "18px",
       verticalAlign: "text-bottom"
     },

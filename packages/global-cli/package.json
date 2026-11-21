@@ -46,9 +46,9 @@
     "clean": "rimraf ./dist",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",
-    "prepublishOnly": "cp ../../README.md . && yarn build",
-    "link": "yarn link",
-    "unlink": "yarn unlink"
+    "prepublishOnly": "cp ../../README.md . && npm run build",
+    "link": "npm link",
+    "unlink": "npm unlink"
   },
   "dependencies": {
     "@log4brains/cli": "1.1.0",

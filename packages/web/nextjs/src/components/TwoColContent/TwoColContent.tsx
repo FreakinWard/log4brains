@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { CustomTheme } from "../../mui";
 
 const useStyles = makeStyles((theme: CustomTheme) =>

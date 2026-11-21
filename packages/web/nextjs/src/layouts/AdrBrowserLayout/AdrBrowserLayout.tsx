@@ -26,7 +26,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 // } from "@material-ui/icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { AdrMenu } from "./components/AdrMenu";
 import { CustomTheme } from "../../mui";
 import { ConnectedSearchBox } from "./components/ConnectedSearchBox/ConnectedSearchBox";
@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme: CustomTheme) => {
       paddingRight: theme.spacing(3)
     },
     adlTitle: {
-      fontWeight: theme.typography.fontWeightBold
+      fontWeight: Number(theme.typography.fontWeightBold)
     },
     adrMenuSpinner: {
       alignSelf: "center",
