@@ -13,6 +13,8 @@ module.exports = {
     "**/*.js",
     "**/*.d.ts",
     "**/*.stories.tsx", // temporary disabled
+    "tsup.config.ts",
+    "tsup.config.base.ts",
     "dist",
     "node_modules"
   ],

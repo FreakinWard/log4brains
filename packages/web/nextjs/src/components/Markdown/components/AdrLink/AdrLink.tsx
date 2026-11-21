@@ -39,7 +39,7 @@ export function AdrLink({ slug, status, title, customLabel }: AdrLinkProps) {
     <Link href={`/adr/${slug}`} passHref>
       <MuiLink
         className={clsx({
-          [classes[`${status}Link` as keyof typeof classes]]: true
+          [classes[`${status}Link`]]: true
         })}
       >
         {customLabel || title || "Untitled"}
