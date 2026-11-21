@@ -8,3 +8,4 @@ dist/
 CHANGELOG.md
 /lerna.json
 .claude/
+packages/core/docs/typedoc/

@@ -1,6 +1,6 @@
 import path from "path";
 import { globbySync } from "globby";
-import rimraf from "rimraf";
+import { rmSync } from "fs";
 import moment from "moment";
 import { Log4brains } from "../src/infrastructure/api";
 import { forceUnixPath } from "../src/lib/paths";
@@ -11,7 +11,7 @@ function clean(): void {
   globbySync([
     `${PROJECT_PATH}/**/*.md`,
     `!${PROJECT_PATH}/**/template.md`
-  ]).forEach((fileToClean) => rimraf.sync(fileToClean));
+  ]).forEach((fileToClean) => rmSync(fileToClean, { force: true }));
 }
 
 describe("E2E tests / RW", () => {
