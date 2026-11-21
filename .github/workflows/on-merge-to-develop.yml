@@ -19,6 +19,11 @@ jobs:
   quality-checks:
     uses: ./.github/workflows/reusable-quality-checks.yml
 
+  sonarcloud:
+    uses: ./.github/workflows/reusable-sonarcloud.yml
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   load-nodejs-supported-versions:
     uses: ./.github/workflows/reusable-load-nodejs-supported-versions.yml
 
