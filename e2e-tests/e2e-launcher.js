@@ -1,10 +1,9 @@
-const execa = require("execa");
-const rimraf = require("rimraf");
-const os = require("os");
-const path = require("path");
-const fs = require("fs");
-const chalk = require("chalk");
-const { expect } = require("chai");
+import { execa } from "execa";
+import os from "os";
+import path from "path";
+import fs from "fs";
+import chalk from "chalk";
+import { expect } from "chai";
 
 const fsP = fs.promises;
 
@@ -17,15 +16,13 @@ async function usingTempDir(fn) {
   try {
     return await fn(folder);
   } finally {
-    rimraf.sync(folder);
+    fs.rmSync(folder, { recursive: true, force: true });
   }
 }
 
-async function run(file, arguments, cwd) {
-  console.log(
-    chalk.bold(`${chalk.green("RUN")} ${file} ${arguments.join(" ")}`)
-  );
-  const childProcess = execa(file, arguments, { cwd });
+async function run(file, args, cwd) {
+  console.log(chalk.bold(`${chalk.green("RUN")} ${file} ${args.join(" ")}`));
+  const childProcess = execa(file, args, { cwd });
   childProcess.stdout.pipe(process.stdout);
   childProcess.stderr.pipe(process.stderr);
   return await childProcess;
