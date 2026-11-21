@@ -95,7 +95,9 @@ export function Markdown({ children, onCompiled }: MarkdownProps) {
       rootRef.current
         ?.querySelectorAll<HTMLElement>("pre code")
         .forEach((block) => {
-          hljs.highlightBlock(block);
+          // Hot Reload re-renders the same elements: highlight.js 11 skips the ones it already highlighted
+          block.removeAttribute("data-highlighted");
+          hljs.highlightElement(block);
         });
     }
   }, [children, renderedMarkdown]);
