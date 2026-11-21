@@ -1,5 +1,5 @@
 import React from "react";
-import { compiler as mdCompiler } from "markdown-to-jsx";
+import { compiler as mdCompiler } from "markdown-to-jsx/react";
 import { render } from "@testing-library/react";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { MarkdownToc } from "./MarkdownToc";
