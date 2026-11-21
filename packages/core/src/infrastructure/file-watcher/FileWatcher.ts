@@ -2,8 +2,19 @@ import { Log4brainsError } from "@src/domain";
 import chokidar, { FSWatcher } from "chokidar";
 import { Log4brainsConfig } from "../config";
 
-export type FileWatcherEventType =
-  "add" | "addDir" | "change" | "unlink" | "unlinkDir";
+const fileWatcherEventTypes = [
+  "add",
+  "addDir",
+  "change",
+  "unlink",
+  "unlinkDir"
+] as const;
+
+export type FileWatcherEventType = (typeof fileWatcherEventTypes)[number];
+
+function isFileWatcherEventType(event: string): event is FileWatcherEventType {
+  return (fileWatcherEventTypes as readonly string[]).includes(event);
+}
 
 export type FileWatcherEvent = {
   type: FileWatcherEventType;
@@ -56,10 +67,12 @@ export class FileWatcher {
     this.chokidar = chokidar
       .watch(paths, {
         ignoreInitial: true,
-        cwd: this.workdir,
-        disableGlobbing: true
+        cwd: this.workdir // the paths are never globs since chokidar 4
       })
       .on("all", (event, filePath) => {
+        if (!isFileWatcherEventType(event)) {
+          return;
+        }
         this.observers.forEach((observer) =>
           observer({
             type: event,

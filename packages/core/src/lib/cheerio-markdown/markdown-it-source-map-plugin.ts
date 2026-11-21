@@ -1,4 +1,4 @@
-import MarkdownIt from "markdown-it";
+import type { MarkdownIt } from "markdown-it";
 
 // Source: https://github.com/tylingsoft/markdown-it-source-map
 // Thanks! ;)

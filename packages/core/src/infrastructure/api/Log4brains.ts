@@ -1,6 +1,5 @@
 import { AwilixContainer } from "awilix";
 import { buildContainer } from "@src/infrastructure/di";
-import open from "open";
 import launchEditor from "launch-editor";
 import { Adr, AdrSlug, AdrStatus, PackageRef } from "@src/adr/domain";
 import {
@@ -188,6 +187,8 @@ export class Log4brains {
     }
 
     launchEditor(file.path.absolutePath, undefined, async () => {
+      // Loaded on demand: only needed when no editor is found
+      const { default: open } = await import("open");
       await open(file.path.absolutePath);
       if (onImpossibleToGuess) {
         onImpossibleToGuess();
