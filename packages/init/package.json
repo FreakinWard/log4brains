@@ -49,13 +49,13 @@
     "chalk": "^6.0.1",
     "commander": "^15.1.0",
     "execa": "^10.2.1",
-    "moment-timezone": "^0.5.32",
+    "moment-timezone": "^0.6.6",
     "terminal-link": "^5.0.0",
-    "yaml": "^1.10.0"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@types/edit-json-file": "^1.4.0",
     "esm": "^3.2.25",
-    "ts-node": "^9.0.0"
+    "ts-node": "^10.9.2"
   }
 }
