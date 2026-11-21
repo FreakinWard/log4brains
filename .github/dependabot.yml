@@ -21,8 +21,6 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "@mui/*"
         update-types: ["version-update:semver-major"]
-      - dependency-name: "socket.io*"
-        update-types: ["version-update:semver-major"]
       - dependency-name: "markdown-to-jsx"
         update-types: ["version-update:semver-major"]
 

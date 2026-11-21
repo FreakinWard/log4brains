@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "types": ["node", "socket.io-client"], // TypeScript 6 no longer includes every @types package by default
+    "types": ["node"], // TypeScript 6 no longer includes every @types package by default
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
