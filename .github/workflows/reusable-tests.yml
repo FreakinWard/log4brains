@@ -28,6 +28,9 @@ jobs:
   tests:
     runs-on: ${{ inputs.os }}
     continue-on-error: ${{ inputs.experimental }}
+    env:
+      # .npmrc sets engine-strict=true; best-effort jobs test upcoming Node versions outside the supported range
+      npm_config_engine_strict: ${{ !inputs.experimental }}
     steps:
       - uses: actions/checkout@v7
         with:
