@@ -8,6 +8,5 @@ module.exports = {
   displayName: packageJson.name,
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/"
-  }),
-  setupFiles: ["<rootDir>/src/polyfills.ts"]
+  })
 };
