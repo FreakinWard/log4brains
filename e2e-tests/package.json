@@ -2,10 +2,10 @@
   "name": "e2e-tests",
   "description": "Log4brains E2E tests sub-package",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chalk": "^4.1.0",
-    "execa": "^4.1.0",
-    "rimraf": "^3.0.2"
+    "chai": "^6.3.0",
+    "chalk": "^6.0.1",
+    "execa": "^10.2.1"
   }
 }
