@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories:
+      - "/"
+      - "/e2e-tests"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      # One PR per week for all non-breaking updates
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      # Held back until the web rewrite (MAINTENANCE_PLAN.md, phase 6)
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react"
+      - dependency-name: "@material-ui/*"
+      - dependency-name: "socket.io*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "markdown-to-jsx"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
