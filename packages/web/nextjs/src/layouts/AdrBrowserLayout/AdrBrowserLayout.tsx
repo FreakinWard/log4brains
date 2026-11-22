@@ -148,7 +148,7 @@ const AdrMenuContainer = styled("div")(({ theme }) => ({
   },
   "&::-webkit-scrollbar-thumb": {
     borderRadius: "10px",
-    "-webkit-box-shadow": "inset 0 0 2px rgba(0,0,0,.3)",
+    WebkitBoxShadow: "inset 0 0 2px rgba(0,0,0,.3)",
     backgroundColor: theme.palette.grey[400]
   }
 }));
