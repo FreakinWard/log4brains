@@ -1,0 +1,53 @@
+name: Local npm registry
+description: >
+  Dry runs only. Starts a throwaway npm registry (Verdaccio) on localhost:4873 that proxies npmjs.org,
+  publishes this run's packages to it, and points npm at it for the rest of the job, so
+  `npm install -g @awarded/log4brains@<version>` installs exactly what a real publish would ship.
+inputs:
+  artifact:
+    description: Name of the run artifact that holds the packed .tgz files
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/download-artifact@v8
+      with:
+        name: ${{ inputs.artifact }}
+        path: ${{ runner.temp }}/local-registry-packages
+
+    - name: Start the registry and publish the packages
+      shell: bash
+      run: |
+        dir="$RUNNER_TEMP/verdaccio"
+        mkdir -p "$dir"
+        cat > "$dir/config.yaml" <<'EOF'
+        storage: ./storage
+        auth:
+          htpasswd:
+            file: ./htpasswd
+        uplinks:
+          npmjs:
+            url: https://registry.npmjs.org/
+        packages:
+          "@awarded/*":
+            access: $all
+            publish: $authenticated
+          "**":
+            access: $all
+            proxy: npmjs
+        log: { type: stdout, format: pretty, level: warn }
+        EOF
+        npx --yes verdaccio@6 --config "$dir/config.yaml" --listen 4873 > "$dir/verdaccio.log" 2>&1 &
+        for _ in $(seq 1 60); do curl -sf http://localhost:4873/-/ping > /dev/null && break; sleep 2; done
+
+        registry=http://localhost:4873/
+        token=$(curl -sf -X PUT http://localhost:4873/-/user/org.couchdb.user:ci \
+          -H 'content-type: application/json' -d '{"name":"ci","password":"local-only"}' \
+          | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>console.log(JSON.parse(d).token))")
+        npm config set //localhost:4873/:_authToken "$token"
+        cd "$RUNNER_TEMP/local-registry-packages"
+        for tgz in *.tgz; do
+          # "./" so npm reads a local file, not a GitHub shorthand
+          npm publish "./$tgz" --registry "$registry" --tag dry-run --access public
+        done
+        echo "NPM_CONFIG_REGISTRY=$registry" >> "$GITHUB_ENV"

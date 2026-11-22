@@ -1,0 +1,160 @@
+# Stage: Build. Validate (unit tests + local e2e on every supported OS/Node) and Build run in parallel;
+# the next stage starts only when both pass. Build produces the one set of packages Beta publishes.
+on:
+  workflow_call:
+    outputs:
+      stable:
+        description: Version the Release stage publishes to npm "latest"
+        value: ${{ jobs.build.outputs.stable }}
+      beta:
+        description: Version the Beta stage publishes to npm "beta"
+        value: ${{ jobs.build.outputs.beta }}
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    name: Node ${{ matrix.label }} · ${{ matrix.os }}
+    runs-on: ${{ matrix.runner }}
+    continue-on-error: ${{ matrix.experimental }}
+    env:
+      # .npmrc sets engine-strict=true; best-effort jobs test upcoming Node versions outside the supported range
+      npm_config_engine_strict: ${{ !matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # Supported versions on Linux (keep in sync with .github/supported_nodejs_versions.json),
+        # the current LTS (.nvmrc) on macOS and Windows, and the newest Node release as best effort.
+        include:
+          - os: linux
+            runner: ubuntu-latest
+            node: 22.x
+            label: "22"
+            experimental: false
+          - os: linux
+            runner: ubuntu-latest
+            node: 24.x
+            label: "24"
+            experimental: false
+          - os: linux
+            runner: ubuntu-latest
+            node: 26.x
+            label: "26"
+            experimental: false
+          - os: mac
+            runner: macos-latest
+            node: ""
+            label: LTS
+            experimental: false
+          - os: win
+            runner: windows-latest
+            node: ""
+            label: LTS
+            experimental: false
+          - os: linux
+            runner: ubuntu-latest
+            node: current
+            label: current
+            experimental: true
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # Jest snapshot tests need the git history
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          node-version-file: ${{ matrix.node == '' && '.nvmrc' || '' }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      # init's integration tests use the built cli and core packages
+      - run: npm run build
+      - run: npm test
+      - name: E2E tests (local build)
+        run: |
+          npm run link-cli
+          # npm's global bin directory: <prefix>/bin, except on Windows where it is <prefix>
+          echo "$(npm prefix -g)$([ "$RUNNER_OS" = "Windows" ] || echo /bin)" >> "$GITHUB_PATH"
+          # Production-like install: no devDependencies and no lockfile, like `npm install -g` for users
+          rm -rf node_modules
+          npm install --omit=dev --no-package-lock --no-audit --no-fund
+          npm run e2e
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    outputs:
+      stable: ${{ steps.version.outputs.stable }}
+      beta: ${{ steps.version.outputs.beta }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # tags for the version, history for SonarCloud
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc # current LTS
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Compute versions
+        id: version
+        run: |
+          versions="$(.github/scripts/release-version.sh)"
+          echo "$versions" | tee -a "$GITHUB_OUTPUT"
+          beta="$(sed -n 's/^beta=//p' <<< "$versions")"
+          stable="$(sed -n 's/^stable=//p' <<< "$versions")"
+          echo "### Version \`$beta\` (stable \`$stable\`)" >> "$GITHUB_STEP_SUMMARY"
+
+      - run: npm ci
+      - name: Format and lint
+        run: |
+          npm run format
+          npm run lint
+
+      # Set before building: the web build embeds the version, which the preview UI shows
+      - name: Stamp the beta version on every package
+        run: npx lerna version "${{ steps.version.outputs.beta }}" --exact --force-publish --no-git-tag-version --no-push --yes --allow-branch "$GITHUB_REF_NAME"
+      - run: npm run build
+      - name: Build Storybook
+        run: npm run build-storybook -w packages/web
+
+      # Coverage (lcov) and test execution (jest-sonar.xml) reports, see sonar-project.properties
+      - name: Unit tests with coverage
+        env:
+          JEST_SONAR_OUTPUT_DIR: coverage
+        run: |
+          reporters=(--reporters=default --reporters=@casualbot/jest-sonar-reporter)
+          npm test -w packages/core -- --coverage --coverageReporters=lcov "${reporters[@]}"
+          npm test -w packages/web -- --coverage --coverageReporters=lcov "${reporters[@]}"
+      # Versioned with the stable version, so SonarCloud's "previous version" new-code period spans a release
+      - uses: SonarSource/sonarqube-scan-action@59202af334b4ba7b5db01b701b8e79f8b3bef0f4 # v8.5.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: -Dsonar.projectVersion=${{ steps.version.outputs.stable }}
+      # A failed quality gate is a warning (annotation + job summary), never a failed check
+      - name: SonarCloud quality gate
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: .github/scripts/sonarcloud-quality-gate.sh
+
+      - name: Pack
+        run: |
+          cp README.md packages/global-cli/ # done by prepublishOnly, which npm pack doesn't run
+          mkdir -p dist
+          npm pack --workspaces --pack-destination dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: packages
+          path: dist/*.tgz
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v7
+        with:
+          name: storybook
+          path: packages/web/nextjs/storybook-static
+          if-no-files-found: error
