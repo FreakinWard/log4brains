@@ -7,6 +7,10 @@
 /** @type {import('@storybook/nextjs').StorybookConfig} */
 module.exports = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  // Serve the Next.js public/ directory so stories resolve the same root-relative
+  // assets as the app (favicon.ico, l4b-static/*). Without it the preview iframe's
+  // automatic /favicon.ico request 404s and shows up as a console error.
+  staticDirs: ["../public"],
   framework: {
     name: "@storybook/nextjs",
     options: {}

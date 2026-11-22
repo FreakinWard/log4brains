@@ -8,6 +8,14 @@ import "../src/components/Markdown/hljs.css";
 
 /** @type {import('@storybook/nextjs').Preview} */
 const preview = {
+  parameters: {
+    // Match production Next.js, where basePath is "" by default. The @storybook/nextjs
+    // mock router otherwise defaults basePath to "/", turning `${basePath}/l4b-static/x`
+    // into a protocol-relative `//l4b-static/x` that resolves to a bogus host.
+    nextjs: {
+      router: { basePath: "" }
+    }
+  },
   decorators: [
     (Story) => (
       <MuiDecorator>
