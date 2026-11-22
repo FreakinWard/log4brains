@@ -1,30 +1,22 @@
-import React from "react";
-import { Meta, Story } from "@storybook/react";
-import { AdrStatusChip, AdrStatusChipProps } from "./AdrStatusChip";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { AdrStatusChip } from "./AdrStatusChip";
 
-const Template: Story<AdrStatusChipProps> = (args) => (
-  <AdrStatusChip {...args} />
-);
-
-export default {
+const meta: Meta<typeof AdrStatusChip> = {
   title: "AdrStatusChip",
   component: AdrStatusChip
-} as Meta;
+};
+export default meta;
 
-export const Draft = Template.bind({});
-Draft.args = { status: "draft" };
+type Story = StoryObj<typeof AdrStatusChip>;
 
-export const Proposed = Template.bind({});
-Proposed.args = { status: "proposed" };
+export const Draft: Story = { args: { status: "draft" } };
 
-export const Rejected = Template.bind({});
-Rejected.args = { status: "rejected" };
+export const Proposed: Story = { args: { status: "proposed" } };
 
-export const Accepted = Template.bind({});
-Accepted.args = { status: "accepted" };
+export const Rejected: Story = { args: { status: "rejected" } };
 
-export const Deprecated = Template.bind({});
-Deprecated.args = { status: "deprecated" };
+export const Accepted: Story = { args: { status: "accepted" } };
 
-export const Superseded = Template.bind({});
-Superseded.args = { status: "superseded" };
+export const Deprecated: Story = { args: { status: "deprecated" } };
+
+export const Superseded: Story = { args: { status: "superseded" } };

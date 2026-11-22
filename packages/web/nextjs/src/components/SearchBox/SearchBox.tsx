@@ -170,8 +170,8 @@ export function SearchBox(props: SearchBoxProps) {
       onOpen={handleOpen}
       onClose={handleClose}
       filterOptions={(r) => r} // We hijack Autocomplete's behavior to display search results as options
-      renderOption={(optionProps, result) => (
-        <li {...optionProps}>
+      renderOption={({ key, ...optionProps }, result) => (
+        <li key={key} {...optionProps}>
           <SvgIcon fontSize="small">
             <AdrIcon />
           </SvgIcon>

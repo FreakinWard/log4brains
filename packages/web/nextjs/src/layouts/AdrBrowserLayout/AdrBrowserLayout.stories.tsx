@@ -1,29 +1,26 @@
-import React from "react";
-import { Meta, Story } from "@storybook/react";
-import { AdrBrowserLayout, AdrBrowserLayoutProps } from "..";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { AdrBrowserLayout } from "..";
 import { adrMocks } from "../../../.storybook/mocks";
 import { toAdrLight } from "../../lib-shared/types";
 
-const Template: Story<AdrBrowserLayoutProps> = (args) => (
-  <AdrBrowserLayout {...args} />
-);
-
-export default {
+const meta: Meta<typeof AdrBrowserLayout> = {
   title: "Layouts/AdrBrowser",
   component: AdrBrowserLayout
-} as Meta;
+};
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = { adrs: adrMocks.map(toAdrLight) };
+type Story = StoryObj<typeof AdrBrowserLayout>;
 
-export const LoadingMenu = Template.bind({});
-LoadingMenu.args = {};
+export const Default: Story = { args: { adrs: adrMocks.map(toAdrLight) } };
 
-export const ReloadingMenu = Template.bind({});
-ReloadingMenu.args = { adrs: adrMocks.map(toAdrLight), adrsReloading: true };
+export const LoadingMenu: Story = { args: {} };
 
-export const EmptyMenu = Template.bind({});
-EmptyMenu.args = { adrs: [] };
+export const ReloadingMenu: Story = {
+  args: { adrs: adrMocks.map(toAdrLight), adrsReloading: true }
+};
 
-export const RoutingProgressBar = Template.bind({});
-RoutingProgressBar.args = { adrs: adrMocks.map(toAdrLight), routing: true };
+export const EmptyMenu: Story = { args: { adrs: [] } };
+
+export const RoutingProgressBar: Story = {
+  args: { adrs: adrMocks.map(toAdrLight), routing: true }
+};

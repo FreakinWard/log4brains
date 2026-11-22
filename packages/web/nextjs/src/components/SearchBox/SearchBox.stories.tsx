@@ -1,56 +1,60 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { AppBar, Toolbar } from "@mui/material";
-import { SearchBox, SearchBoxProps } from "./SearchBox";
+import { SearchBox } from "./SearchBox";
 import { adrMocks } from "../../../.storybook/mocks";
 
-const Template: Story<SearchBoxProps> = (args) => <SearchBox {...args} />;
-
-export default {
+const meta: Meta<typeof SearchBox> = {
   title: "SearchBox",
   component: SearchBox,
   decorators: [
-    (DecoratedStory) => (
+    (Story) => (
       <AppBar>
         <Toolbar style={{ justifyContent: "center" }}>
           <div style={{ width: 750 }}>
-            <DecoratedStory />
+            <Story />
           </div>
         </Toolbar>
       </AppBar>
     )
   ]
-} as Meta;
+};
+export default meta;
 
-export const Closed = Template.bind({});
-Closed.args = {};
+type Story = StoryObj<typeof SearchBox>;
 
-export const Open = Template.bind({});
-Open.args = {
-  open: true
+export const Closed: Story = { args: {} };
+
+export const Open: Story = {
+  args: {
+    open: true
+  }
 };
 
-export const OpenWithResults = Template.bind({});
-OpenWithResults.args = {
-  open: true,
-  query: "Test",
-  results: adrMocks.map((adr) => ({
-    title: adr.title,
-    href: `/adr/${adr.slug}`
-  }))
+export const OpenWithResults: Story = {
+  args: {
+    open: true,
+    query: "Test",
+    results: adrMocks.map((adr) => ({
+      title: adr.title,
+      href: `/adr/${adr.slug}`
+    }))
+  }
 };
 
-export const OpenLoading = Template.bind({});
-OpenLoading.args = {
-  open: true,
-  query: "test",
-  results: [],
-  loading: true
+export const OpenLoading: Story = {
+  args: {
+    open: true,
+    query: "test",
+    results: [],
+    loading: true
+  }
 };
 
-export const OpenWithoutResults = Template.bind({});
-OpenWithoutResults.args = {
-  open: true,
-  query: "cdlifsdilhfsd",
-  results: []
+export const OpenWithoutResults: Story = {
+  args: {
+    open: true,
+    query: "cdlifsdilhfsd",
+    results: []
+  }
 };
