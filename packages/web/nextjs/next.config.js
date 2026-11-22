@@ -5,6 +5,23 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true"
 });
 
+// Turbopack only reads files under its root, which must contain both this app and the `next` package.
+// Next.js defaults to the folder of the nearest lockfile, but a global install (`npm install -g`) has none
+// and puts `next` beside the web package, outside this folder. So the root is the closest folder holding
+// both, taken above node_modules (in a global install, both sit inside the CLI package's node_modules).
+function getTurbopackRoot() {
+  const appParts = __dirname.split(path.sep);
+  const nextParts = path
+    .dirname(require.resolve("next/package.json"))
+    .split(path.sep);
+  let i = 0;
+  while (i < appParts.length && appParts[i] === nextParts[i]) i += 1;
+  const common = appParts.slice(0, i).join(path.sep) || path.sep;
+  return path.basename(common) === "node_modules"
+    ? path.dirname(common)
+    : common;
+}
+
 const packageJson = require(
   `${
     fs.existsSync(path.join(__dirname, "package.json")) ? "./" : "../"
@@ -18,6 +35,7 @@ const buildId = process.env.LOG4BRAINS_BUILD_ID;
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  turbopack: { root: getTurbopackRoot() },
   // Users' `log4brains build` compiles this app from node_modules, which the bundler skips by default
   transpilePackages: [packageJson.name],
   poweredByHeader: false,
