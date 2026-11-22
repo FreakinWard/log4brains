@@ -5,6 +5,7 @@ dist/
 .next-export/
 .next-preview/
 .log4brains/
+storybook-static/
 CHANGELOG.md
 /lerna.json
 .claude/

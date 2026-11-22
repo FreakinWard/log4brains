@@ -1,21 +1,24 @@
 import React from "react";
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Markdown } from "./Markdown";
 
-export default {
+const meta: Meta<typeof Markdown> = {
   title: "Markdown",
   component: Markdown,
   decorators: [
-    (DecoratedStory) => (
+    (Story) => (
       <div style={{ width: 750, margin: "auto" }}>
-        <DecoratedStory />
+        <Story />
       </div>
     )
   ]
-} as Meta;
+};
+export default meta;
 
-export function Default() {
-  return (
+type Story = StoryObj<typeof Markdown>;
+
+export const Default: Story = {
+  render: () => (
     <Markdown>
       {`# Header 1
 
@@ -137,5 +140,5 @@ const user: User = new UserAccount("Murphy", 1);
 
 `}
     </Markdown>
-  );
-}
+  )
+};

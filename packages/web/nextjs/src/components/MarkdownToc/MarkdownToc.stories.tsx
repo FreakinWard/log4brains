@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { compiler as mdCompiler } from "markdown-to-jsx/react";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { MarkdownToc } from "./MarkdownToc";
@@ -48,11 +48,14 @@ const content = mdCompiler(markdown, options) as React.ReactElement<{
   children: React.ReactElement;
 }>;
 
-export default {
+const meta: Meta<typeof MarkdownToc> = {
   title: "MarkdownToc",
   component: MarkdownToc
-} as Meta;
+};
+export default meta;
 
-export function Default() {
-  return <MarkdownToc content={content.props.children} />;
-}
+type Story = StoryObj<typeof MarkdownToc>;
+
+export const Default: Story = {
+  render: () => <MarkdownToc content={content.props.children} />
+};
