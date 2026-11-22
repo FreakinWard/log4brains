@@ -1,23 +1,23 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
-const deepFreezeRecur = (obj: any): any => {
-  if (typeof obj !== "object") {
-    return obj;
+const deepFreezeRecur = (obj: unknown): void => {
+  if (typeof obj !== "object" || obj === null) {
+    return;
   }
-  Object.keys(obj).forEach((prop) => {
-    if (typeof obj[prop] === "object" && !Object.isFrozen(obj[prop])) {
-      deepFreezeRecur(obj[prop]);
+  Object.values(obj).forEach((value: unknown) => {
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      !Object.isFrozen(value)
+    ) {
+      deepFreezeRecur(value);
     }
   });
-  return Object.freeze(obj);
+  Object.freeze(obj);
 };
 
 /**
  * Apply Object.freeze() recursively on the given object and sub-objects.
  */
 export const deepFreeze = <T>(obj: T): T => {
-  return deepFreezeRecur(obj);
+  deepFreezeRecur(obj);
+  return obj;
 };

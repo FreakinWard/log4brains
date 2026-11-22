@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import { getLog4brainsInstance } from "../../lib/core-api";
-import { getConfig } from "../../lib/next";
-import { AdrScene, AdrSceneProps } from "../../scenes";
+import { isrProps } from "../../lib/revalidate";
+import { AdrScene, AdrScenePageProps } from "../../scenes";
 import { toAdr } from "../../lib-shared/types";
 
 export default AdrScene;
@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<AdrSceneProps> = async ({
+export const getStaticProps: GetStaticProps<AdrScenePageProps> = async ({
   params
 }) => {
   const l4bInstance = getLog4brainsInstance();
@@ -42,8 +42,8 @@ export const getStaticProps: GetStaticProps<AdrSceneProps> = async ({
           ? await l4bInstance.getAdrBySlug(currentAdr.supersededBy)
           : undefined
       ),
-      l4bVersion: getConfig().serverRuntimeConfig.VERSION
+      l4bVersion: process.env.LOG4BRAINS_VERSION ?? ""
     },
-    revalidate: 1
+    ...isrProps
   };
 };

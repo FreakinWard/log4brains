@@ -1,14 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/prefer-regexp-exec */
-/* eslint-disable jest/no-conditional-expect */
-/* eslint-disable jest/no-try-expect */
-import execa from "execa";
+import { execa, type ResultPromise } from "execa";
 import path from "path";
 import os from "os";
 import fs, { promises as fsP } from "fs";
-import rimraf from "rimraf";
 
 // Source: https://shift.infinite.red/integration-testing-interactive-clis-93af3cc0d56f. Thanks!
 const keys = {
@@ -37,7 +30,7 @@ async function usingTempDir(fn: (cwd: string) => void | Promise<void>) {
   try {
     await fn(folder);
   } finally {
-    rimraf.sync(folder);
+    fs.rmSync(folder, { recursive: true, force: true });
   }
 }
 
@@ -46,11 +39,11 @@ type PackageAnswer = {
   path: string;
   adrFolder: string;
 };
-// eslint-disable-next-line sonarjs/cognitive-complexity
+
 function bindAnswers(
-  cli: execa.ExecaChildProcess<string>,
+  cli: ResultPromise,
   packageAnswer?: PackageAnswer
-): execa.ExecaChildProcess<string> {
+): ResultPromise {
   if (!cli.stdout) {
     throw new Error("CLI must have an stdout");
   }

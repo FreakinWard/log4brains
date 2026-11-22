@@ -1,42 +1,30 @@
 import React, { useEffect, useMemo } from "react";
-import { compiler as mdCompiler } from "markdown-to-jsx";
+import { compiler as mdCompiler } from "markdown-to-jsx/react";
 import { useRouter } from "next/router";
 import hljs from "highlight.js";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import {
-  Typography,
-  Link as MuiLink,
-  TypographyProps
-} from "@material-ui/core";
-import { CustomTheme } from "../../mui";
+import { Typography, Link as MuiLink, TypographyProps } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { AdrLink } from "./components";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { slugify } from "../../lib/slugify";
 
-const useStyles = makeStyles((theme: CustomTheme) =>
-  createStyles({
-    code: {
-      backgroundColor: "#F8F8F8",
-      borderRadius: theme.shape.borderRadius,
-      padding: 3
-    },
-    listItem: {}
-  })
-);
+// Typography's `paragraph` prop, removed in MUI v9
+const Paragraph = styled(Typography)({
+  marginBottom: "16px"
+});
+
+const Code = styled("code")(({ theme }) => ({
+  backgroundColor: "#F8F8F8",
+  borderRadius: `${theme.shape.borderRadius}px`,
+  padding: "3px"
+}));
 
 function Li(props: TypographyProps) {
-  const classes = useStyles();
   return (
-    <li className={classes.listItem}>
+    <li>
       <Typography component="span" {...props} />
     </li>
   );
-}
-
-function Code(props: { children: React.ReactNode }) {
-  const classes = useStyles();
-  const { children } = props;
-  return <code className={classes.code}>{children}</code>;
 }
 
 const options = {
@@ -57,7 +45,7 @@ const options = {
       component: MarkdownHeading,
       props: { variant: "h4" }
     },
-    p: { component: Typography, props: { paragraph: true } },
+    p: { component: Paragraph },
     a: { component: MuiLink },
     li: { component: Li },
     AdrLink: { component: AdrLink },
@@ -72,9 +60,12 @@ type MarkdownProps = {
 };
 
 function isReactElementWithChildren(
-  obj: JSX.Element
+  obj: React.ReactNode
 ): obj is React.ReactElement<{ children: React.ReactElement }> {
-  return "children" in obj.props; // TODO: improve tests here
+  return (
+    React.isValidElement<Record<string, unknown>>(obj) &&
+    "children" in obj.props
+  ); // TODO: improve tests here
 }
 
 export function Markdown({ children, onCompiled }: MarkdownProps) {
@@ -107,7 +98,9 @@ export function Markdown({ children, onCompiled }: MarkdownProps) {
       rootRef.current
         ?.querySelectorAll<HTMLElement>("pre code")
         .forEach((block) => {
-          hljs.highlightBlock(block);
+          // Hot Reload re-renders the same elements: highlight.js 11 skips the ones it already highlighted
+          block.removeAttribute("data-highlighted");
+          hljs.highlightElement(block);
         });
     }
   }, [children, renderedMarkdown]);

@@ -19,11 +19,11 @@ export async function createSearchInstance(
     await fetch(
       mode === Log4brainsMode.preview
         ? `/api/search-index`
-        : `${Router.basePath}/data/${process.env.NEXT_BUILD_ID}/search-index.json`
+        : `${Router.basePath}/data/${process.env.LOG4BRAINS_BUILD_ID}/search-index.json`
     )
   ).json()) as unknown;
   if (!isSerializedIndex(index)) {
-    throw new Error(`Invalid Search SerializedIndex: ${index}`);
+    throw new Error(`Invalid Search SerializedIndex: ${JSON.stringify(index)}`);
   }
   return Search.createFromSerializedIndex(index);
 }

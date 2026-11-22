@@ -1,6 +1,4 @@
-/* eslint-disable func-names */
-/* eslint-disable no-param-reassign */
-import MarkdownIt from "markdown-it";
+import type { MarkdownIt } from "markdown-it";
 
 // Source: https://github.com/tylingsoft/markdown-it-source-map
 // Thanks! ;)

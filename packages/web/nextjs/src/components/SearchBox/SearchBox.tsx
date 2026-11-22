@@ -1,32 +1,31 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import {
   Autocomplete,
   AutocompleteCloseReason,
   AutocompleteInputChangeReason,
-  AutocompleteProps
-} from "@material-ui/lab";
-import { CircularProgress, SvgIcon, Typography } from "@material-ui/core";
-import { useControlled } from "@material-ui/core/utils";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+  AutocompleteProps,
+  CircularProgress,
+  SvgIcon,
+  Typography
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { useControlled } from "@mui/material/utils";
+
 import { GrDocumentText as AdrIcon } from "react-icons/gr";
 import { useRouter } from "next/router";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResult } from "../../lib-shared/search";
 
-const useStyles = makeStyles((theme: Theme) => {
-  return createStyles({
-    searchBar: {
-      zIndex: "inherit"
-    },
-    resultTitle: {
-      marginLeft: "0.5ch"
-    },
-    acPaper: {
-      borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px`,
-      marginTop: 0
-    }
-  });
+const StyledSearchBar = styled(SearchBar)({
+  zIndex: "inherit"
+});
+
+const ResultTitle = styled(Typography)({
+  marginLeft: "0.5ch"
+});
+
+const Loading = styled("div")({
+  textAlign: "center"
 });
 
 export type SearchBoxProps = Omit<
@@ -39,7 +38,7 @@ export type SearchBoxProps = Omit<
    *
    * @param event The event source of the callback.
    */
-  onOpen?: (event: React.ChangeEvent<{}>) => void;
+  onOpen?: (event: React.ChangeEvent<unknown>) => void;
 
   /**
    * Callback fired when the popup requests to be closed.
@@ -49,7 +48,7 @@ export type SearchBoxProps = Omit<
    * @param reason Can be: `"toggleInput"`, `"escape"`, `"select-option"`, `"blur"`.
    */
   onClose?: (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     reason: AutocompleteCloseReason
   ) => void;
 
@@ -68,7 +67,7 @@ export type SearchBoxProps = Omit<
    * @param reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`.
    */
   onQueryChange?: (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     query: string,
     reason: AutocompleteInputChangeReason
   ) => void;
@@ -92,8 +91,6 @@ export type SearchBoxProps = Omit<
 };
 
 export function SearchBox(props: SearchBoxProps) {
-  const classes = useStyles();
-
   const {
     onOpen,
     onClose,
@@ -112,7 +109,7 @@ export function SearchBox(props: SearchBoxProps) {
     state: "open"
   });
 
-  const handleOpen = (event: React.ChangeEvent<{}>) => {
+  const handleOpen = (event: React.ChangeEvent<unknown>) => {
     if (open) {
       return;
     }
@@ -125,7 +122,7 @@ export function SearchBox(props: SearchBoxProps) {
   const router = useRouter();
 
   const handleClose = (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     reason: AutocompleteCloseReason
   ) => {
     if (!open) {
@@ -140,9 +137,9 @@ export function SearchBox(props: SearchBoxProps) {
   let noOptionsText: React.ReactNode = "Type to start searching";
   if (loading) {
     noOptionsText = (
-      <div style={{ textAlign: "center" }}>
+      <Loading>
         <CircularProgress size={20} />
-      </div>
+      </Loading>
     );
   } else if (query) {
     noOptionsText = "No matching documents";
@@ -151,17 +148,15 @@ export function SearchBox(props: SearchBoxProps) {
   return (
     <Autocomplete
       {...otherProps}
-      classes={{ paper: classes.acPaper }}
       options={results ?? []}
       getOptionLabel={(result) => result.title}
       renderInput={(params) => (
-        <SearchBar
+        <StyledSearchBar
           {...params}
           open={open}
           onClear={(event) =>
             onQueryChange && onQueryChange(event, "", "clear")
           }
-          className={classes.searchBar}
         />
       )}
       inputValue={query}
@@ -175,15 +170,13 @@ export function SearchBox(props: SearchBoxProps) {
       onOpen={handleOpen}
       onClose={handleClose}
       filterOptions={(r) => r} // We hijack Autocomplete's behavior to display search results as options
-      renderOption={(result) => (
-        <>
+      renderOption={(optionProps, result) => (
+        <li {...optionProps}>
           <SvgIcon fontSize="small">
             <AdrIcon />
           </SvgIcon>
-          <Typography className={classes.resultTitle}>
-            {result.title}
-          </Typography>
-        </>
+          <ResultTitle>{result.title}</ResultTitle>
+        </li>
       )}
       noOptionsText={noOptionsText}
       onChange={async (_, result) => {

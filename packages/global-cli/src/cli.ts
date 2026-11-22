@@ -1,19 +1,16 @@
-import commander from "commander";
-import type { AppConsole } from "@log4brains/cli-common";
-import { createInitCli } from "@log4brains/init";
-import { createCli } from "@log4brains/cli";
-import { createWebCli } from "@log4brains/web";
+import { Command } from "commander";
+import type { AppConsole } from "@awarded/log4brains-cli-common";
+import { createInitCli } from "@awarded/log4brains-init";
+import { createCli } from "@awarded/log4brains-cli";
+import { createWebCli } from "@awarded/log4brains-web";
 
 type Deps = {
   appConsole: AppConsole;
   version: string;
 };
 
-export function createGlobalCli({
-  appConsole,
-  version
-}: Deps): commander.Command {
-  const program = new commander.Command();
+export function createGlobalCli({ appConsole, version }: Deps): Command {
+  const program = new Command().allowExcessArguments(); // commander >=13 rejects extra arguments; keep the previous lenient behavior
   program
     .version(version)
     .description(

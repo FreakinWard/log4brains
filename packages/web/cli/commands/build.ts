@@ -1,16 +1,12 @@
 import chalk from "chalk";
-import build from "next/dist/build";
-import exportApp from "next/dist/export";
-import loadConfig from "next/dist/next-server/server/config";
-import { PHASE_EXPORT } from "next/dist/next-server/lib/constants";
 import path from "path";
-import mkdirp from "mkdirp";
+import { randomUUID } from "crypto";
 import { makeBadge } from "badge-maker";
 import { promises as fsP } from "fs";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@awarded/log4brains-cli-common";
 import { Search } from "@lib-shared/search";
 import { toAdrLight } from "@lib-shared/types";
-import { execNext, getL4bInstance, getNextJsDir } from "../utils";
+import { getL4bInstance, getNextJsDir, runNextCli } from "../utils";
 
 type Deps = {
   appConsole: AppConsole;
@@ -18,63 +14,43 @@ type Deps = {
 
 export async function buildCommand(
   { appConsole }: Deps,
-  outPath: string,
+  outPathOpt: string,
   basePath: string
 ): Promise<void> {
   process.env.NEXT_TELEMETRY_DISABLED = "1";
   appConsole.println("Building Log4brains...");
 
-  const nextDir = getNextJsDir();
-  // eslint-disable-next-line global-require,import/no-dynamic-require,@typescript-eslint/no-var-requires
-  const nextConfig = require(path.join(nextDir, "next.config.js")) as Record<
-    string,
-    unknown
-  >;
-
-  // We use a different distDir than the preview mode
-  // because getStaticPath()'s `fallback` config is somehow cached
-  const distDir = ".next-export";
-  const nextCustomConfig = {
-    ...nextConfig,
-    distDir,
-    basePath,
-    env: {
-      ...(nextConfig.env && typeof nextConfig.env === "object"
-        ? nextConfig.env
-        : {}),
-      NEXT_PUBLIC_LOG4BRAINS_STATIC: "1"
-    }
-  };
+  // `next build` runs from the Next.js app's folder: paths are resolved from the current one first
+  const outPath = path.resolve(outPathOpt);
+  const cwdFromOutPath = path.relative(outPath, process.cwd());
+  if (
+    !cwdFromOutPath.startsWith("..") &&
+    !path.isAbsolute(cwdFromOutPath) // Windows: on another drive
+  ) {
+    // The output folder is emptied before the build: it must not contain the project
+    throw new Error(
+      `Invalid output path: ${outPath} contains the current folder. Use the -o <path> option to select another one.`
+    );
+  }
+  const buildId = randomUUID();
 
   appConsole.debug("Run `next build`...");
-  await execNext(async () => {
-    // #NEXTJS-HACK: build() is not meant to be called from the outside of Next.js
-    // And there is an error in their typings: `conf?` is typed as `null`, so we have to use @ts-ignore
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    await build(nextDir, nextCustomConfig);
+  // Static export (output: "export" in next.config.js), generated in the app's .next-export folder
+  await runNextCli(["build"], {
+    NEXT_PUBLIC_LOG4BRAINS_STATIC: "1",
+    LOG4BRAINS_BUILD_ID: buildId,
+    LOG4BRAINS_BASE_PATH: basePath,
+    LOG4BRAINS_CWD: path.resolve(process.env.LOG4BRAINS_CWD || ".")
   });
 
-  appConsole.debug("Run `next export`...");
-  await execNext(async () => {
-    await exportApp(
-      nextDir,
-      {
-        outdir: outPath
-      },
-      await loadConfig(PHASE_EXPORT, nextDir, nextCustomConfig) // Configuration is not handled like in build() here
-    );
+  await fsP.rm(outPath, { recursive: true, force: true });
+  await fsP.cp(path.join(getNextJsDir(), ".next-export"), outPath, {
+    recursive: true
   });
 
   appConsole.startSpinner("Generating ADR data...");
-  const buildId = await fsP.readFile(
-    path.join(nextDir, distDir, "BUILD_ID"),
-    "utf-8"
-  );
-
   // TODO: move to a dedicated module
-  await mkdirp(path.join(outPath, "data", buildId));
+  await fsP.mkdir(path.join(outPath, "data", buildId), { recursive: true });
   const adrs = await getL4bInstance().searchAdrs();
 
   // TODO: remove this dead code when we are sure we don't need a JSON file per ADR

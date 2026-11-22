@@ -1,0 +1,52 @@
+on:
+  workflow_call:
+    secrets:
+      SONAR_TOKEN:
+        required: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history for SonarCloud's new-code detection and blame
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc # current LTS
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+      # Coverage (lcov) and test execution (jest-sonar.xml) reports, see sonar-project.properties
+      - name: Unit tests with coverage
+        env:
+          JEST_SONAR_OUTPUT_DIR: coverage
+        run: |
+          reporters="--reporters=default --reporters=@casualbot/jest-sonar-reporter"
+          npm test -w packages/core -- --coverage --coverageReporters=lcov $reporters
+          npm test -w packages/web -- --coverage --coverageReporters=lcov $reporters
+
+      # Analyses are versioned with the Lerna version, so SonarCloud can use "previous version" as new code
+      - name: Read the project version
+        id: version
+        run: echo "version=$(node -p "require('./lerna.json').version")" >> "$GITHUB_OUTPUT"
+
+      - uses: SonarSource/sonarqube-scan-action@59202af334b4ba7b5db01b701b8e79f8b3bef0f4 # v8.5.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: -Dsonar.projectVersion=${{ steps.version.outputs.version }}
+
+      # A failed quality gate is a warning (annotation + job summary), never a failed check
+      - name: SonarCloud quality gate
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: .github/scripts/sonarcloud-quality-gate.sh

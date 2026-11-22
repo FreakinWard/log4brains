@@ -1,4 +1,4 @@
-import { AppConsole } from "@log4brains/cli-common";
+import { AppConsole } from "@awarded/log4brains-cli-common";
 import { createInitCli } from "../src/cli";
 
 const cli = createInitCli({

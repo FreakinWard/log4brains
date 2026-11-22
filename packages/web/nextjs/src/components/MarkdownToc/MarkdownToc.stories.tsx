@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta } from "@storybook/react";
-import { compiler as mdCompiler } from "markdown-to-jsx";
+import { compiler as mdCompiler } from "markdown-to-jsx/react";
 import { MarkdownHeading } from "../MarkdownHeading";
 import { MarkdownToc } from "./MarkdownToc";
 

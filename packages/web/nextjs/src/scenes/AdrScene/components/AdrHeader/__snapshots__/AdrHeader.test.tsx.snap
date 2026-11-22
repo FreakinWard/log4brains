@@ -1,97 +1,79 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`AdrHeader renders correctly with deciders 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
+    <div>
+      <div
+        class="css-1bgvo2p"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-1butzn4-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
       <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Deciders"
       >
         <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PeopleIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3m-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3m0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5m8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5"
           />
         </svg>
-         
-        Jan 1, 2020
+         John Doe, Lorem Ipsum, Ipsum Dolor
       </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Deciders"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
-        />
-      </svg>
-       
-      John Doe, Lorem Ipsum, Ipsum Dolor
-    </p>
-  </div>
-  <div>
     <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
         >
-          <span
-            className="MuiButton-label"
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -99,14 +81,9 @@ exports[`AdrHeader renders correctly with deciders 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,126 +96,105 @@ exports[`AdrHeader renders correctly with deciders 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader renders correctly with package 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 1, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-1butzn4-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -246,14 +202,9 @@ exports[`AdrHeader renders correctly with package 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -266,126 +217,105 @@ exports[`AdrHeader renders correctly with package 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader renders correctly with publication date 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-10sketz-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -393,14 +323,9 @@ exports[`AdrHeader renders correctly with publication date 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -413,147 +338,127 @@ exports[`AdrHeader renders correctly with publication date 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader renders correctly with tags 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 1, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Tags"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"
-        />
-      </svg>
-       
-      <span
-        className="makeStyles-tags-4"
-      >
-        #foo #bar
-      </span>
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-1butzn4-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Tags"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="LabelIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12z"
+          />
+        </svg>
+         
+        <span
+          class="css-1i5zo8a"
+        >
+          #foo #bar
+        </span>
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -561,14 +466,9 @@ exports[`AdrHeader renders correctly with tags 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -581,109 +481,88 @@ exports[`AdrHeader renders correctly with tags 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader renders correctly without deciders 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
+    <div>
+      <div
+        class="css-1bgvo2p"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Creation date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 1, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-1butzn4-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              DRAFT
+            </span>
+          </div>
+        </div>
+      </div>
       <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Creation date"
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
       >
         <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
           />
         </svg>
-         
-        Jan 1, 2020
+         John Doe
       </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-draft-7 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            DRAFT
-          </span>
-        </div>
-      </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
     <div>
-      <div
-        className="MuiButtonGroup-root"
-        role="group"
-      >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
         >
-          <span
-            className="MuiButton-label"
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -691,14 +570,9 @@ exports[`AdrHeader renders correctly without deciders 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -711,126 +585,105 @@ exports[`AdrHeader renders correctly without deciders 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader shows the Github repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-10sketz-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -838,14 +691,9 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -858,39 +706,19 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://github.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Github"
-        >
-          <span
-            className="MuiButton-label"
+          </button>
+          <a
+            aria-label="View/edit on Github"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            href="https://github.com/xxx"
+            rel="noopener"
+            tabindex="0"
+            target="_blank"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -898,12 +726,7 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-width="0"
                 viewBox="0 0 1024 1024"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -913,126 +736,105 @@ exports[`AdrHeader shows the Github repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AdrHeader shows the Gitlab repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
+          </a>
         </div>
       </div>
     </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
   </div>
-  <div>
+</DocumentFragment>
+`;
+
+exports[`AdrHeader shows the Gitlab repository button 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-10sketz-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1040,14 +842,9 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1060,39 +857,19 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://gitlab.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Gitlab"
-        >
-          <span
-            className="MuiButton-label"
+          </button>
+          <a
+            aria-label="View/edit on Gitlab"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            href="https://gitlab.com/xxx"
+            rel="noopener"
+            tabindex="0"
+            target="_blank"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1100,12 +877,7 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-width="0"
                 viewBox="0 0 1024 1024"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1115,126 +887,105 @@ exports[`AdrHeader shows the Gitlab repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader shows the generic repository button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-10sketz-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1242,14 +993,9 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1262,39 +1008,19 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://foo.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Git"
-        >
-          <span
-            className="MuiButton-label"
+          </button>
+          <a
+            aria-label="View/edit on Git"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-lastButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            href="https://foo.com/xxx"
+            rel="noopener"
+            tabindex="0"
+            target="_blank"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1302,12 +1028,7 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-width="0"
                 version="1.1"
                 viewBox="0 0 32 32"
                 width="1em"
@@ -1318,126 +1039,105 @@ exports[`AdrHeader shows the generic repository button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AdrHeader shows the locally edit button 1`] = `
-<div
-  className="makeStyles-root-1"
->
-  <div>
-    <div
-      className="makeStyles-inlineInfo-2"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Package"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2zm2 10H3v4c0 1.1.9 2 2 2h4v-2H5v-4zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2z"
-          />
-        </svg>
-         
-        test
-      </p>
-      <p
-        className="MuiTypography-root MuiTypography-body2"
-        title="Publication date"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-          />
-        </svg>
-         
-        Jan 2, 2020
-      </p>
-      <div
-        title="Status"
-      >
-        <div
-          className="MuiChip-root makeStyles-root-5 makeStyles-accepted-10 MuiChip-outlined MuiChip-sizeSmall"
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-        >
-          <span
-            className="MuiChip-label MuiChip-labelSmall makeStyles-label-6"
-          >
-            ACCEPTED
-          </span>
-        </div>
-      </div>
-    </div>
-    <p
-      className="MuiTypography-root MuiTypography-body2"
-      title="Author"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root makeStyles-icon-3 MuiSvgIcon-fontSizeInherit"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-        />
-      </svg>
-       
-      John Doe
-    </p>
-  </div>
-  <div>
+<DocumentFragment>
+  <div
+    class="css-1ij28oh"
+  >
     <div>
       <div
-        className="MuiButtonGroup-root"
-        role="group"
+        class="css-1bgvo2p"
       >
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Copy link"
-          type="button"
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Package"
         >
-          <span
-            className="MuiButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="CropFreeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v4h2V5h4V3H5c-1.1 0-2 .9-2 2m2 10H3v4c0 1.1.9 2 2 2h4v-2H5zm14 4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zm0-16h-4v2h4v4h2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+           test
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+          title="Publication date"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+            data-testid="EventIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12h-5v5h5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1zm3 18H5V8h14z"
+            />
+          </svg>
+           Jan 2, 2020
+        </p>
+        <div
+          title="Status"
+        >
+          <div
+            class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault css-10sketz-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-19m61dl-MuiChip-label"
+            >
+              ACCEPTED
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-7ctihp-MuiTypography-root"
+        title="Author"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
+          data-testid="PersonIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+          />
+        </svg>
+         John Doe
+      </p>
+    </div>
+    <div>
+      <div>
+        <div
+          class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-horizontal MuiButtonGroup-colorPrimary css-19i0b4l-MuiButtonGroup-root"
+          role="group"
+        >
+          <button
+            aria-label="Copy link"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-firstButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1445,14 +1145,9 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 fill="none"
                 height="1em"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1465,39 +1160,19 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
-        <a
-          aria-describedby={null}
-          aria-disabled={false}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined"
-          href="https://foo.com/xxx"
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          rel="noopener"
-          tabIndex={0}
-          target="_blank"
-          title="View/edit on Git"
-        >
-          <span
-            className="MuiButton-label"
+          </button>
+          <a
+            aria-label="View/edit on Git"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorPrimary MuiButtonGroup-middleButton css-ghlk6w-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            href="https://foo.com/xxx"
+            rel="noopener"
+            tabindex="0"
+            target="_blank"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1505,12 +1180,7 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
+                stroke-width="0"
                 version="1.1"
                 viewBox="0 0 32 32"
                 width="1em"
@@ -1521,52 +1191,29 @@ exports[`AdrHeader shows the locally edit button 1`] = `
                 />
               </svg>
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </a>
-        <button
-          aria-describedby={null}
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiButton-outlinedSecondary"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          title="Edit locally"
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
+          </a>
+          <button
+            aria-label="Edit locally"
+            class="MuiButtonBase-root MuiButtonGroup-grouped MuiButton-root MuiButton-outlined MuiButton-sizeMedium MuiButton-colorSecondary MuiButtonGroup-lastButton css-m4ayi4-MuiButtonBase-root-MuiButton-root"
+            data-mui-internal-clone-element="true"
+            tabindex="0"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+              data-testid="EditIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
               <path
-                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"
               />
             </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

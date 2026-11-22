@@ -1,4 +1,5 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import MarkdownIt from "markdown-it";
 import { markdownItSourceMap } from "./markdown-it-source-map-plugin";
 import { CheerioMarkdownElement } from "./CheerioMarkdownElement";
@@ -16,7 +17,7 @@ function isWindowsLine(line: string): boolean {
 type OnChangeObserver = (markdown: string) => void;
 
 export class CheerioMarkdown {
-  public $!: cheerio.Root; // for read-only purposes only!
+  public $!: cheerio.CheerioAPI; // for read-only purposes only!
 
   private readonly observers: OnChangeObserver[] = [];
 
@@ -50,7 +51,7 @@ export class CheerioMarkdown {
     return lines[i];
   }
 
-  replaceText(elt: cheerio.Cheerio, newText: string): void {
+  replaceText(elt: cheerio.Cheerio<AnyNode>, newText: string): void {
     const mdElt = new CheerioMarkdownElement(elt);
     if (mdElt.startLine === undefined || mdElt.endLine === undefined) {
       throw new Error("Cannot source-map this element from Markdown");
@@ -65,7 +66,7 @@ export class CheerioMarkdown {
     }
   }
 
-  deleteElement(elt: cheerio.Cheerio): void {
+  deleteElement(elt: cheerio.Cheerio<AnyNode>): void {
     const mdElt = new CheerioMarkdownElement(elt);
     if (mdElt.startLine === undefined || mdElt.endLine === undefined) {
       throw new Error("Cannot source-map this element from Markdown");
@@ -104,7 +105,7 @@ export class CheerioMarkdown {
     this.updateMarkdown(lines.join(`\n`));
   }
 
-  insertLineAfter(elt: cheerio.Cheerio, newLine: string): void {
+  insertLineAfter(elt: cheerio.Cheerio<AnyNode>, newLine: string): void {
     const mdElt = new CheerioMarkdownElement(elt);
     if (mdElt.endLine === undefined) {
       throw new Error("Cannot source-map this element from Markdown");
@@ -117,14 +118,14 @@ export class CheerioMarkdown {
     const lines = this.markdown.split(`\n`);
     const windowsLines = lines.length > 0 ? isWindowsLine(lines[0]) : false;
     if (lines[lines.length - 1].trim() === "") {
-      delete lines[lines.length - 1];
+      lines[lines.length - 1] = "";
     }
     lines.push(`${newLine}${windowsLines ? `\r` : ""}`);
     lines.push(`${windowsLines ? `\r` : ""}\n`);
     this.updateMarkdown(lines.join(`\n`));
   }
 
-  appendToList(ul: cheerio.Cheerio, newItem: string): void {
+  appendToList(ul: cheerio.Cheerio<AnyNode>, newItem: string): void {
     if (!ul.is("ul")) {
       throw new TypeError("Given element is not a <ul>");
     }

@@ -2,8 +2,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { ValueObject } from "./ValueObject";
 
-export class ValueObjectMap<K extends ValueObject<any>, V>
-  implements Map<K, V> {
+export class ValueObjectMap<K extends ValueObject<any>, V> implements Map<
+  K,
+  V
+> {
   private readonly map: Map<K, V>;
 
   constructor(tuples?: [K, V][]) {
@@ -11,7 +13,6 @@ export class ValueObjectMap<K extends ValueObject<any>, V>
   }
 
   private getKeyRef(key: K): K | undefined {
-    // eslint-disable-next-line no-restricted-syntax
     for (const i of this.map.keys()) {
       if (i.equals(key)) {
         return i;
@@ -64,19 +65,19 @@ export class ValueObjectMap<K extends ValueObject<any>, V>
     return this.map.size;
   }
 
-  [Symbol.iterator](): IterableIterator<[K, V]> {
+  [Symbol.iterator](): ReturnType<Map<K, V>[typeof Symbol.iterator]> {
     return this.map[Symbol.iterator]();
   }
 
-  entries(): IterableIterator<[K, V]> {
+  entries(): ReturnType<Map<K, V>["entries"]> {
     return this.map.entries();
   }
 
-  keys(): IterableIterator<K> {
+  keys(): ReturnType<Map<K, V>["keys"]> {
     return this.map.keys();
   }
 
-  values(): IterableIterator<V> {
+  values(): ReturnType<Map<K, V>["values"]> {
     return this.map.values();
   }
 

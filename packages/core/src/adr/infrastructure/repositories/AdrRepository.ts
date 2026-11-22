@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import fs, { promises as fsP } from "fs";
 import path from "path";
-import simpleGit, { SimpleGit } from "simple-git";
+import { simpleGit, SimpleGit } from "simple-git";
 import { AdrRepository as IAdrRepository } from "@src/adr/application";
 import {
   Adr,
@@ -234,9 +234,8 @@ export class AdrRepository implements IAdrRepository {
 
               // The file is not versionned in Git yet
               // So we rely on filesystem's last edit date and global git config
-              const lastEditDate = await this.getLastEditDateFromFilesystem(
-                adrFile
-              );
+              const lastEditDate =
+                await this.getLastEditDateFromFilesystem(adrFile);
               return new Adr({
                 ...baseAdrProps,
                 creationDate: lastEditDate,

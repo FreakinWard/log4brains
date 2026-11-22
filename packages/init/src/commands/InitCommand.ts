@@ -3,17 +3,17 @@
 import fs, { promises as fsP } from "fs";
 import terminalLink from "terminal-link";
 import chalk from "chalk";
-import execa from "execa";
-import mkdirp from "mkdirp";
+import { execa } from "execa";
 import yaml from "yaml";
 import path from "path";
+import { fileURLToPath } from "url";
 import moment from "moment-timezone";
-import type { AppConsole } from "@log4brains/cli-common";
-import { FailureExit } from "@log4brains/cli-common";
+import type { AppConsole } from "@awarded/log4brains-cli-common";
+import { FailureExit } from "@awarded/log4brains-cli-common";
 import { replaceAllInFile } from "../utils";
 
-const assetsPath = path.resolve(path.join(__dirname, "../assets")); // only one level up because bundled with microbundle
-const docLink = "https://github.com/thomvaill/log4brains";
+const assetsPath = fileURLToPath(new URL("../assets", import.meta.url)); // only one level up because bundled into dist/index.js
+const docLink = "https://github.com/FreakinWard/log4brains";
 
 function forceUnixPath(p: string): string {
   return p.replace(/\\/g, "/");
@@ -60,7 +60,7 @@ export class InitCommand {
       "./adrs",
       "./architecture-decisions"
     ];
-    // eslint-disable-next-line no-restricted-syntax
+
     for (const possiblePath of usualPaths) {
       if (fs.existsSync(path.join(cwd, possiblePath))) {
         return possiblePath;
@@ -107,10 +107,19 @@ export class InitCommand {
     );
 
     // Name
-    let name;
+    let name: string | undefined;
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,global-require,import/no-dynamic-require,@typescript-eslint/no-var-requires
-      name = require(path.join(cwd, "package.json")).name as string;
+      const pkg: unknown = JSON.parse(
+        fs.readFileSync(path.join(cwd, "package.json"), "utf-8")
+      );
+      if (
+        typeof pkg === "object" &&
+        pkg !== null &&
+        "name" in pkg &&
+        typeof pkg.name === "string"
+      ) {
+        name = pkg.name;
+      }
     } catch (e) {
       // ignore
     }
@@ -135,8 +144,7 @@ export class InitCommand {
               short: "Mono-package project"
             },
             {
-              name:
-                "Multi-package project (one ADR folder per package + a global one)",
+              name: "Multi-package project (one ADR folder per package + a global one)",
               value: "multi",
               short: "Multi-package project"
             }
@@ -172,7 +180,7 @@ export class InitCommand {
             "./docs/adr"
           );
     }
-    await mkdirp(path.join(cwd, adrFolder));
+    await fsP.mkdir(path.join(cwd, adrFolder), { recursive: true });
     this.console.println();
 
     // Packages
@@ -202,7 +210,7 @@ export class InitCommand {
           (answer) => !!answer.trim(),
           `${pkgCodeFolder}/docs/adr`
         );
-        await mkdirp(path.join(cwd, pkgAdrFolder));
+        await fsP.mkdir(path.join(cwd, pkgAdrFolder), { recursive: true });
         packages.push({
           name: pkgName,
           path: forceUnixPath(pkgCodeFolder),

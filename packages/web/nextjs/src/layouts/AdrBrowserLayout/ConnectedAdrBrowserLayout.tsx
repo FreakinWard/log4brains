@@ -1,7 +1,6 @@
 import React from "react";
 import Router, { useRouter } from "next/router";
-// import io from "socket.io-client"; // loaded by _document.tsx so that we don't add this lib in the static mode bundle
-import type { FileWatcherEvent } from "@log4brains/core";
+import type { FileWatcherEvent } from "@awarded/log4brains-core";
 import { Adr, AdrLight } from "../../lib-shared/types";
 import { Log4brainsMode, Log4brainsModeContext } from "../../contexts";
 import { AdrBrowserLayout, AdrBrowserLayoutProps } from "./AdrBrowserLayout";
@@ -69,11 +68,10 @@ type ConnectedAdrBrowserLayoutProps = Omit<
   adrs?: AdrLight[];
 };
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function ConnectedAdrBrowserLayout(
   props: ConnectedAdrBrowserLayoutProps
 ) {
-  const { adrs: preloadedAdrs } = props;
+  const { adrs: preloadedAdrs, children } = props;
 
   const router = useRouter();
   const mode = React.useContext(Log4brainsModeContext);
@@ -83,12 +81,8 @@ export function ConnectedAdrBrowserLayout(
   const [adrsLoading, setAdrsLoadingState] = React.useState(false);
   const [routing, setRoutingState] = React.useState(false);
 
-  const previousProps = React.useRef<ConnectedAdrBrowserLayoutProps | null>(
-    null
-  );
   const latestProps = React.useRef(props);
   React.useEffect(() => {
-    previousProps.current = latestProps.current;
     latestProps.current = props;
   });
 
@@ -99,7 +93,7 @@ export function ConnectedAdrBrowserLayout(
       await fetch(
         mode === Log4brainsMode.preview
           ? `/api/adr`
-          : `${router.basePath}/data/${process.env.NEXT_BUILD_ID}/adrs.json`
+          : `${router.basePath}/data/${process.env.LOG4BRAINS_BUILD_ID}/adrs.json`
       )
     ).json()) as AdrLight[];
     adrsRes.reverse(); // @see Log4brains.searchAdrs(): they are returned by chronological order ASC. We display them DESC in the UI
@@ -113,6 +107,25 @@ export function ConnectedAdrBrowserLayout(
     }
   }, [updateAdrsList, adrs]);
 
+  // The current ADR's metadata (title, status, date...) changed, eg. after a Hot Reload: the list shows it too
+  const scene = React.Children.only(children);
+  const currentAdr = isAdrSceneChild(scene)
+    ? scene.props.currentAdr
+    : undefined;
+  const previousAdr = React.useRef(currentAdr);
+  React.useEffect(() => {
+    const previous = previousAdr.current;
+    previousAdr.current = currentAdr;
+    if (
+      previous &&
+      currentAdr &&
+      previous.slug === currentAdr.slug &&
+      hasAdrMetadataChanged(previous, currentAdr)
+    ) {
+      void updateAdrsList();
+    }
+  }, [currentAdr, updateAdrsList]);
+
   // Routing progress bar
   Router.events.on("routeChangeStart", () => setRoutingState(true));
   Router.events.on("routeChangeComplete", () => setRoutingState(false));
@@ -120,11 +133,12 @@ export function ConnectedAdrBrowserLayout(
 
   // Hot Reload
   React.useEffect(() => {
+    // Socket.IO client loaded by _document.tsx so that we don't add this lib in the static mode bundle
     if (mode !== Log4brainsMode.preview || window.io === undefined) {
       return () => {};
     }
 
-    const socket = io();
+    const socket = window.io();
     socket.on("FileWatcher", async (event: FileWatcherEvent) => {
       debug(`[FileWatcher] ${event.type} - ${event.relativePath}`);
 
@@ -147,23 +161,8 @@ export function ConnectedAdrBrowserLayout(
       // * ADR LIST UPDATE (for menu and nav)
       //    - If any .md file changed, except:
       //      - If it's index.md
-      //      - If the current ADR changed (ie a Hot Reload was triggered) BUT not its metadata (title, status, date...) [for perf. reasons]
-      const previousChild = previousProps.current
-        ? React.Children.only(previousProps.current.children)
-        : undefined;
-      const currentMetadataChanged =
-        isAdrSceneChild(child) &&
-        previousChild &&
-        isAdrSceneChild(previousChild) &&
-        hasAdrMetadataChanged(
-          child.props.currentAdr,
-          previousChild.props.currentAdr
-        );
-      if (
-        isMdFile &&
-        !isIndexFile &&
-        (!needsHotReload || currentMetadataChanged)
-      ) {
+      //      - If the current ADR changed (ie a Hot Reload was triggered): only if its metadata changed, see above [for perf. reasons]
+      if (isMdFile && !isIndexFile && !needsHotReload) {
         await updateAdrsList();
       }
     });

@@ -1,12 +1,7 @@
 import { GitProvider } from "@src/infrastructure/config";
 
 export type AdrDtoStatus =
-  | "draft"
-  | "proposed"
-  | "rejected"
-  | "accepted"
-  | "deprecated"
-  | "superseded";
+  "draft" | "proposed" | "rejected" | "accepted" | "deprecated" | "superseded";
 
 // Dates are string (Date.toJSON()) because because Next.js cannot serialize Date objects
 

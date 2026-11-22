@@ -1,7 +1,8 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 
 export class CheerioMarkdownElement {
-  constructor(private readonly cheerioElt: cheerio.Cheerio) {}
+  constructor(private readonly cheerioElt: cheerio.Cheerio<AnyNode>) {}
 
   get startLine(): number | undefined {
     const data = this.cheerioElt.data("sourceLineStart") as string | undefined;

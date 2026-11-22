@@ -13,13 +13,14 @@ defaults:
 
 jobs:
   get-log4brains-version:
+    if: ${{ vars.RELEASES_ENABLED == 'true' }} # set this repository variable once npm/Docker secrets are configured
     uses: ./.github/workflows/reusable-get-log4brains-version.yml
 
   wait-for-npm-version-to-be-published:
     needs: get-log4brains-version
     uses: ./.github/workflows/reusable-wait-for-npm-version-to-be-published.yml
     with:
-      npm-package: log4brains
+      npm-package: "@awarded/log4brains"
       npm-version: ${{ needs.get-log4brains-version.outputs.version }}
 
   load-nodejs-supported-versions:
@@ -31,12 +32,13 @@ jobs:
       - get-log4brains-version
       - wait-for-npm-version-to-be-published
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: ${{ fromJson(needs.load-nodejs-supported-versions.outputs.node_versions) }}
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains@${{ needs.get-log4brains-version.outputs.version }}
+      npm-package-fullname: "@awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}"
       os: ${{ matrix.os }}
       node-version: ${{ matrix.node-version }}
 
@@ -45,21 +47,23 @@ jobs:
       - get-log4brains-version
       - wait-for-npm-version-to-be-published
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     uses: ./.github/workflows/reusable-e2e-tests.yml
     with:
-      npm-package-fullname: log4brains@${{ needs.get-log4brains-version.outputs.version }}
+      npm-package-fullname: "@awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}"
       os: ${{ matrix.os }}
       node-version: current
       experimental: true # best effort mode
 
   docker-build-and-push:
+    if: ${{ vars.RELEASES_ENABLED == 'true' }} # set this repository variable once npm/Docker secrets are configured
     needs: e2e-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/login-action@v3
+      - uses: actions/checkout@v7
+      - uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -78,27 +82,28 @@ jobs:
           fi
 
   publish-adr:
+    if: ${{ vars.RELEASES_ENABLED == 'true' }} # set this repository variable once npm/Docker secrets are configured
     needs:
       - get-log4brains-version
       - e2e-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false # required by JamesIves/github-pages-deploy-action
           fetch-depth: 0 # required by Log4brains to work correctly (needs the whole Git history)
       # We don't use cache here so we really test a fresh install
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc # current LTS
       - name: Install and Build Log4brains
         run: |
-          npm install -g log4brains@${{ needs.get-log4brains-version.outputs.version }}
+          npm install -g @awarded/log4brains@${{ needs.get-log4brains-version.outputs.version }}
           log4brains build --basePath /${GITHUB_REPOSITORY#*/}/adr
       - name: Publish to Github pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: .log4brains/out
-          TARGET_FOLDER: adr
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: .log4brains/out
+          target-folder: adr

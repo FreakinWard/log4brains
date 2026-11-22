@@ -1,13 +1,5 @@
 {
-  "compilerOptions": {
-    "target": "ES2018", // Transpiled later by Next.js or microbundle with Babel
-    "module": "esnext", // Microbundle/rollup will also generate a commonJS-compatible package
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve"
-  }
+  // Root-level files only: each package has its own tsconfig (run `npm run typescript` to check them all)
+  "extends": "./tsconfig.base.json",
+  "include": ["*.ts"]
 }

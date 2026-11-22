@@ -27,12 +27,12 @@ git pull
 
 echo ""
 echo "Release checklist:"
-echo "  - the last build pipeline is successful: https://github.com/thomvaill/log4brains/actions/workflows/build.yml"
-echo "  - the example is working: https://thomvaill.github.io/log4brains/adr/"
+echo "  - the last build pipeline is successful: https://github.com/FreakinWard/log4brains/actions/workflows/build.yml"
+echo "  - the example is working: https://freakinward.github.io/log4brains/adr/"
 echo "  - manual smoketests are OK (log4brains adr new, log4brains adr list, log4brains preview)"
 read -rp "Press any key to continue or Ctrl+C to abort..."
 
-yarn lerna publish \
+npx lerna publish \
   --conventional-commits \
   --conventional-graduate \
   --exact \
@@ -40,5 +40,5 @@ yarn lerna publish \
 
 echo ""
 echo "Done!"
-echo "Please now monitor the Post-Release actions: https://github.com/thomvaill/log4brains/actions"
+echo "Please now monitor the Post-Release actions: https://github.com/FreakinWard/log4brains/actions"
 echo "And don't forget to edit CHANGELOG.md and the Github release to write a clean changelog of this release"

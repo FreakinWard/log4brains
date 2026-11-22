@@ -18,7 +18,7 @@ export const gitProviders = [
   "bitbucket",
   "generic"
 ] as const;
-export type GitProvider = typeof gitProviders[number];
+export type GitProvider = (typeof gitProviders)[number];
 
 // Optional values are automatically guessed at configuration build time
 export type GitRepositoryConfig = Readonly<{

@@ -1,37 +1,33 @@
 import React from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Link as MuiLink, Typography } from "@material-ui/core";
-import clsx from "clsx";
+import { Link as MuiLink, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import {
   Toc as TocModel,
   TocBuilder as TocModelBuilder
 } from "../../lib/toc-utils";
 import { MarkdownHeading, MarkdownHeadingProps } from "../MarkdownHeading";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      "& > ul": {
-        padding: "0 !important"
-      }
-    },
-    title: {
-      fontWeight: theme.typography.fontWeightBold,
-      paddingBottom: theme.spacing(1)
-    },
-    tocUl: {
-      listStyleType: "none",
-      paddingLeft: "1rem"
-    }
-  })
-);
+const Root = styled("div")({
+  "& > ul": {
+    padding: "0 !important"
+  }
+});
+
+const Title = styled(Typography)(({ theme }) => ({
+  paddingBottom: theme.spacing(1)
+}));
+
+const TocList = styled("ul")({
+  listStyleType: "none",
+  paddingLeft: "1rem"
+});
 
 function variantToLevel(variant: string): number {
   return parseInt(variant.replace("h", ""), 10);
 }
 
 function isMarkdownHeadingElement(
-  element: JSX.Element
+  element: React.JSX.Element
 ): element is React.ReactElement<MarkdownHeadingProps> {
   return typeof element.type === "function" && element.type === MarkdownHeading;
 }
@@ -61,12 +57,10 @@ type TocSectionProps = {
 };
 
 function TocSection({ title, id, children }: TocSectionProps) {
-  const classes = useStyles();
-
   return (
     <li>
       <MuiLink href={`#${id}`}>{title}</MuiLink>
-      {children ? <ul className={classes.tocUl}>{children}</ul> : null}
+      {children ? <TocList>{children}</TocList> : null}
     </li>
   );
 }
@@ -82,8 +76,6 @@ export function MarkdownToc({
   content,
   levelStart = 1
 }: MarkdownTocProps) {
-  const classes = useStyles();
-
   if (!content) {
     return null;
   }
@@ -94,17 +86,17 @@ export function MarkdownToc({
   }
 
   return (
-    <div className={clsx(classes.root, className)}>
-      <Typography variant="subtitle2" className={classes.title}>
-        Table of contents
-      </Typography>
-      <ul className={classes.tocUl}>
-        {model.render((title: string, id: string, children: JSX.Element[]) => (
-          <TocSection title={title} id={id} key={id}>
-            {children}
-          </TocSection>
-        ))}
-      </ul>
-    </div>
+    <Root className={className}>
+      <Title variant="subtitle2">Table of contents</Title>
+      <TocList>
+        {model.render(
+          (title: string, id: string, children: React.JSX.Element[]) => (
+            <TocSection title={title} id={id} key={id}>
+              {children}
+            </TocSection>
+          )
+        )}
+      </TocList>
+    </Root>
   );
 }

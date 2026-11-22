@@ -2,24 +2,27 @@
 
 <p align="center">
   <a href="#readme">
-    <img src="https://github.com/thomvaill/log4brains/raw/develop/docs/Log4brains-logo-full.png" alt="Log4brains logo" width="276" />
+    <img src="https://github.com/FreakinWard/log4brains/raw/develop/docs/Log4brains-logo-full.png" alt="Log4brains logo" width="276" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/thomvaill/log4brains/blob/develop/LICENSE">
+  <a href="https://github.com/FreakinWard/log4brains/blob/develop/LICENSE">
     <img src="https://img.shields.io/badge/license-Apache%202-blue" alt="License" />
   </a>
-  <a href="https://github.com/thomvaill/log4brains/actions/workflows/on-merge-to-develop.yml">
-    <img src="https://github.com/thomvaill/log4brains/actions/workflows/on-merge-to-develop.yml/badge.svg" alt="Build Status" />
+  <a href="https://github.com/FreakinWard/log4brains/actions/workflows/on-merge-to-develop.yml">
+    <img src="https://github.com/FreakinWard/log4brains/actions/workflows/on-merge-to-develop.yml/badge.svg" alt="Build Status" />
   </a>
-  <a href="https://github.com/thomvaill/log4brains/releases">
-    <img src="https://img.shields.io/npm/v/log4brains?label=log4brains" alt="log4brains latest version" />
+  <a href="https://github.com/FreakinWard/log4brains/releases">
+    <img src="https://img.shields.io/npm/v/@awarded/log4brains?label=%40awarded%2Flog4brains" alt="@awarded/log4brains latest version" />
   </a>
-  <a href="https://thomvaill.github.io/log4brains/adr/">
-    <img src="https://thomvaill.github.io/log4brains/adr/badge.svg" alt="Log4brains ADRs" />
+  <a href="https://freakinward.github.io/log4brains/adr/">
+    <img src="https://freakinward.github.io/log4brains/adr/badge.svg" alt="Log4brains ADRs" />
   </a>
 </p>
+
+> **Maintained fork.** This is a community-maintained fork of [thomvaill/log4brains](https://github.com/thomvaill/log4brains), originally created by Thomas Vaillant.
+> It is published to npm as [`@awarded/log4brains`](https://www.npmjs.com/package/@awarded/log4brains). The CLI command is still `log4brains`.
 
 Log4brains is a docs-as-code knowledge base for your development and infrastructure projects.
 It enables you to log [Architecture Decision Records](https://adr.github.io/) (ADR) right from your IDE and to publish them automatically as a static website.
@@ -56,7 +59,7 @@ By logging your decisions chronologically, you will be able to:
 - `@adr` annotation to include code references in ADRs
 - ADR creation/edition from the UI
 - Create a new GitHub/GitLab issue from the UI
-- ... let's [suggest a new feature](https://github.com/thomvaill/log4brains/issues/new?labels=feature&template=feature.md) if you have other needs!
+- ... let's [suggest a new feature](https://github.com/FreakinWard/log4brains/issues/new?labels=feature&template=feature.md) if you have other needs!
 
 </p>
 </details>
@@ -64,10 +67,10 @@ By logging your decisions chronologically, you will be able to:
 <br />
 <p align="center">
   <a href="https://www.youtube.com/watch?v=HDEwOCn9T0w" title="Click to watch the full screencast">
-    <img src="https://github.com/thomvaill/log4brains/raw/develop/docs/demo.gif" alt="Log4brains demo" width="838" />
+    <img src="https://github.com/FreakinWard/log4brains/raw/develop/docs/demo.gif" alt="Log4brains demo" width="838" />
   </a>
 </p>
-<p align="center"><a href="https://www.youtube.com/watch?v=HDEwOCn9T0w">🎞️ Watch the full screencast</a> - <a href="https://thomvaill.github.io/log4brains/adr/">⚡ See an example (Log4brains' own ADRs)</a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=HDEwOCn9T0w">🎞️ Watch the full screencast</a> - <a href="https://freakinward.github.io/log4brains/adr/">⚡ See an example (Log4brains' own ADRs)</a></p>
 
 ## Table of contents <!-- omit in toc -->
 
@@ -93,7 +96,7 @@ in the same git repository, to keep them in sync.
 To get started, run these commands inside your project root folder:
 
 ```bash
-npm install -g log4brains # if you want to install the latest beta version, run `npm install -g log4brains@beta` instead
+npm install -g @awarded/log4brains # if you want to install the latest beta version, run `npm install -g @awarded/log4brains@beta` instead
 log4brains init
 ```
 
@@ -177,7 +180,7 @@ jobs:
           node-version: lts/*
       - name: Install and Build Log4brains
         run: |
-          npm install -g log4brains
+          npm install -g @awarded/log4brains
           log4brains build --basePath /${GITHUB_REPOSITORY#*/}/log4brains
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -225,7 +228,7 @@ pages:
     GIT_DEPTH: 0 # required by Log4brains to work correctly (needs the whole Git history)
   script:
     - mkdir -p public
-    - npm install -g --unsafe-perm log4brains
+    - npm install -g --unsafe-perm @awarded/log4brains
     - log4brains build --basePath /$CI_PROJECT_NAME/log4brains --out public/log4brains
   artifacts:
     paths:
@@ -271,7 +274,7 @@ Then, configure your CI to run these commands:
 
 - Install Node and the AWS CLI
 - Checkout your Git repository **with the full history**. Otherwise, Log4brains won't work correctly (see previous examples)
-- `npm install -g log4brains`
+- `npm install -g @awarded/log4brains`
 - `log4brains build`
 - `aws s3 sync .log4brains/out s3://<YOUR BUCKET> --delete`
 
@@ -286,7 +289,7 @@ Finally, you can add the ADR badge to your `README.md`!
 <table>
 <tbody>
 <tr>
-<td><a href="https://thomvaill.github.io/log4brains/adr/"><img src="https://thomvaill.github.io/log4brains/adr/badge.svg" alt="Log4brains ADRs" /></a></td>
+<td><a href="https://freakinward.github.io/log4brains/adr/"><img src="https://freakinward.github.io/log4brains/adr/badge.svg" alt="Log4brains ADRs" /></a></td>
 <td><code>[![Log4brains ADRs](http://URL-of-your-knowledge-base/badge.svg)](http://URL-of-your-knowledge-base/)</code></td>
 </tr>
 </tbody>
@@ -464,16 +467,16 @@ project:
 
 ### Is Log4brains also available as a Docker image?
 
-Yes! <https://hub.docker.com/r/thomvaill/log4brains>
+Yes! <https://hub.docker.com/r/freakinward/log4brains>
 
 ## 📣 Your feedback is welcome!
 
 I had the idea of Log4brains based on my needs and my past experiences with ADRs, but it is now constantly evolving with your precious feedback.
-You are very welcome to [create a new feedback in the Discussions](https://github.com/thomvaill/log4brains/discussions/new?category=Feedback) or to reach out to me at <thomvaill@bluebricks.dev>. Thanks a lot 🙏
+You are very welcome to [create a new feedback in the Discussions](https://github.com/FreakinWard/log4brains/discussions/new?category=Feedback). Thanks a lot 🙏
 
 ## Contributing
 
-Pull Requests are more than welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details. You can also [create a new issue](https://github.com/thomvaill/log4brains/issues/new/choose) or [give your feedback](https://github.com/thomvaill/log4brains/discussions/new?category=Feedback).
+Pull Requests are more than welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details. You can also [create a new issue](https://github.com/FreakinWard/log4brains/issues/new/choose) or [give your feedback](https://github.com/FreakinWard/log4brains/discussions/new?category=Feedback).
 
 ## Acknowledgments
 

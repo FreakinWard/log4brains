@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import moment from "moment";
 import path from "path";
@@ -77,7 +76,7 @@ describe("E2E tests / RO", () => {
   describe("generateAdrSlug()", () => {
     test("in global scope", async () => {
       const date = moment().format("YYYYMMDD");
-      expect(await instance.generateAdrSlug("My end-to-end test !")).toEqual(
+      expect(await instance.generateAdrSlug("My end-to-end test !")).toBe(
         `${date}-my-end-to-end-test`
       );
     });
@@ -86,7 +85,7 @@ describe("E2E tests / RO", () => {
       const date = moment().format("YYYYMMDD");
       expect(
         await instance.generateAdrSlug("My end-to-end test !", "package1")
-      ).toEqual(`package1/${date}-my-end-to-end-test`);
+      ).toBe(`package1/${date}-my-end-to-end-test`);
     });
   });
 });

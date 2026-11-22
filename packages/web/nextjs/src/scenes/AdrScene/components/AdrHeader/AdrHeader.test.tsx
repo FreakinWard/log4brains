@@ -1,17 +1,16 @@
-import { AdrDtoStatus } from "@log4brains/core";
 import React from "react";
-import TestRenderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { AdrHeader } from "./AdrHeader";
 
 describe("AdrHeader", () => {
   it("renders correctly with deciders", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "",
           title: "Test",
-          status: "draft" as AdrDtoStatus,
+          status: "draft",
           supersededBy: null,
           tags: [],
           deciders: ["John Doe", "Lorem Ipsum", "Ipsum Dolor"],
@@ -30,17 +29,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correctly without deciders", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "",
           title: "Test",
-          status: "draft" as AdrDtoStatus,
+          status: "draft",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -59,17 +58,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correctly with package", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "draft" as AdrDtoStatus,
+          status: "draft",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -88,17 +87,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correctly with tags", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "draft" as AdrDtoStatus,
+          status: "draft",
           supersededBy: null,
           tags: ["foo", "bar"],
           deciders: [],
@@ -117,17 +116,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correctly with publication date", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "accepted" as AdrDtoStatus,
+          status: "accepted",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -146,17 +145,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("shows the Github repository button", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "accepted" as AdrDtoStatus,
+          status: "accepted",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -179,17 +178,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("shows the Gitlab repository button", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "accepted" as AdrDtoStatus,
+          status: "accepted",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -212,17 +211,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("shows the generic repository button", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "accepted" as AdrDtoStatus,
+          status: "accepted",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -245,17 +244,17 @@ describe("AdrHeader", () => {
         }}
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("shows the locally edit button", () => {
-    const tree = TestRenderer.create(
+    const { asFragment } = render(
       <AdrHeader
         adr={{
           slug: "test",
           package: "test",
           title: "Test",
-          status: "accepted" as AdrDtoStatus,
+          status: "accepted",
           supersededBy: null,
           tags: [],
           deciders: [],
@@ -279,6 +278,6 @@ describe("AdrHeader", () => {
         locallyEditable
       />
     );
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

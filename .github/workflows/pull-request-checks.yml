@@ -12,10 +12,18 @@ jobs:
   quality-checks:
     uses: ./.github/workflows/reusable-quality-checks.yml
 
+  sonarcloud:
+    # Pull requests from forks don't receive secrets
+    if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+    uses: ./.github/workflows/reusable-sonarcloud.yml
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   # We only test the LTS on all OSes for performance reasons
   # Other versions will be tested on the main workflow after the merge
   tests-LTS-per-os:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     uses: ./.github/workflows/reusable-tests.yml

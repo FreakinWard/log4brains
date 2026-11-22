@@ -1,20 +1,15 @@
-import { LinearProgress } from "@material-ui/core";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { LinearProgress } from "@mui/material";
 import React from "react";
+import { styled } from "@mui/material/styles";
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      top: 0,
-      width: "100%",
-      height: 2,
-      position: "absolute"
-    }
-  })
-);
+const TopProgress = styled(LinearProgress)({
+  top: 0,
+  width: "100%",
+  height: 2,
+  position: "absolute"
+});
 
 export function RoutingProgress() {
-  const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
@@ -34,11 +29,10 @@ export function RoutingProgress() {
   }, []);
 
   return (
-    <LinearProgress
+    <TopProgress
       color="secondary"
       variant={progress < 100 ? "determinate" : "indeterminate"}
       value={progress}
-      className={classes.root}
     />
   );
 }

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import type { ClassType } from "./ClassType";
 import { Query } from "./Query";
 
 export interface QueryHandler<Q extends Query = any, QR = any> {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  readonly queryClass: Function;
+  readonly queryClass: ClassType<Query>;
   execute(query: Q): Promise<QR>;
 }

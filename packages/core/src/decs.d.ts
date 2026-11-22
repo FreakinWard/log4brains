@@ -1,5 +1,3 @@
-declare module "markdown-it-source-map";
-
 declare module "launch-editor" {
   export default function (
     path: string,

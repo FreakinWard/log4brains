@@ -1,7 +1,7 @@
-import commander from "commander";
+import { Command } from "commander";
 import terminalLink from "terminal-link";
-import { Log4brains, Log4brainsError } from "@log4brains/core";
-import { AppConsole, FailureExit } from "@log4brains/cli-common";
+import { Log4brains, Log4brainsError } from "@awarded/log4brains-core";
+import { AppConsole, FailureExit } from "@awarded/log4brains-cli-common";
 
 import {
   ListCommand,
@@ -11,7 +11,7 @@ import {
 } from "./commands";
 
 const templateExampleUrl =
-  "https://raw.githubusercontent.com/thomvaill/log4brains/stable/packages/init/assets/template.md";
+  "https://raw.githubusercontent.com/FreakinWard/log4brains/develop/packages/init/assets/template.md";
 
 let l4bInstance: Log4brains;
 function getL4bInstance(): Log4brains {
@@ -47,18 +47,17 @@ type Deps = {
   appConsole: AppConsole;
 };
 
-export function createCli({ appConsole }: Deps): commander.Command {
-  const program = new commander.Command();
+export function createCli({ appConsole }: Deps): Command {
+  const program = new Command().allowExcessArguments(); // commander >=13 rejects extra arguments; keep the previous lenient behavior
 
   const adr = program
     .command("adr")
     .description("Group of commands to manage your ADRs...");
 
   adr
-    .command("new [title]")
-    .description("Create an ADR", {
-      title: "The title of the ADR. Required if --quiet is passed"
-    })
+    .command("new")
+    .argument("[title]", "The title of the ADR. Required if --quiet is passed")
+    .description("Create an ADR")
     .option("-q, --quiet", "Disable interactive mode", false)
     .option(
       "-p, --package <package>",
@@ -95,15 +94,13 @@ export function createCli({ appConsole }: Deps): commander.Command {
     ) // TODO: list available statuses
     .option("-r, --raw", "Use a raw format instead of a table", false)
     .description("List ADRs")
-    .action(
-      (opts: ListCommandOpts): Promise<void> => {
-        const cmd = new ListCommand({
-          l4bInstance: getL4bInstance(),
-          appConsole
-        });
-        return execWithErrorHandler(cmd.execute(opts), appConsole);
-      }
-    );
+    .action((opts: ListCommandOpts): Promise<void> => {
+      const cmd = new ListCommand({
+        l4bInstance: getL4bInstance(),
+        appConsole
+      });
+      return execWithErrorHandler(cmd.execute(opts), appConsole);
+    });
 
   return program;
 }

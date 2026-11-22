@@ -1,19 +1,57 @@
 import gitUrlParse from "git-url-parse";
-import parseGitConfig from "parse-git-config";
+import { readFileSync } from "fs";
 import path from "path";
 import { GitRepositoryConfig, Log4brainsConfig, gitProviders } from "./schema";
 
-type GitRemoteConfig = {
-  url: string;
-};
-function isGitRemoteConfig(
-  remoteConfig: unknown
-): remoteConfig is GitRemoteConfig {
-  return (
-    typeof remoteConfig === "object" &&
-    remoteConfig !== null &&
-    "url" in remoteConfig
-  );
+/**
+ * `[remote "origin"]` -> true, `[core]` -> false, not a section header -> undefined
+ */
+function isOriginSectionHeader(line: string): boolean | undefined {
+  if (!line.startsWith("[") || !line.endsWith("]")) {
+    return undefined;
+  }
+  const [kind, name] = line.slice(1, -1).trim().split(/\s+/);
+  return kind === "remote" && name === '"origin"';
+}
+
+/**
+ * `url = https://...` -> the URL, without quotes
+ */
+function parseUrlEntry(line: string): string | undefined {
+  const separator = line.indexOf("=");
+  if (separator <= 0 || line.slice(0, separator).trim() !== "url") {
+    return undefined;
+  }
+  const value = line.slice(separator + 1).trim();
+  return value.startsWith('"') && value.endsWith('"')
+    ? value.slice(1, -1)
+    : value;
+}
+
+/**
+ * Reads the URL of the "origin" remote in the `.git/config` file of the given folder.
+ * Synchronous on purpose (see guessGitRepositoryConfig()).
+ */
+function readOriginRemoteUrl(workdir: string): string | undefined {
+  let content: string;
+  try {
+    content = readFileSync(path.join(workdir, ".git/config"), "utf-8");
+  } catch {
+    return undefined;
+  }
+  let inOriginSection = false;
+  for (const line of content.split("\n").map((l) => l.trim())) {
+    const isOrigin = isOriginSectionHeader(line);
+    if (isOrigin !== undefined) {
+      inOriginSection = isOrigin;
+    } else if (inOriginSection) {
+      const url = parseUrlEntry(line);
+      if (url) {
+        return url;
+      }
+    }
+  }
+  return undefined;
 }
 
 export function guessGitRepositoryConfig(
@@ -24,13 +62,8 @@ export function guessGitRepositoryConfig(
   let url = existingConfig.project.repository?.url;
   if (!url) {
     // Try to guess from the current Git configuration
-    // We use parse-git-config and not SimpleGit because we want this method to remain synchronous
-    const gitConfig = parseGitConfig.sync({
-      path: path.join(workdir, ".git/config")
-    });
-    if (isGitRemoteConfig(gitConfig['remote "origin"'])) {
-      url = gitConfig['remote "origin"'].url;
-    }
+    // We read it directly and not with SimpleGit because we want this method to remain synchronous
+    url = readOriginRemoteUrl(workdir);
   }
   if (!url) {
     return undefined;
