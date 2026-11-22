@@ -1,0 +1,132 @@
+# Stage: Beta. Runs automatically after Build: publishes the Build stage's packages to npm "beta",
+# tests the published package on every OS/Node, then pushes the Docker image.
+# Publish holds the "beta" environment and every other job waits on it.
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: Beta version built by the Build stage
+        type: string
+        required: true
+      stable:
+        description: Stable version, passed on to the Release stage
+        type: string
+        required: true
+      dry-run:
+        description: Publish, tag and push nothing
+        type: boolean
+        required: true
+    outputs:
+      stable:
+        description: Stable version, passed on so Release only needs this stage
+        value: ${{ inputs.stable }}
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    environment: beta
+    permissions:
+      contents: write # git tag
+      id-token: write # npm trusted publishing
+    env:
+      VERSION: ${{ inputs.version }}
+      DRY_RUN: ${{ inputs.dry-run }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc # npm 11.5.1+ for trusted publishing
+          registry-url: https://registry.npmjs.org/
+      - uses: actions/download-artifact@v8
+        with:
+          name: packages
+          path: dist
+      - name: Publish to npm (beta)
+        run: .github/scripts/npm-publish.sh dist beta "$DRY_RUN"
+      - name: Tag v${{ inputs.version }}
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then echo "Dry run: would tag v$VERSION"; exit 0; fi
+          gh api "repos/$GITHUB_REPOSITORY/git/refs" -f ref="refs/tags/v$VERSION" -f sha="$GITHUB_SHA" > /dev/null
+      - name: Wait until npm serves it
+        if: ${{ !inputs.dry-run }}
+        run: ./scripts/wait-for-npm-version-to-be-published.sh @awarded/log4brains "$VERSION" 10
+      - name: Summary
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then prefix="Dry run: would publish"; else prefix="Published"; fi
+          echo "### $prefix \`@awarded/log4brains@$VERSION\` to \`beta\`" >> "$GITHUB_STEP_SUMMARY"
+
+  e2e:
+    name: Node ${{ matrix.node }} · ${{ matrix.os }}
+    needs: publish
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-latest","mac":"macos-latest","win":"windows-latest"}')[matrix.os] }}
+    continue-on-error: ${{ matrix.node == 'current' }}
+    env:
+      npm_config_engine_strict: ${{ matrix.node != 'current' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [linux, mac, win]
+        node: ["22", "24", "26", current]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # log4brains reads the git history
+      - if: ${{ inputs.dry-run }}
+        uses: ./.github/actions/local-npm-registry
+        with:
+          artifact: packages
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: e2e-tests/package-lock.json
+      - run: npm install -g "@awarded/log4brains@${{ inputs.version }}"
+      - name: E2E tests on the published package
+        run: npm run e2e
+
+  docker:
+    name: Docker
+    needs: e2e
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ inputs.version }}
+      IMAGE: docker.io/${{ vars.DOCKERHUB_USERNAME || 'awarded' }}/log4brains
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm # npm's download cache, for the global install
+          cache-dependency-path: e2e-tests/package-lock.json
+      - if: ${{ inputs.dry-run }}
+        uses: ./.github/actions/local-npm-registry
+        with:
+          artifact: packages
+      - if: ${{ !inputs.dry-run }}
+        uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push :${{ inputs.version }} and :beta
+        run: |
+          docker build --network host \
+            --build-arg LOG4BRAINS_VERSION="$VERSION" \
+            --build-arg NPM_CONFIG_REGISTRY="${NPM_CONFIG_REGISTRY:-https://registry.npmjs.org/}" \
+            -t "$IMAGE:$VERSION" -t "$IMAGE:beta" docker
+          docker run --rm "$IMAGE:$VERSION" --version
+          if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+            echo "### Dry run: would push \`$IMAGE:$VERSION\` and \`$IMAGE:beta\`" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          docker push "$IMAGE:$VERSION"
+          docker push "$IMAGE:beta"
+          echo "### Pushed \`$IMAGE:$VERSION\` and \`$IMAGE:beta\`" >> "$GITHUB_STEP_SUMMARY"

@@ -1,90 +1,110 @@
-# Inspired from https://github.com/backstage/backstage/blob/master/.github/workflows/ci.yml. Thanks!
-name: On merge to develop (alpha releases)
+# Release pipeline: Build -> Beta -> Release, one run per merge to develop (like Azure DevOps stages).
+# Each stage is a reusable workflow (stage-*.yml) that holds every job needed to complete it, so the run's
+# sidebar lists the stages and each stage can be re-run from the run page.
+#
+# Dry run: until the repository variable RELEASES_ENABLED is "true", and always on branches other than
+# develop, Beta and Release publish nothing, tag nothing and deploy nothing. Their e2e tests and Docker
+# build install the packages from a throwaway local npm registry instead.
+name: Release pipeline
+
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - develop
+    branches: [develop]
     paths:
       - "packages/**"
-      - "!packages/**/CHANGELOG.md" # filters out changes made by lerna
-      - "!packages/**/package.json" # filters out changes made by lerna
+      - "e2e-tests/**"
+      - "docker/**"
+      - "package.json"
+      - "package-lock.json"
+      - "lerna.json"
+      - ".nvmrc"
       - ".github/**"
+  workflow_dispatch:
+    inputs:
+      deployment:
+        description: Which stages run
+        type: choice
+        default: full-ci
+        options: [no-deployment, beta-only, full-ci]
 
-defaults:
-  run:
-    shell: bash
+# Like Azure's `trigger: batch: true`: a running release is never cancelled, and merges that arrive
+# meanwhile collapse into a single queued run that releases develop's latest commit.
+concurrency:
+  group: release-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
-  quality-checks:
-    uses: ./.github/workflows/reusable-quality-checks.yml
+  build:
+    name: Build
+    uses: ./.github/workflows/stage-build.yml
+    secrets: inherit
 
-  sonarcloud:
-    uses: ./.github/workflows/reusable-sonarcloud.yml
-    secrets:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-  load-nodejs-supported-versions:
-    uses: ./.github/workflows/reusable-load-nodejs-supported-versions.yml
-
-  # We test the current LTS on all OSes and other supported versions are only tested on Ubuntu for performance reasons
-  # All the other os/version tuples will be tested in the post-release E2E workflow
-  tests-per-nodejs-version:
-    needs: load-nodejs-supported-versions
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: ${{ fromJson(needs.load-nodejs-supported-versions.outputs.node_versions) }}
-    uses: ./.github/workflows/reusable-tests.yml
+  beta:
+    name: Beta
+    needs: build
+    if: github.event_name == 'push' || inputs.deployment != 'no-deployment'
+    permissions:
+      contents: write # git tag
+      id-token: write # npm trusted publishing
+    uses: ./.github/workflows/stage-beta.yml
     with:
-      os: ubuntu-latest
-      node-version: ${{ matrix.node-version }}
+      version: ${{ needs.build.outputs.beta }}
+      stable: ${{ needs.build.outputs.stable }}
+      dry-run: ${{ vars.RELEASES_ENABLED != 'true' || github.ref != 'refs/heads/develop' }}
+    secrets: inherit
 
-  tests-LTS-per-other-os:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-latest, macos-latest]
-    uses: ./.github/workflows/reusable-tests.yml
+  release:
+    name: Release
+    needs: beta
+    if: github.event_name == 'push' || inputs.deployment == 'full-ci'
+    permissions:
+      contents: write # git tag + GitHub Release
+      id-token: write # npm trusted publishing + GitHub Pages
+      pages: write
+    uses: ./.github/workflows/stage-release.yml
     with:
-      os: ${{ matrix.os }}
-      node-version-file: .nvmrc # current LTS
+      version: ${{ needs.beta.outputs.stable }}
+      dry-run: ${{ vars.RELEASES_ENABLED != 'true' || github.ref != 'refs/heads/develop' }}
+    secrets: inherit
 
-  tests-nodejs-current:
-    uses: ./.github/workflows/reusable-tests.yml
-    with:
-      os: ubuntu-latest
-      node-version: current
-      experimental: true # best effort mode
-
-  release-alpha:
-    if: ${{ vars.RELEASES_ENABLED == 'true' }} # set this repository variable once npm/Docker secrets are configured
-    needs:
-      - quality-checks
-      - tests-per-nodejs-version
-      - tests-LTS-per-other-os
+  # Like Azure's ManualValidation@0 with timeoutInMinutes: 1 and onTimeout: reject. It sits beside the
+  # Release stage because it has to run while that stage waits. If Release is still waiting for approval
+  # after 1 minute, the run is cancelled so it doesn't block the next merge. Release later with
+  # "Re-run failed jobs": the re-run asks for approval again with no timeout (this job only runs on attempt 1).
+  release-timeout:
+    name: Release timeout
+    needs: beta
+    if: github.run_attempt == 1 && (github.event_name == 'push' || inputs.deployment == 'full-ci')
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RUN: repos/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0 # fetch all history for Lerna (https://stackoverflow.com/a/60184319/9285308)
-          ssh-key: ${{ secrets.LERNA_GITHUB_DEPLOY_KEY }} # so that Lerna is able to push to the protected branch (https://github.com/orgs/community/discussions/25305#discussioncomment-10728028)
-      - name: Fetch all git tags for Lerna # (https://stackoverflow.com/a/60184319/9285308)
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* || true
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc # current LTS
-          cache: npm
-          cache-dependency-path: package-lock.json
-          registry-url: https://registry.npmjs.org/ # needed by lerna to push to NPM
-      - run: npm ci
-      - run: npm run build
-      - name: Git identity for github-actions[bot]
+      - name: Wait for the approval request
+        id: request
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-      - name: Run lerna publish
-        run: npx lerna publish --yes --conventional-commits --conventional-prerelease --force-publish --dist-tag alpha --exact --create-release github
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          for _ in $(seq 1 60); do
+            pending=$(gh api "$RUN/pending_deployments" --jq '[.[] | select(.environment.name == "release")] | length')
+            if [ "$pending" -gt 0 ]; then echo "waiting=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 5
+          done
+          echo "Release never requested approval"
+
+      - name: Give the approver 1 minute
+        if: steps.request.outputs.waiting == 'true'
+        run: |
+          # Check every 5 seconds and stop as soon as Release is no longer waiting (approved or rejected).
+          for _ in $(seq 1 12); do
+            sleep 5
+            pending=$(gh api "$RUN/pending_deployments" --jq '[.[] | select(.environment.name == "release")] | length')
+            if [ "$pending" -eq 0 ]; then echo "Release was approved in time"; exit 0; fi
+          done
+          echo "::warning title=Release approval timed out::Not approved within 1 minute. To release later, open this run and click 'Re-run failed jobs'."
+          echo "### Release approval timed out" >> "$GITHUB_STEP_SUMMARY"
+          echo "Open this run and click **Re-run failed jobs** to release later (no timeout on re-runs)." >> "$GITHUB_STEP_SUMMARY"
+          gh api -X POST "$RUN/cancel" > /dev/null

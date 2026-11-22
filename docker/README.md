@@ -5,7 +5,7 @@ Official Docker image of the Log4brains CLI: <https://github.com/FreakinWard/log
 ## Usage
 
 ```bash
-docker run --rm -ti -v $(pwd):/workdir -p 4004:4004 freakinward/log4brains help
+docker run --rm -ti -v $(pwd):/workdir -p 4004:4004 awarded/log4brains help
 ```
 
 Note: the browser auto-open feature is not available when running from Docker.

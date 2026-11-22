@@ -1,6 +1,8 @@
 FROM node:lts-alpine
 
 ARG LOG4BRAINS_VERSION
+# npm reads this during the install; the release pipeline's dry runs point it at a local registry
+ARG NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
 
 USER node
 WORKDIR /workdir

@@ -467,7 +467,7 @@ project:
 
 ### Is Log4brains also available as a Docker image?
 
-Yes! <https://hub.docker.com/r/freakinward/log4brains>
+Yes! <https://hub.docker.com/r/awarded/log4brains>
 
 ## 📣 Your feedback is welcome!
 

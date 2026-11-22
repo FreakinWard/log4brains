@@ -1,0 +1,199 @@
+# Stage: Release. Publish holds the "release" environment, which requires approval; every other job
+# waits on it, so nothing in this stage runs before the release is approved.
+# Publish rebuilds the same commit with the stable version (the web build embeds the version), then the
+# published package is tested on every OS/Node before the Docker image and the GitHub Pages site go out.
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: Stable version to publish
+        type: string
+        required: true
+      dry-run:
+        description: Publish, tag, push and deploy nothing
+        type: boolean
+        required: true
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write # GitHub Release + tag
+      id-token: write # npm trusted publishing
+    env:
+      VERSION: ${{ inputs.version }}
+      DRY_RUN: ${{ inputs.dry-run }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # tags for the GitHub Release notes
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc # npm 11.5.1+ for trusted publishing
+          cache: npm
+          cache-dependency-path: package-lock.json
+          registry-url: https://registry.npmjs.org/
+      - name: Check v${{ inputs.version }} isn't released yet
+        if: ${{ !inputs.dry-run }}
+        run: |
+          if git rev-parse -q --verify "refs/tags/v$VERSION" > /dev/null; then
+            echo "::error::v$VERSION is already tagged. Merge a change to release a new version."
+            exit 1
+          fi
+      - run: npm ci
+      - name: Stamp the stable version on every package
+        run: npx lerna version "$VERSION" --exact --force-publish --no-git-tag-version --no-push --yes --allow-branch "$GITHUB_REF_NAME"
+      - run: npm run build
+      - name: Pack
+        run: |
+          cp README.md packages/global-cli/ # done by prepublishOnly, which npm pack doesn't run
+          mkdir -p dist
+          npm pack --workspaces --pack-destination dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: packages-stable
+          path: dist/*.tgz
+          if-no-files-found: error
+      - name: Publish to npm (latest)
+        run: .github/scripts/npm-publish.sh dist latest "$DRY_RUN"
+      - name: GitHub Release v${{ inputs.version }}
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then echo "Dry run: would create the GitHub Release v$VERSION"; exit 0; fi
+          gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --generate-notes
+      - name: Wait until npm serves it
+        if: ${{ !inputs.dry-run }}
+        run: ./scripts/wait-for-npm-version-to-be-published.sh @awarded/log4brains "$VERSION" 10
+      - name: Summary
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then prefix="Dry run: would publish"; else prefix="Published"; fi
+          echo "### $prefix \`@awarded/log4brains@$VERSION\` to \`latest\`" >> "$GITHUB_STEP_SUMMARY"
+
+  e2e:
+    name: Node ${{ matrix.node }} · ${{ matrix.os }}
+    needs: publish
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-latest","mac":"macos-latest","win":"windows-latest"}')[matrix.os] }}
+    continue-on-error: ${{ matrix.node == 'current' }}
+    env:
+      npm_config_engine_strict: ${{ matrix.node != 'current' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [linux, mac, win]
+        node: ["22", "24", "26", current]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # log4brains reads the git history
+      - if: ${{ inputs.dry-run }}
+        uses: ./.github/actions/local-npm-registry
+        with:
+          artifact: packages-stable
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: e2e-tests/package-lock.json
+      - run: npm install -g "@awarded/log4brains@${{ inputs.version }}"
+      - name: E2E tests on the published package
+        run: npm run e2e
+
+  docker:
+    name: Docker
+    needs: e2e
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ inputs.version }}
+      IMAGE: docker.io/${{ vars.DOCKERHUB_USERNAME || 'awarded' }}/log4brains
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm # npm's download cache, for the global install
+          cache-dependency-path: e2e-tests/package-lock.json
+      - if: ${{ inputs.dry-run }}
+        uses: ./.github/actions/local-npm-registry
+        with:
+          artifact: packages-stable
+      - if: ${{ !inputs.dry-run }}
+        uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push :${{ inputs.version }} and :latest
+        run: |
+          docker build --network host \
+            --build-arg LOG4BRAINS_VERSION="$VERSION" \
+            --build-arg NPM_CONFIG_REGISTRY="${NPM_CONFIG_REGISTRY:-https://registry.npmjs.org/}" \
+            -t "$IMAGE:$VERSION" -t "$IMAGE:latest" docker
+          docker run --rm "$IMAGE:$VERSION" --version
+          if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+            echo "### Dry run: would push \`$IMAGE:$VERSION\` and \`$IMAGE:latest\`" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          docker push "$IMAGE:$VERSION"
+          docker push "$IMAGE:latest"
+          echo "### Pushed \`$IMAGE:$VERSION\` and \`$IMAGE:latest\`" >> "$GITHUB_STEP_SUMMARY"
+
+  # The ADR site (built with the published package, so it doubles as a smoke test) and the Storybook
+  # built in the Build stage, deployed together: /<repo>/adr/ and /<repo>/storybook/
+  pages:
+    name: GitHub Pages
+    needs: e2e
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ !inputs.dry-run && 'github-pages' || '' }}
+      url: ${{ !inputs.dry-run && format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) || '' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    env:
+      VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # log4brains reads the git history
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm # npm's download cache, for the global install
+          cache-dependency-path: e2e-tests/package-lock.json
+      - if: ${{ inputs.dry-run }}
+        uses: ./.github/actions/local-npm-registry
+        with:
+          artifact: packages-stable
+      - name: Build the ADR site
+        run: |
+          npm install -g "@awarded/log4brains@$VERSION"
+          repo="${GITHUB_REPOSITORY#*/}"
+          log4brains build --basePath "/$repo/adr" --out _site/adr
+      - uses: actions/download-artifact@v8
+        with:
+          name: storybook
+          path: _site/storybook
+      - name: Site index
+        run: |
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Log4brains</title>
+          <meta http-equiv="refresh" content="0; url=adr/">
+          <p><a href="adr/">Architecture decision records</a> · <a href="storybook/">Storybook</a></p>
+          EOF
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - name: Deploy
+        if: ${{ !inputs.dry-run }}
+        uses: actions/deploy-pages@v5
