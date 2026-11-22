@@ -111,15 +111,16 @@ jobs:
           echo "### Version \`$beta\` (stable \`$stable\`)" >> "$GITHUB_STEP_SUMMARY"
 
       - run: npm ci
-      - name: Format and lint
-        run: |
-          npm run format
-          npm run lint
 
       # Set before building: the web build embeds the version, which the preview UI shows
       - name: Stamp the beta version on every package
         run: npx lerna version "${{ steps.version.outputs.beta }}" --exact --force-publish --no-git-tag-version --no-push --yes --allow-branch "$GITHUB_REF_NAME"
       - run: npm run build
+      # Lint resolves types from the built packages
+      - name: Format and lint
+        run: |
+          npm run format
+          npm run lint
       - name: Build Storybook
         run: npm run build-storybook -w packages/web
 
