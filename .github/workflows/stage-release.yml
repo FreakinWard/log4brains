@@ -70,9 +70,14 @@ jobs:
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then echo "Dry run: would create the GitHub Release v$VERSION"; exit 0; fi
           gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --generate-notes
-      - name: Wait until npm serves it
+      # Every package, not just the CLI: the e2e jobs install all of them, and npm makes each one available separately
+      - name: Wait until npm serves every package
         if: ${{ !inputs.dry-run }}
-        run: ./scripts/wait-for-npm-version-to-be-published.sh @awarded/log4brains "$VERSION" 10
+        run: |
+          for tgz in dist/*.tgz; do
+            name="$(tar -xzOf "$tgz" package/package.json | node -p "JSON.parse(require('fs').readFileSync(0, 'utf8')).name")"
+            ./scripts/wait-for-npm-version-to-be-published.sh "$name" "$VERSION" 15
+          done
       - name: Summary
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then prefix="Dry run: would publish"; else prefix="Published"; fi
