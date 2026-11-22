@@ -119,6 +119,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
+          cache: npm # npm's download cache, for the global install
+          cache-dependency-path: e2e-tests/package-lock.json
       - if: ${{ inputs.dry-run }}
         uses: ./.github/actions/local-npm-registry
         with:
@@ -165,6 +167,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
+          cache: npm # npm's download cache, for the global install
+          cache-dependency-path: e2e-tests/package-lock.json
       - if: ${{ inputs.dry-run }}
         uses: ./.github/actions/local-npm-registry
         with:

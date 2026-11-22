@@ -22,6 +22,7 @@ runs:
         mkdir -p "$dir"
         cat > "$dir/config.yaml" <<'EOF'
         storage: ./storage
+        max_body_size: 500mb # the web package ships its prebuilt Next.js app
         auth:
           htpasswd:
             file: ./htpasswd
