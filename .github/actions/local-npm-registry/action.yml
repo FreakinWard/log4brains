@@ -10,6 +10,10 @@ inputs:
 runs:
   using: composite
   steps:
+    # The registry runs on the LTS Node; jobs testing another version set it up after this action
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: .nvmrc
     - uses: actions/download-artifact@v8
       with:
         name: ${{ inputs.artifact }}
@@ -40,6 +44,11 @@ runs:
         EOF
         npx --yes verdaccio@6 --config "$dir/config.yaml" --listen 4873 > "$dir/verdaccio.log" 2>&1 &
         for _ in $(seq 1 60); do curl -sf http://localhost:4873/-/ping > /dev/null && break; sleep 2; done
+        if ! curl -sf http://localhost:4873/-/ping > /dev/null; then
+          echo "::error::The local npm registry didn't start"
+          cat "$dir/verdaccio.log"
+          exit 1
+        fi
 
         registry=http://localhost:4873/
         token=$(curl -sf -X PUT http://localhost:4873/-/user/org.couchdb.user:ci \
