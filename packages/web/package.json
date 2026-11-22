@@ -22,7 +22,13 @@
   },
   "files": [
     "dist",
-    "nextjs"
+    "nextjs",
+    "!nextjs/coverage",
+    "!nextjs/storybook-static",
+    "!nextjs/src/**/*.test.ts",
+    "!nextjs/src/**/*.test.tsx",
+    "!nextjs/src/**/*.stories.tsx",
+    "!nextjs/src/**/__snapshots__"
   ],
   "source": "./index.ts",
   "main": "./dist/index.js",
