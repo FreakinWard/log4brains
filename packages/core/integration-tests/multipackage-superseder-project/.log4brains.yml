@@ -1,0 +1,10 @@
+---
+project:
+  name: log4brains-tests-multipackage-superseder
+  tz: Europe/Paris
+  adrFolder: ./docs/adr
+
+  packages:
+    - name: mypackage
+      path: ./packages/mypackage
+      adrFolder: ./packages/mypackage/adr

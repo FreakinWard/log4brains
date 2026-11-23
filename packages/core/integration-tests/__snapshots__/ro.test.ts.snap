@@ -74,11 +74,9 @@ exports[`E2E tests / RO searchAdrs() all 1`] = `
   "package2/20201028-links-to-another-package",
   "package1/20201028-links-to-global",
   "20201028-superseded-adr",
-  "package1/20201028-superseded-in-package",
   "20201029-proposed-adr",
   "20201029-rejected-adr",
   "20201029-superseder",
-  "package1/20201029-superseder-in-package",
   "20201030-draft-adr",
 ]
 `;
@@ -813,47 +811,6 @@ Lorem ipsum.
 
 Lorem ipsum.
 ",
-      "rawMarkdown": "# Superseded ADR in a package
-
-- Status: superseded by [20201029-superseder-in-package](20201029-superseder-in-package.md)
-- Date: 2020-10-28
-
-## Context and Problem Statement
-
-Lorem ipsum.
-
-## Decision Outcome
-
-Lorem ipsum.
-",
-    },
-    "creationDate": "2026-11-23T15:22:14.497Z",
-    "deciders": [],
-    "file": {
-      "absolutePath": "/ABSOLUTE-PATH/ro-project/packages/package1/adr/20201028-superseded-in-package.md",
-      "relativePath": "packages/package1/adr/20201028-superseded-in-package.md",
-    },
-    "lastEditAuthor": "Anonymous",
-    "lastEditDate": "2026-11-23T15:22:14.497Z",
-    "package": "package1",
-    "publicationDate": "2020-10-28T22:59:59.000Z",
-    "slug": "package1/20201028-superseded-in-package",
-    "status": "superseded",
-    "supersededBy": "package1/20201029-superseder-in-package",
-    "tags": [],
-    "title": "Superseded ADR in a package",
-  },
-  {
-    "body": {
-      "enhancedMdx": "
-## Context and Problem Statement
-
-Lorem ipsum.
-
-## Decision Outcome
-
-Lorem ipsum.
-",
       "rawMarkdown": "# Proposed ADR
 
 - Status: proposed
@@ -973,47 +930,6 @@ Lorem ipsum.
     "supersededBy": null,
     "tags": [],
     "title": "Superseder",
-  },
-  {
-    "body": {
-      "enhancedMdx": "
-## Context and Problem Statement
-
-Lorem ipsum.
-
-## Decision Outcome
-
-Lorem ipsum.
-",
-      "rawMarkdown": "# Superseder ADR in a package
-
-- Status: accepted
-- Date: 2020-10-29
-
-## Context and Problem Statement
-
-Lorem ipsum.
-
-## Decision Outcome
-
-Lorem ipsum.
-",
-    },
-    "creationDate": "2026-11-23T15:22:16.277Z",
-    "deciders": [],
-    "file": {
-      "absolutePath": "/ABSOLUTE-PATH/ro-project/packages/package1/adr/20201029-superseder-in-package.md",
-      "relativePath": "packages/package1/adr/20201029-superseder-in-package.md",
-    },
-    "lastEditAuthor": "Anonymous",
-    "lastEditDate": "2026-11-23T15:22:16.277Z",
-    "package": "package1",
-    "publicationDate": "2020-10-29T22:59:59.000Z",
-    "slug": "package1/20201029-superseder-in-package",
-    "status": "accepted",
-    "supersededBy": null,
-    "tags": [],
-    "title": "Superseder ADR in a package",
   },
   {
     "body": {

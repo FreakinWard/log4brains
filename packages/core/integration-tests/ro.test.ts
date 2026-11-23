@@ -71,25 +71,6 @@ describe("E2E tests / RO", () => {
       const adr = await instance.getAdrBySlug("unknown");
       expect(adr).toBeUndefined();
     });
-
-    test("resolves a same-package superseder to its package-qualified slug", async () => {
-      const superseded = await instance.getAdrBySlug(
-        "package1/20201028-superseded-in-package"
-      );
-      expect(superseded?.status).toBe("superseded");
-      expect(superseded?.supersededBy).toBe(
-        "package1/20201029-superseder-in-package"
-      );
-
-      // The resolved superseder must be retrievable by that slug: this is
-      // exactly what the web build does in getStaticProps. Before the fix the
-      // superseder resolved to a bare, package-less slug that matched no ADR,
-      // which broke `log4brains build` for the whole multi-package site.
-      const superseder = await instance.getAdrBySlug(
-        superseded?.supersededBy ?? ""
-      );
-      expect(superseder?.slug).toBe("package1/20201029-superseder-in-package");
-    });
   });
 
   describe("generateAdrSlug()", () => {
