@@ -23,7 +23,21 @@ export function toAdrLight(adr: AdrDto | Adr | AdrLight): AdrLight {
 
 export function toAdr(dto: AdrDto, superseder?: AdrLight): Adr {
   if (dto.supersededBy && !superseder) {
-    throw new Error("You forgot to pass the superseder");
+    // An unresolvable superseder (e.g. a typo or a reference to an ADR that
+    // does not exist) must never break the static build. Render the page
+    // without the superseder link and warn, naming the ADR and its unresolved
+    // target so the author can fix it.
+    // eslint-disable-next-line no-console
+    console.warn(
+      `[log4brains] ADR "${dto.slug}" is "superseded by ${dto.supersededBy}", but no matching ADR was found. Rendering without the superseder link.`
+    );
+    return {
+      ...dto,
+      supersededBy: null,
+      body: {
+        enhancedMdx: dto.body.enhancedMdx
+      }
+    };
   }
   if (superseder && superseder.slug !== dto.supersededBy) {
     throw new Error(

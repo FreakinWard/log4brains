@@ -4,6 +4,7 @@ import { AdrSlug } from "./AdrSlug";
 import { AdrStatus } from "./AdrStatus";
 import { MarkdownAdrLink } from "./MarkdownAdrLink";
 import { MarkdownBody } from "./MarkdownBody";
+import { PackageRef } from "./PackageRef";
 
 describe("Adr", () => {
   beforeAll(() => {
@@ -84,6 +85,65 @@ describe("Adr", () => {
   `)
       });
       expect(adr.superseder?.value).toBe("foo/bar");
+    });
+
+    it("resolves a same-package superseder referenced by a relative Markdown link", () => {
+      const adr = new Adr({
+        slug: new AdrSlug("mypackage/20201028-superseded"),
+        package: new PackageRef("mypackage"),
+        body: new MarkdownBody(`# My ADR
+
+  - Status: superseded by [20201029-superseder](20201029-superseder.md)
+  `)
+      });
+      expect(adr.superseder?.value).toBe("mypackage/20201029-superseder");
+    });
+
+    it("resolves a same-package superseder referenced by a bare slug", () => {
+      const adr = new Adr({
+        slug: new AdrSlug("mypackage/20201028-superseded"),
+        package: new PackageRef("mypackage"),
+        body: new MarkdownBody(`# My ADR
+
+  - Status: superseded by 20201029-superseder
+  `)
+      });
+      expect(adr.superseder?.value).toBe("mypackage/20201029-superseder");
+    });
+
+    it("keeps a package-less superseder bare when the ADR has no package", () => {
+      const adr = new Adr({
+        slug: new AdrSlug("20201028-superseded"),
+        body: new MarkdownBody(`# My ADR
+
+  - Status: superseded by 20201029-superseder
+  `)
+      });
+      expect(adr.superseder?.value).toBe("20201029-superseder");
+    });
+
+    it("keeps a cross-package superseder referenced by a qualified slug", () => {
+      const adr = new Adr({
+        slug: new AdrSlug("mypackage/20201028-superseded"),
+        package: new PackageRef("mypackage"),
+        body: new MarkdownBody(`# My ADR
+
+  - Status: superseded by otherpackage/20201029-superseder
+  `)
+      });
+      expect(adr.superseder?.value).toBe("otherpackage/20201029-superseder");
+    });
+
+    it("returns undefined for an unresolvable (empty) superseder without throwing", () => {
+      const adr = new Adr({
+        slug: new AdrSlug("mypackage/20201028-superseded"),
+        package: new PackageRef("mypackage"),
+        body: new MarkdownBody(`# My ADR
+
+  - Status: superseded by
+  `)
+      });
+      expect(adr.superseder).toBeUndefined();
     });
   });
 

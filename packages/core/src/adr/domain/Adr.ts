@@ -112,9 +112,22 @@ export class Adr extends AggregateRoot<Props> {
     if (!this.status.equals(AdrStatus.SUPERSEDED) || !statusStr) {
       return undefined;
     }
-    const slug = statusStr.replace(/superseded\s*by\s*:?/i, "").trim();
+    const reference = statusStr.replace(/superseded\s*by\s*:?/i, "").trim();
+    if (!reference) {
+      return undefined;
+    }
+    // A same-package supersession is written relative to the superseded ADR
+    // (a bare slug or a relative Markdown link), so it carries no package part.
+    // Resolve it within this ADR's own package, mirroring how
+    // MarkdownAdrLinkResolver resolves cross-ADR links relative to the source.
+    // An already-qualified (cross-package) slug and a global/package-less ADR
+    // are left untouched.
+    const value =
+      this.package && !reference.includes("/")
+        ? `${this.package.name}/${reference}`
+        : reference;
     try {
-      return slug ? new AdrSlug(slug) : undefined;
+      return new AdrSlug(value);
     } catch (e) {
       return undefined; // TODO: log
     }
