@@ -43,6 +43,13 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
           registry-url: https://registry.npmjs.org/
+      - name: Check this is the branch's latest commit
+        run: |
+          latest="$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_REF_NAME" --jq .sha)"
+          if [[ "$latest" != "$GITHUB_SHA" ]]; then
+            echo "::error::A newer commit is on $GITHUB_REF_NAME. Release from the newest run instead."
+            exit 1
+          fi
       - name: Check v${{ inputs.version }} isn't released yet
         if: ${{ !inputs.dry-run }}
         run: |

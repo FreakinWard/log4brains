@@ -27,11 +27,12 @@ on:
         default: full-ci
         options: [no-deployment, beta-only, full-ci]
 
-# Like Azure's `trigger: batch: true`: a running release is never cancelled, and merges that arrive
-# meanwhile collapse into a single queued run that releases develop's latest commit.
-concurrency:
-  group: release-pipeline-${{ github.ref }}
-  cancel-in-progress: false
+# Concurrency is per stage, not per run, so an approval waiting in Release never holds up the next merge:
+# - Beta: like Azure's `trigger: batch: true`. A running Beta is never cancelled, and merges that arrive
+#   meanwhile collapse into one queued Beta for the latest of them.
+# - Release: one at a time. A waiting approval holds it for at most the 1-minute timeout, and Publish
+#   refuses any commit that isn't the branch's latest, so only the newest merge can be released.
+# Build has no limit: it only tests and packs, and each run gets its own version.
 
 permissions:
   contents: read
@@ -46,6 +47,9 @@ jobs:
     name: Beta
     needs: build
     if: github.event_name == 'push' || inputs.deployment != 'no-deployment'
+    concurrency:
+      group: release-pipeline-beta-${{ github.ref }}
+      cancel-in-progress: false
     permissions:
       contents: write # git tag
       id-token: write # npm trusted publishing
@@ -60,6 +64,9 @@ jobs:
     name: Release
     needs: beta
     if: github.event_name == 'push' || inputs.deployment == 'full-ci'
+    concurrency:
+      group: release-pipeline-release-${{ github.ref }}
+      cancel-in-progress: false
     permissions:
       contents: write # git tag + GitHub Release
       id-token: write # npm trusted publishing + GitHub Pages
@@ -72,12 +79,12 @@ jobs:
 
   # Like Azure's ManualValidation@0 with timeoutInMinutes: 1 and onTimeout: reject. It sits beside the
   # Release stage because it has to run while that stage waits. If Release is still waiting for approval
-  # after 1 minute, the run is cancelled so it doesn't block the next merge. Release later with
-  # "Re-run failed jobs": the re-run asks for approval again with no timeout (this job only runs on attempt 1).
+  # after 1 minute, the run is cancelled so it doesn't hold up the next release. It runs on every attempt:
+  # to release later, use "Re-run failed jobs" on the run and approve within a minute.
   release-timeout:
     name: Release timeout
     needs: beta
-    if: github.run_attempt == 1 && (github.event_name == 'push' || inputs.deployment == 'full-ci')
+    if: github.event_name == 'push' || inputs.deployment == 'full-ci'
     runs-on: ubuntu-latest
     permissions:
       actions: write
