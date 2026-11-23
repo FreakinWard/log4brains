@@ -19,6 +19,9 @@
   <a href="https://freakinward.github.io/log4brains/adr/">
     <img src="https://freakinward.github.io/log4brains/adr/badge.svg" alt="Log4brains ADRs" />
   </a>
+  <a href="https://freakinward.github.io/log4brains/storybook/">
+    <img src="https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white" alt="Storybook" />
+  </a>
 </p>
 
 > **Maintained fork.** This is a community-maintained fork of [thomvaill/log4brains](https://github.com/thomvaill/log4brains), originally created by Thomas Vaillant.
