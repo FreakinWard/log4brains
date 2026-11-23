@@ -25,7 +25,7 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    environment: release
+    environment: ${{ !inputs.dry-run && 'release' || '' }} # dry runs skip it: it only allows develop
     permissions:
       contents: write # GitHub Release + tag
       id-token: write # npm trusted publishing

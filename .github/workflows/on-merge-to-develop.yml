@@ -4,7 +4,9 @@
 #
 # Dry run: until the repository variable RELEASES_ENABLED is "true", and always on branches other than
 # develop, Beta and Release publish nothing, tag nothing and deploy nothing. Their e2e tests and Docker
-# build install the packages from a throwaway local npm registry instead.
+# build install the packages from a throwaway local npm registry instead, and they skip the beta/release
+# environments (which only allow develop). To try pipeline changes before merging, run this workflow on
+# the branch with "Force release" checked.
 name: Release pipeline
 
 on:
@@ -27,7 +29,7 @@ on:
         default: full-ci
         options: [no-deployment, beta-only, full-ci]
       force-release:
-        description: Force release — run Release even when no package changed since the last release
+        description: Force release — publish a beta and run Release even when no package changed since the last release
         type: boolean
         default: false
 
@@ -50,7 +52,9 @@ jobs:
   beta:
     name: Beta
     needs: build
-    if: github.event_name == 'push' || inputs.deployment != 'no-deployment'
+    # Beta and Release are skipped when no package changed since the last release (ci, docs, test-only merges),
+    # unless "Force release" is checked on a manual run
+    if: (github.event_name == 'push' || inputs.deployment != 'no-deployment') && (needs.build.outputs.releasable == 'true' || inputs.force-release)
     concurrency:
       group: release-pipeline-beta-${{ github.ref }}
       cancel-in-progress: false
@@ -68,7 +72,6 @@ jobs:
   release:
     name: Release
     needs: beta
-    # Skipped when no package changed since the last release, unless "Force release" is checked on a manual run
     if: (github.event_name == 'push' || inputs.deployment == 'full-ci') && (needs.beta.outputs.releasable == 'true' || inputs.force-release)
     concurrency:
       group: release-pipeline-release-${{ github.ref }}
@@ -90,7 +93,11 @@ jobs:
   release-timeout:
     name: Release timeout
     needs: beta
-    if: (github.event_name == 'push' || inputs.deployment == 'full-ci') && (needs.beta.outputs.releasable == 'true' || inputs.force-release)
+    # Dry runs have no approval to time out
+    if: >-
+      (github.event_name == 'push' || inputs.deployment == 'full-ci')
+      && (needs.beta.outputs.releasable == 'true' || inputs.force-release)
+      && vars.RELEASES_ENABLED == 'true' && github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     permissions:
       actions: write
@@ -119,5 +126,5 @@ jobs:
           done
           echo "::warning title=Release approval timed out::Not approved within 1 minute. To release later, open this run and click 'Re-run failed jobs'."
           echo "### Release approval timed out" >> "$GITHUB_STEP_SUMMARY"
-          echo "Open this run and click **Re-run failed jobs** to release later (no timeout on re-runs)." >> "$GITHUB_STEP_SUMMARY"
+          echo "To release later, open this run, click **Re-run failed jobs** and approve within 1 minute." >> "$GITHUB_STEP_SUMMARY"
           gh api -X POST "$RUN/cancel" > /dev/null
