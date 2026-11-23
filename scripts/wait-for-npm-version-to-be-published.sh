@@ -32,21 +32,26 @@ fi
 
 echo "Checking if ${package_name}@${package_version} is available on NPM (waiting max ${wait_minutes} min)..."
 
-i=0
-while ! npm view "${package_name}" versions --json | jq -e --arg package_version "${package_version}" 'index($package_version)' &> /dev/null
+# --prefer-online: ask the registry every time; npm's cached copy of the version list can lag minutes behind
+is_available() {
+  npm view "${package_name}" versions --json --prefer-online 2> /dev/null \
+    | jq -e --arg package_version "${package_version}" 'index($package_version)' &> /dev/null
+}
+
+deadline=$((SECONDS + wait_minutes * 60))
+until is_available
 do
-  if [[ ${i} -gt ${wait_minutes} ]]
+  if [[ ${SECONDS} -ge ${deadline} ]]
   then
     echo "Failure for more than ${wait_minutes} minutes"
     echo "Available versions:"
-    npm view "${package_name}" versions --json
+    npm view "${package_name}" versions --json --prefer-online
     echo "Abort"
     exit 1
   fi
 
-  echo "${package_name}@${package_version} is not available yet on NPM. Let's wait 60s..."
-  sleep 60
-  ((i=i+1))
+  echo "${package_name}@${package_version} is not available yet on NPM. Let's wait 10s..."
+  sleep 10
 done
 
 echo "${package_name}@${package_version} is available"

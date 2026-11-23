@@ -130,7 +130,7 @@ jobs:
           echo "### Version \`$beta\` (stable \`$stable\`)" >> "$GITHUB_STEP_SUMMARY"
           if [[ "$(sed -n 's/^releasable=//p' <<< "$versions")" != "true" ]]; then
             last="$(sed -n 's/^last_release=//p' <<< "$versions")"
-            echo "Release skipped: no package changed since $last. To release anyway, run this pipeline manually with **Force release** checked." >> "$GITHUB_STEP_SUMMARY"
+            echo "Beta and Release skipped: no package changed since $last. To publish anyway, run this pipeline manually with **Force release** checked." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - run: npm ci
