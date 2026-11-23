@@ -9,6 +9,12 @@ on:
       beta:
         description: Version the Beta stage publishes to npm "beta"
         value: ${{ jobs.build.outputs.beta }}
+      releasable:
+        description: Whether anything since the last release changes the published packages
+        value: ${{ jobs.build.outputs.releasable }}
+      last-release:
+        description: The last stable release tag
+        value: ${{ jobs.build.outputs.last-release }}
 
 permissions:
   contents: read
@@ -100,6 +106,8 @@ jobs:
     outputs:
       stable: ${{ steps.version.outputs.stable }}
       beta: ${{ steps.version.outputs.beta }}
+      releasable: ${{ steps.version.outputs.releasable }}
+      last-release: ${{ steps.version.outputs.last_release }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -120,6 +128,10 @@ jobs:
           beta="$(sed -n 's/^beta=//p' <<< "$versions")"
           stable="$(sed -n 's/^stable=//p' <<< "$versions")"
           echo "### Version \`$beta\` (stable \`$stable\`)" >> "$GITHUB_STEP_SUMMARY"
+          if [[ "$(sed -n 's/^releasable=//p' <<< "$versions")" != "true" ]]; then
+            last="$(sed -n 's/^last_release=//p' <<< "$versions")"
+            echo "Release skipped: no package changed since $last. To release anyway, run this pipeline manually with **Force release** checked." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - run: npm ci
 

@@ -12,6 +12,10 @@ on:
         description: Stable version, passed on to the Release stage
         type: string
         required: true
+      releasable:
+        description: Whether anything since the last release changes the published packages, passed on to Release
+        type: string
+        required: true
       dry-run:
         description: Publish, tag and push nothing
         type: boolean
@@ -20,6 +24,9 @@ on:
       stable:
         description: Stable version, passed on so Release only needs this stage
         value: ${{ inputs.stable }}
+      releasable:
+        description: Whether anything since the last release changes the published packages
+        value: ${{ inputs.releasable }}
 
 permissions:
   contents: read

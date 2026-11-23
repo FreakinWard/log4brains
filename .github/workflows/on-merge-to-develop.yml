@@ -26,6 +26,10 @@ on:
         type: choice
         default: full-ci
         options: [no-deployment, beta-only, full-ci]
+      force-release:
+        description: Force release — run Release even when no package changed since the last release
+        type: boolean
+        default: false
 
 # Concurrency is per stage, not per run, so an approval waiting in Release never holds up the next merge:
 # - Beta: like Azure's `trigger: batch: true`. A running Beta is never cancelled, and merges that arrive
@@ -57,13 +61,15 @@ jobs:
     with:
       version: ${{ needs.build.outputs.beta }}
       stable: ${{ needs.build.outputs.stable }}
+      releasable: ${{ needs.build.outputs.releasable }}
       dry-run: ${{ vars.RELEASES_ENABLED != 'true' || github.ref != 'refs/heads/develop' }}
     secrets: inherit
 
   release:
     name: Release
     needs: beta
-    if: github.event_name == 'push' || inputs.deployment == 'full-ci'
+    # Skipped when no package changed since the last release, unless "Force release" is checked on a manual run
+    if: (github.event_name == 'push' || inputs.deployment == 'full-ci') && (needs.beta.outputs.releasable == 'true' || inputs.force-release)
     concurrency:
       group: release-pipeline-release-${{ github.ref }}
       cancel-in-progress: false
@@ -84,7 +90,7 @@ jobs:
   release-timeout:
     name: Release timeout
     needs: beta
-    if: github.event_name == 'push' || inputs.deployment == 'full-ci'
+    if: (github.event_name == 'push' || inputs.deployment == 'full-ci') && (needs.beta.outputs.releasable == 'true' || inputs.force-release)
     runs-on: ubuntu-latest
     permissions:
       actions: write
