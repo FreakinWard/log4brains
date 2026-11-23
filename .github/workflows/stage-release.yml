@@ -218,9 +218,25 @@ jobs:
           <meta http-equiv="refresh" content="0; url=adr/">
           <p><a href="adr/">Architecture decision records</a> · <a href="storybook/">Storybook</a></p>
           EOF
+      # One artifact name per attempt: deploy-pages refuses to choose when a re-run finds the earlier
+      # attempt's artifact under the same name
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+          name: github-pages-${{ github.run_attempt }}
+      # The artifact list can lag a few seconds behind the upload, so a first "not found" is retried once
       - name: Deploy
+        id: deploy
         if: ${{ !inputs.dry-run }}
+        continue-on-error: true
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+      - name: Wait before retrying the deploy
+        if: ${{ !inputs.dry-run && steps.deploy.outcome == 'failure' }}
+        run: sleep 20
+      - name: Deploy (retry)
+        if: ${{ !inputs.dry-run && steps.deploy.outcome == 'failure' }}
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
