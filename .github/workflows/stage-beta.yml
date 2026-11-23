@@ -85,6 +85,15 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # log4brains reads the git history
+      # Windows: npm's cache and global folder default to C:, where unpacking packages is ~8x slower than on D:
+      - name: Put npm on the D drive (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          {
+            echo "npm_config_cache=D:/npm-cache"
+            echo "npm_config_prefix=D:/npm-prefix"
+          } >> "$GITHUB_ENV"
+          echo "D:/npm-prefix" >> "$GITHUB_PATH"
       - if: ${{ inputs.dry-run }}
         uses: ./.github/actions/local-npm-registry
         with:
