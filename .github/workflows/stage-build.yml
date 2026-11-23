@@ -103,6 +103,8 @@ jobs:
 
       - name: Compute versions
         id: version
+        env:
+          BETA_NUMBER: ${{ github.run_number }}
         run: |
           versions="$(.github/scripts/release-version.sh)"
           echo "$versions" | tee -a "$GITHUB_OUTPUT"
