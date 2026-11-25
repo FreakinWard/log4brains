@@ -1,6 +1,6 @@
 # Switch back to GitHub Flow, but keeping the automated beta releases
 
-- Status: accepted
+- Status: superseded by [20261124-automate-stable-releases-with-a-staged-release-pipeline](20261124-automate-stable-releases-with-a-staged-release-pipeline.md)
 - Date: 2024-12-17
 
 ## Context and Problem Statement
@@ -29,3 +29,7 @@ Specifically, **Lerna**, which we use for managing our monorepo, does not integr
 Chosen option: "Option 2: Switch back to Github Flow, but keeping the automated beta releases", because it fullfils all the requirements.
 In fact, we can still merge quickly pull requests without releasing a stable release, while keeping the automated beta release.
 The stable release is a manual script executed by maintainers.
+
+## Links
+
+- Superseded by [20261124-automate-stable-releases-with-a-staged-release-pipeline](20261124-automate-stable-releases-with-a-staged-release-pipeline.md), which automates the stable release. The closing line above — the manual stable script — is no longer the live guidance.

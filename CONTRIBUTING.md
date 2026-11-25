@@ -105,7 +105,7 @@ Log4brains follows a **simplified Git Flow** model. Here’s how the process wor
 
    This helps us get feedback from early adopters before triggering a stable release.
 
-7. **Stable Release**: Once the `develop` branch is stable and tested, the maintainers will manually run `scripts/release.sh` to publish a new stable release to npm (TODO: should be automated in the future).
+7. **Stable Release**: The same merge that publishes the beta also runs the **Release** stage of the release pipeline, which republishes that exact commit as a stable release to npm's `latest` tag. It is gated: the `release` GitHub environment requires a maintainer's approval (within 1 minute, otherwise the run cancels and can be re-run later). No one runs a release script by hand. See the ADR [Automate stable releases with a staged release pipeline](docs/adr/20261124-automate-stable-releases-with-a-staged-release-pipeline.md) for how the pipeline derives versions and gates publishing.
 
 ## License
 
