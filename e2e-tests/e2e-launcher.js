@@ -2,10 +2,15 @@ import { execa } from "execa";
 import os from "os";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 import chalk from "chalk";
 import { expect } from "chai";
 
 const fsP = fs.promises;
+const FIXTURES_DIR = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "fixtures"
+);
 
 process.env.NODE_ENV = "test";
 
@@ -26,6 +31,49 @@ async function run(file, args, cwd) {
   childProcess.stdout.pipe(process.stdout);
   childProcess.stderr.pipe(process.stderr);
   return await childProcess;
+}
+
+// Regression coverage for `log4brains build` on a multi-package project with
+// superseded ADRs (FreakinWard/log4brains#13, upstream thomvaill/log4brains#107).
+// Runs the real CLI against a self-contained multi-package fixture and asserts
+// the generated output by meaning: a same-package supersession resolves to the
+// package-qualified superseder URL, and a dangling superseder reference still
+// builds its page instead of crashing. It never snapshots and never reads
+// Git-derived metadata, so (squash-)committing the fixture cannot flake it.
+async function testMultipackageSupersederBuild(cwd) {
+  // arrange
+  const outDir = path.join(cwd, ".log4brains", "out");
+  const supersededPage = path.join(
+    outDir,
+    "adr",
+    "mypackage",
+    "20201028-superseded-in-package",
+    "index.html"
+  );
+  const missingSupersederPage = path.join(
+    outDir,
+    "adr",
+    "mypackage",
+    "20201101-superseded-missing",
+    "index.html"
+  );
+  fs.cpSync(path.join(FIXTURES_DIR, "multipackage-superseder"), cwd, {
+    recursive: true
+  });
+
+  // act
+  const buildRes = await run("log4brains", ["build"], cwd);
+
+  // assert
+  expect(buildRes.exitCode).to.equal(0, "log4brains build must exit 0");
+  expect(fs.readFileSync(supersededPage, "utf8")).to.contain(
+    "/adr/mypackage/20201029-superseder-in-package/",
+    "a same-package superseder must resolve to its package-qualified URL"
+  );
+  expect(fs.existsSync(missingSupersederPage)).to.equal(
+    true,
+    "an ADR with a missing superseder must still be built"
+  );
 }
 
 (async () => {
@@ -55,9 +103,11 @@ async function run(file, args, cwd) {
       .be.true;
 
     // TODO: preview tests (https://github.com/thomvaill/log4brains/issues/2)
-
-    console.log(chalk.bold.green("END"));
   });
+
+  await usingTempDir(testMultipackageSupersederBuild);
+
+  console.log(chalk.bold.green("END"));
 })().catch((e) => {
   console.error("");
   console.error(`${chalk.red.bold("== FATAL ERROR ==")}`);

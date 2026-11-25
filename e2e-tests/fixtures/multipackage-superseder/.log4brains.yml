@@ -1,0 +1,10 @@
+---
+project:
+  name: log4brains-e2e-multipackage-superseder
+  tz: Europe/Paris
+  adrFolder: ./docs/adr
+
+  packages:
+    - name: mypackage
+      path: ./packages/mypackage
+      adrFolder: ./packages/mypackage/adr
