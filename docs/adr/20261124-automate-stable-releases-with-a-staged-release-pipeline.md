@@ -4,7 +4,7 @@
 - Deciders: FreakinWard
 - Date: 2026-11-24
 
-Technical Story: PRs #5–#12 (staging the release pipeline as Build, Beta and Release, then hardening it)
+Technical Story: [#5](https://github.com/FreakinWard/log4brains/pull/5), [#7](https://github.com/FreakinWard/log4brains/pull/7), [#8](https://github.com/FreakinWard/log4brains/pull/8), [#9](https://github.com/FreakinWard/log4brains/pull/9), [#11](https://github.com/FreakinWard/log4brains/pull/11), [#12](https://github.com/FreakinWard/log4brains/pull/12) — staging the release pipeline as Build, Beta and Release, then hardening it
 
 ## Context and Problem Statement
 
